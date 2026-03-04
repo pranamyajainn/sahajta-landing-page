@@ -1,5 +1,7 @@
 "use client";
 
+import { Sprout } from "lucide-react";
+
 export default function FeaturedProduct() {
     return (
         <section className="section-pad section-surface" id="product">
@@ -7,10 +9,10 @@ export default function FeaturedProduct() {
                 <span className="micro-label">Our Latest Launch</span>
                 <h2
                     style={{
-                        fontFamily: "var(--font-lora), Georgia, serif",
+                        fontFamily: "var(--font-cormorant), Georgia, serif",
                         fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
                         fontWeight: 700,
-                        color: "#1A1A1A",
+                        color: "var(--text-dark)",
                         letterSpacing: "-0.02em",
                         lineHeight: 1.1,
                         marginBottom: "48px",
@@ -19,11 +21,11 @@ export default function FeaturedProduct() {
                     vibe2real.codes
                 </h2>
 
-                {/* Testimonial — left green border */}
+                {/* Testimonial — left gold border */}
                 <div
                     style={{
-                        backgroundColor: "#EEF5F1",
-                        borderLeft: "3px solid #7AAE8A",
+                        backgroundColor: "var(--bg-green-tint)",
+                        borderLeft: "3px solid var(--gold)",
                         padding: "24px 32px",
                         marginBottom: "56px",
                         maxWidth: "680px",
@@ -31,10 +33,10 @@ export default function FeaturedProduct() {
                 >
                     <p
                         style={{
-                            fontFamily: "var(--font-lora), Georgia, serif",
+                            fontFamily: "var(--font-cormorant), Georgia, serif",
                             fontStyle: "italic",
-                            fontSize: "1.125rem",
-                            color: "#3D3D3D",
+                            fontSize: "1.25rem",
+                            color: "var(--text-body)",
                             lineHeight: 1.7,
                             marginBottom: "16px",
                         }}
@@ -46,8 +48,8 @@ export default function FeaturedProduct() {
                         style={{
                             fontFamily: "var(--font-inter)",
                             fontSize: "0.875rem",
-                            fontWeight: 500,
-                            color: "#1A1A1A",
+                            fontWeight: 600,
+                            color: "var(--text-dark)",
                             marginBottom: "2px",
                         }}
                     >
@@ -57,7 +59,7 @@ export default function FeaturedProduct() {
                         style={{
                             fontFamily: "var(--font-inter)",
                             fontSize: "0.8125rem",
-                            color: "#6B6B6B",
+                            color: "var(--text-muted)",
                         }}
                     >
                         Loom product demo
@@ -73,10 +75,12 @@ export default function FeaturedProduct() {
                     <div>
                         <div
                             style={{
-                                display: "inline-block",
-                                backgroundColor: "rgba(122,174,138,0.12)",
-                                border: "1px solid rgba(122,174,138,0.25)",
-                                color: "#5A9270",
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "6px",
+                                backgroundColor: "var(--gold-tint)",
+                                border: "1px solid rgba(201,160,68,0.25)",
+                                color: "var(--gold-dark)",
                                 fontSize: "0.75rem",
                                 fontWeight: 600,
                                 fontFamily: "var(--font-inter)",
@@ -86,6 +90,11 @@ export default function FeaturedProduct() {
                                 marginBottom: "20px",
                             }}
                         >
+                            <Sprout
+                                style={{ width: "12px", height: "12px", color: "var(--gold)" }}
+                                strokeWidth={1.5}
+                                aria-hidden="true"
+                            />
                             Launched in 24 hours · Open Source · Free to use
                         </div>
 
@@ -93,7 +102,7 @@ export default function FeaturedProduct() {
                             style={{
                                 fontFamily: "var(--font-inter)",
                                 fontSize: "1rem",
-                                color: "#3D3D3D",
+                                color: "var(--text-body)",
                                 lineHeight: 1.7,
                                 marginBottom: "32px",
                             }}
@@ -103,15 +112,14 @@ export default function FeaturedProduct() {
                             3 hours. One big mindset shift.
                         </p>
 
-                        {/* Stats — large Lora numbers */}
+                        {/* Stats — large Cormorant numbers in gold */}
                         <div
                             style={{
                                 display: "grid",
                                 gridTemplateColumns: "1fr 1fr 1fr",
-                                gap: "0",
                                 padding: "28px 0",
-                                borderTop: "1px solid #E2E0DC",
-                                borderBottom: "1px solid #E2E0DC",
+                                borderTop: "1px solid var(--border)",
+                                borderBottom: "1px solid var(--border)",
                                 marginBottom: "32px",
                             }}
                         >
@@ -123,10 +131,10 @@ export default function FeaturedProduct() {
                                 <div key={i} style={{ textAlign: "center", padding: "0 8px" }}>
                                     <p
                                         style={{
-                                            fontFamily: "var(--font-lora), Georgia, serif",
+                                            fontFamily: "var(--font-cormorant), Georgia, serif",
                                             fontSize: "2rem",
                                             fontWeight: 700,
-                                            color: "#7AAE8A",
+                                            color: "var(--gold-dark)",
                                             lineHeight: 1,
                                             marginBottom: "6px",
                                         }}
@@ -137,7 +145,7 @@ export default function FeaturedProduct() {
                                         style={{
                                             fontFamily: "var(--font-inter)",
                                             fontSize: "0.75rem",
-                                            color: "#6B6B6B",
+                                            color: "var(--text-muted)",
                                             letterSpacing: "0.04em",
                                         }}
                                     >
@@ -155,11 +163,15 @@ export default function FeaturedProduct() {
                                 fontFamily: "var(--font-inter)",
                                 fontSize: "0.9375rem",
                                 fontWeight: 500,
-                                color: "#4A6FA5",
+                                color: "var(--gold-dark)",
                                 textDecoration: "none",
                             }}
-                            onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
-                            onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+                            onMouseEnter={(e) =>
+                                (e.currentTarget.style.textDecoration = "underline")
+                            }
+                            onMouseLeave={(e) =>
+                                (e.currentTarget.style.textDecoration = "none")
+                            }
                         >
                             Explore vibe2real.codes →
                         </a>
@@ -168,10 +180,10 @@ export default function FeaturedProduct() {
                     {/* Right: From / To transformation card */}
                     <div
                         style={{
-                            backgroundColor: "#FFFFFF",
-                            border: "1px solid #E2E0DC",
-                            borderLeft: "3px solid #7AAE8A",
-                            borderRadius: "0 12px 12px 0",
+                            backgroundColor: "var(--bg-white)",
+                            border: "1px solid var(--border)",
+                            borderLeft: "3px solid var(--gold)",
+                            borderRadius: "0 16px 16px 0",
                             overflow: "hidden",
                         }}
                     >
@@ -182,8 +194,8 @@ export default function FeaturedProduct() {
                                     fontFamily: "var(--font-inter)",
                                     fontSize: "0.6875rem",
                                     fontWeight: 500,
-                                    color: "#9A9A9A",
-                                    letterSpacing: "0.12em",
+                                    color: "var(--text-micro)",
+                                    letterSpacing: "0.14em",
                                     textTransform: "uppercase",
                                     marginBottom: "10px",
                                 }}
@@ -192,10 +204,10 @@ export default function FeaturedProduct() {
                             </p>
                             <p
                                 style={{
-                                    fontFamily: "var(--font-lora), Georgia, serif",
+                                    fontFamily: "var(--font-cormorant), Georgia, serif",
                                     fontStyle: "italic",
                                     fontSize: "1.25rem",
-                                    color: "#6B6B6B",
+                                    color: "var(--text-muted)",
                                     lineHeight: 1.5,
                                 }}
                             >
@@ -204,7 +216,14 @@ export default function FeaturedProduct() {
                         </div>
 
                         {/* Divider */}
-                        <div style={{ height: "1px", backgroundColor: "#E2E0DC", margin: "0 32px" }} />
+                        <div
+                            style={{
+                                height: "1px",
+                                backgroundColor: "var(--border)",
+                                margin: "0 32px",
+                            }}
+                            aria-hidden="true"
+                        />
 
                         {/* TO */}
                         <div style={{ padding: "28px 32px" }}>
@@ -213,8 +232,8 @@ export default function FeaturedProduct() {
                                     fontFamily: "var(--font-inter)",
                                     fontSize: "0.6875rem",
                                     fontWeight: 500,
-                                    color: "#7AAE8A",
-                                    letterSpacing: "0.12em",
+                                    color: "var(--gold-dark)",
+                                    letterSpacing: "0.14em",
                                     textTransform: "uppercase",
                                     marginBottom: "10px",
                                 }}
@@ -223,10 +242,10 @@ export default function FeaturedProduct() {
                             </p>
                             <p
                                 style={{
-                                    fontFamily: "var(--font-lora), Georgia, serif",
+                                    fontFamily: "var(--font-cormorant), Georgia, serif",
                                     fontStyle: "italic",
                                     fontSize: "1.25rem",
-                                    color: "#1A1A1A",
+                                    color: "var(--green-primary)",
                                     lineHeight: 1.5,
                                     fontWeight: 600,
                                 }}

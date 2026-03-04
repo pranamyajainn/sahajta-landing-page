@@ -9,7 +9,7 @@ export default function BookACall() {
         (async () => {
             const cal = await getCalApi({ namespace: "30min" });
             cal("ui", {
-                styles: { branding: { brandColor: "#4A6FA5" } },
+                styles: { branding: { brandColor: "#1A4D3A" } },
                 hideEventTypeDetails: false,
                 layout: "month_view",
             });
@@ -19,14 +19,16 @@ export default function BookACall() {
     return (
         <section className="section-pad section-canvas" id="contact">
             <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+                {/* {{CAL_LINK}} — replace with actual Cal.com link */}
+
                 {/* Header */}
                 <span className="micro-label">Let&apos;s Talk</span>
                 <h2
                     style={{
-                        fontFamily: "var(--font-lora), Georgia, serif",
+                        fontFamily: "var(--font-cormorant), Georgia, serif",
                         fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
                         fontWeight: 700,
-                        color: "#1A1A1A",
+                        color: "var(--text-dark)",
                         letterSpacing: "-0.02em",
                         lineHeight: 1.1,
                         marginBottom: "12px",
@@ -38,7 +40,7 @@ export default function BookACall() {
                     style={{
                         fontFamily: "var(--font-inter)",
                         fontSize: "1.0625rem",
-                        color: "#6B6B6B",
+                        color: "var(--text-muted)",
                         lineHeight: 1.7,
                         maxWidth: "480px",
                         marginBottom: "48px",
@@ -51,8 +53,8 @@ export default function BookACall() {
                 {/* Cal.com inline embed */}
                 <div
                     style={{
-                        border: "1px solid #E2E0DC",
-                        borderRadius: "12px",
+                        border: "1px solid var(--border)",
+                        borderRadius: "16px",
                         overflow: "hidden",
                         marginBottom: "40px",
                     }}
@@ -65,7 +67,7 @@ export default function BookACall() {
                     />
                 </div>
 
-                {/* Email — equal visual weight to the calendar CTA */}
+                {/* Email + LinkedIn — equal visual weight */}
                 <div
                     style={{
                         display: "flex",
@@ -73,16 +75,17 @@ export default function BookACall() {
                         gap: "32px",
                         flexWrap: "wrap",
                         paddingTop: "24px",
-                        borderTop: "1px solid #E2E0DC",
+                        borderTop: "1px solid var(--border)",
                     }}
                 >
+                    {/* Email */}
                     <div>
                         <p
                             style={{
                                 fontFamily: "var(--font-inter)",
-                                fontSize: "0.75rem",
-                                color: "#9A9A9A",
-                                letterSpacing: "0.12em",
+                                fontSize: "0.6875rem",
+                                color: "var(--text-micro)",
+                                letterSpacing: "0.14em",
                                 textTransform: "uppercase",
                                 marginBottom: "6px",
                             }}
@@ -90,18 +93,23 @@ export default function BookACall() {
                             Prefer email?
                         </p>
                         <a
-                            href="mailto:jain@pranamya.tech"
+                            href="mailto:hello@sahajta.ai"
                             style={{
                                 fontFamily: "var(--font-inter)",
                                 fontSize: "1rem",
                                 fontWeight: 500,
-                                color: "#4A6FA5",
+                                color: "var(--gold-dark)",
                                 textDecoration: "none",
                             }}
-                            onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
-                            onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+                            onMouseEnter={(e) =>
+                                (e.currentTarget.style.textDecoration = "underline")
+                            }
+                            onMouseLeave={(e) =>
+                                (e.currentTarget.style.textDecoration = "none")
+                            }
                         >
-                            jain@pranamya.tech
+                            {/* {{CONTACT_EMAIL}} */}
+                            hello@sahajta.ai
                         </a>
                     </div>
 
@@ -109,18 +117,20 @@ export default function BookACall() {
                         style={{
                             width: "1px",
                             height: "32px",
-                            backgroundColor: "#E2E0DC",
+                            backgroundColor: "var(--border)",
                             flexShrink: 0,
                         }}
+                        aria-hidden="true"
                     />
 
+                    {/* LinkedIn */}
                     <div>
                         <p
                             style={{
                                 fontFamily: "var(--font-inter)",
-                                fontSize: "0.75rem",
-                                color: "#9A9A9A",
-                                letterSpacing: "0.12em",
+                                fontSize: "0.6875rem",
+                                color: "var(--text-micro)",
+                                letterSpacing: "0.14em",
                                 textTransform: "uppercase",
                                 marginBottom: "6px",
                             }}
@@ -137,6 +147,7 @@ export default function BookACall() {
                                     href={person.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={`${person.name} on LinkedIn`}
                                     style={{
                                         display: "inline-flex",
                                         alignItems: "center",
@@ -144,13 +155,20 @@ export default function BookACall() {
                                         fontFamily: "var(--font-inter)",
                                         fontSize: "0.9375rem",
                                         fontWeight: 500,
-                                        color: "#4A6FA5",
+                                        color: "var(--gold-dark)",
                                         textDecoration: "none",
                                     }}
-                                    onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
-                                    onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+                                    onMouseEnter={(e) =>
+                                        (e.currentTarget.style.textDecoration = "underline")
+                                    }
+                                    onMouseLeave={(e) =>
+                                        (e.currentTarget.style.textDecoration = "none")
+                                    }
                                 >
-                                    <Linkedin style={{ width: "14px", height: "14px" }} />
+                                    <Linkedin
+                                        style={{ width: "14px", height: "14px", color: "var(--green-light)" }}
+                                        aria-hidden="true"
+                                    />
                                     {person.name}
                                 </a>
                             ))}

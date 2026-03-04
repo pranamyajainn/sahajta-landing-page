@@ -2,68 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================
+   SAHAJTA AI — v4 Brand Token System
+   ========================================================= */
 :root {
-  --bg-primary: #F8F7F4;
-  --bg-secondary: #EDECEA;
-  --bg-card: #FFFFFF;
-  --bg-testimony: #EEF5F1;
-  --text-primary: #1A1A1A;
-  --text-body: #3D3D3D;
-  --text-muted: #6B6B6B;
-  --text-micro: #9A9A9A;
-  --accent-green: #7AAE8A;
-  --accent-blue: #4A6FA5;
-  --accent-blue-dark: #3A5A8A;
-  --border: #E2E0DC;
-  --border-strong: #C8C5BF;
+  /* Backgrounds */
+  --bg-cream: #F5F0E8;
+  --bg-cream-dark: #EDE7D9;
+  --bg-white: #FDFCFA;
+  --bg-green-tint: #EBF2EE;
+
+  /* Brand Colors */
+  --green-primary: #1A4D3A;
+  --green-mid: #2D6E54;
+  --green-light: #4A8C6F;
+  --gold: #C9A044;
+  --gold-dark: #A67F2E;
+  --gold-hover: #B8902F;
+  --gold-tint: #F5EDD6;
+
+  /* Text */
+  --text-dark: #0F2D22;
+  --text-body: #2A3D35;
+  --text-muted: #6B7E76;
+  --text-micro: #9AA89F;
+
+  /* Borders */
+  --border: #DDD8CC;
+  --border-strong: #C4BDB0;
 }
 
+/* =========================================================
+   BASE RESET & GLOBAL
+   ========================================================= */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-cream);
   color: var(--text-body);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Section rhythm */
+/* =========================================================
+   LAYOUT UTILITIES
+   ========================================================= */
 .section-pad {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 128px;
+  padding-bottom: 128px;
 }
 
 .section-canvas {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-cream);
 }
 
 .section-surface {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-cream-dark);
+}
+
+.section-tint {
+  background-color: var(--bg-green-tint);
 }
 
 @media (max-width: 768px) {
   .section-pad {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 }
 
-/* Micro label — appears above every section headline */
+/* =========================================================
+   MICRO LABEL — appears above every section headline
+   ========================================================= */
 .micro-label {
   display: block;
   font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 500;
   color: var(--text-micro);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 12px;
 }
 
-/* Divider-line between two-column layouts */
+/* =========================================================
+   COLUMN DIVIDER
+   ========================================================= */
 .col-divider {
   display: none;
 }
@@ -76,4 +103,83 @@ body {
     align-self: stretch;
     flex-shrink: 0;
   }
+}
+
+/* =========================================================
+   PROOF TICKER — CSS infinite marquee
+   ========================================================= */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 35s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .ticker-track {
+    animation-duration: 50s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   CARD HOVER — translateY + shadow + gold top border
+   ========================================================= */
+.card-hover {
+  transition: transform 220ms ease, box-shadow 220ms ease, border-top-color 220ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(15, 45, 34, 0.10);
+}
+
+/* =========================================================
+   GOLD CTA BUTTON
+   ========================================================= */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--gold);
+  color: var(--text-dark);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-hover);
+  box-shadow: 0 2px 8px rgba(201, 160, 68, 0.30);
+}
+
+/* =========================================================
+   FOCUS VISIBLE — global keyboard focus ring
+   ========================================================= */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 3px;
 }

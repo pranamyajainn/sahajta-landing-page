@@ -1,6 +1,6 @@
 "use client";
 
-import { Linkedin } from "lucide-react";
+import { Linkedin, Sprout } from "lucide-react";
 
 const founders = [
     {
@@ -26,10 +26,10 @@ export default function Team() {
                 <span className="micro-label">The Team</span>
                 <h2
                     style={{
-                        fontFamily: "var(--font-lora), Georgia, serif",
+                        fontFamily: "var(--font-cormorant), Georgia, serif",
                         fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
                         fontWeight: 700,
-                        color: "#1A1A1A",
+                        color: "var(--text-dark)",
                         letterSpacing: "-0.02em",
                         lineHeight: 1.1,
                         marginBottom: "48px",
@@ -46,32 +46,33 @@ export default function Team() {
                         <div
                             key={i}
                             style={{
-                                backgroundColor: "#FFFFFF",
-                                border: "1px solid #E2E0DC",
-                                borderRadius: "12px",
+                                backgroundColor: "var(--bg-white)",
+                                border: "1px solid var(--border)",
+                                borderRadius: "16px",
                                 padding: "40px",
                             }}
                         >
-                            {/* Avatar — circular, sage green border */}
+                            {/* Avatar — circular, gold border */}
                             <div
                                 style={{
                                     width: "64px",
                                     height: "64px",
                                     borderRadius: "50%",
-                                    border: "2px solid #7AAE8A",
-                                    backgroundColor: "#EDECEA",
+                                    border: "2px solid var(--gold)",
+                                    backgroundColor: "var(--gold-tint)",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
                                     marginBottom: "20px",
                                 }}
+                                aria-hidden="true"
                             >
                                 <span
                                     style={{
-                                        fontFamily: "var(--font-lora), Georgia, serif",
+                                        fontFamily: "var(--font-cormorant), Georgia, serif",
                                         fontWeight: 700,
                                         fontSize: "1.125rem",
-                                        color: "#7AAE8A",
+                                        color: "var(--gold-dark)",
                                     }}
                                 >
                                     {founder.initials}
@@ -81,10 +82,10 @@ export default function Team() {
                             {/* Name */}
                             <h3
                                 style={{
-                                    fontFamily: "var(--font-lora), Georgia, serif",
+                                    fontFamily: "var(--font-cormorant), Georgia, serif",
                                     fontSize: "1.25rem",
                                     fontWeight: 700,
-                                    color: "#1A1A1A",
+                                    color: "var(--green-primary)",
                                     letterSpacing: "-0.01em",
                                     marginBottom: "4px",
                                 }}
@@ -98,7 +99,7 @@ export default function Team() {
                                     fontFamily: "var(--font-inter)",
                                     fontSize: "0.8125rem",
                                     fontWeight: 500,
-                                    color: "#6B6B6B",
+                                    color: "var(--text-muted)",
                                     letterSpacing: "0.06em",
                                     textTransform: "uppercase",
                                     marginBottom: "16px",
@@ -107,16 +108,30 @@ export default function Team() {
                                 {founder.role}
                             </p>
 
-                            {/* Bio — result first */}
+                            {/* Bio — sprout as bullet opener */}
                             <p
                                 style={{
                                     fontFamily: "var(--font-inter)",
                                     fontSize: "0.9375rem",
-                                    color: "#3D3D3D",
+                                    color: "var(--text-body)",
                                     lineHeight: 1.7,
                                     marginBottom: "20px",
+                                    display: "flex",
+                                    gap: "8px",
+                                    alignItems: "flex-start",
                                 }}
                             >
+                                <Sprout
+                                    style={{
+                                        width: "15px",
+                                        height: "15px",
+                                        color: "var(--gold)",
+                                        flexShrink: 0,
+                                        marginTop: "4px",
+                                    }}
+                                    strokeWidth={1.5}
+                                    aria-hidden="true"
+                                />
                                 {founder.bio}
                             </p>
 
@@ -125,6 +140,7 @@ export default function Team() {
                                 href={founder.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label={`${founder.name} on LinkedIn`}
                                 style={{
                                     display: "inline-flex",
                                     alignItems: "center",
@@ -132,13 +148,20 @@ export default function Team() {
                                     fontFamily: "var(--font-inter)",
                                     fontSize: "0.8125rem",
                                     fontWeight: 500,
-                                    color: "#4A6FA5",
+                                    color: "var(--gold-dark)",
                                     textDecoration: "none",
                                 }}
-                                onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
-                                onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+                                onMouseEnter={(e) =>
+                                    (e.currentTarget.style.textDecoration = "underline")
+                                }
+                                onMouseLeave={(e) =>
+                                    (e.currentTarget.style.textDecoration = "none")
+                                }
                             >
-                                <Linkedin style={{ width: "14px", height: "14px" }} />
+                                <Linkedin
+                                    style={{ width: "14px", height: "14px" }}
+                                    aria-hidden="true"
+                                />
                                 LinkedIn
                             </a>
                         </div>

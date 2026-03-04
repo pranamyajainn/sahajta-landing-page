@@ -9,24 +9,30 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                canvas: "#F8F7F4",
-                surface: "#EDECEA",
-                card: "#FFFFFF",
-                testimony: "#EEF5F1",
-                heading: "#1A1A1A",
-                prose: "#3D3D3D",
-                muted: "#6B6B6B",
-                micro: "#9A9A9A",
-                sage: "#7AAE8A",
-                ink: {
-                    DEFAULT: "#4A6FA5",
-                    dark: "#3A5A8A",
-                },
-                rule: "#E2E0DC",
-                "rule-strong": "#C8C5BF",
+                /* Backgrounds */
+                "bg-cream": "#F5F0E8",
+                "bg-cream-dark": "#EDE7D9",
+                "bg-white": "#FDFCFA",
+                "bg-green-tint": "#EBF2EE",
+                /* Brand */
+                "green-primary": "#1A4D3A",
+                "green-mid": "#2D6E54",
+                "green-light": "#4A8C6F",
+                gold: "#C9A044",
+                "gold-dark": "#A67F2E",
+                "gold-hover": "#B8902F",
+                "gold-tint": "#F5EDD6",
+                /* Text */
+                "text-dark": "#0F2D22",
+                "text-body": "#2A3D35",
+                "text-muted": "#6B7E76",
+                "text-micro": "#9AA89F",
+                /* Borders */
+                border: "#DDD8CC",
+                "border-strong": "#C4BDB0",
             },
             fontFamily: {
-                serif: ["var(--font-lora)", "Georgia", "serif"],
+                serif: ["var(--font-cormorant)", "Georgia", "serif"],
                 sans: ["var(--font-inter)", "system-ui", "sans-serif"],
             },
             fontSize: {
@@ -37,7 +43,7 @@ const config: Config = {
             letterSpacing: {
                 hero: "-0.03em",
                 section: "-0.02em",
-                label: "0.12em",
+                label: "0.14em",
             },
             lineHeight: {
                 editorial: "1.05",
@@ -45,7 +51,7 @@ const config: Config = {
                 body: "1.7",
             },
             borderRadius: {
-                card: "12px",
+                card: "16px",
                 icon: "10px",
                 button: "6px",
             },
@@ -55,9 +61,9 @@ const config: Config = {
                 sub: "560px",
             },
             boxShadow: {
-                card: "0 8px 32px rgba(0,0,0,0.07)",
-                "card-green": "inset 0 2px 0 0 #7AAE8A, 0 8px 32px rgba(0,0,0,0.07)",
-                cta: "0 1px 3px rgba(74,111,165,0.3)",
+                card: "0 8px 32px rgba(15,45,34,0.07)",
+                "card-gold": "inset 0 2px 0 0 #C9A044, 0 12px 40px rgba(15,45,34,0.10)",
+                cta: "0 2px 8px rgba(201,160,68,0.30)",
             },
         },
     },

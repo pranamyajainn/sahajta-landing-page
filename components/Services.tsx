@@ -24,7 +24,7 @@ const services = [
     },
 ];
 
-function ServiceCard({ service }: { service: typeof services[0] }) {
+function ServiceCard({ service }: { service: (typeof services)[0] }) {
     const [hovered, setHovered] = useState(false);
     const { Icon, title, body, cta } = service;
 
@@ -33,17 +33,18 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             style={{
-                backgroundColor: "#FFFFFF",
-                border: "1px solid #E2E0DC",
-                borderRadius: "12px",
+                backgroundColor: "var(--bg-white)",
+                border: `1px solid ${hovered ? "var(--gold)" : "var(--border)"}`,
+                borderTop: `3px solid ${hovered ? "var(--gold)" : "transparent"}`,
+                borderRadius: "16px",
                 padding: "40px",
                 display: "flex",
                 flexDirection: "column",
-                gap: "0",
                 boxShadow: hovered
-                    ? "inset 0 2px 0 0 #7AAE8A, 0 8px 32px rgba(0,0,0,0.07)"
+                    ? "0 12px 40px rgba(15,45,34,0.10)"
                     : "none",
-                transition: "box-shadow 200ms ease",
+                transform: hovered ? "translateY(-3px)" : "translateY(0)",
+                transition: "transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, border-top-color 220ms ease",
                 cursor: "default",
             }}
         >
@@ -53,23 +54,27 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
                     width: "48px",
                     height: "48px",
                     borderRadius: "10px",
-                    backgroundColor: "#EDECEA",
+                    backgroundColor: "var(--gold-tint)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     marginBottom: "24px",
                 }}
             >
-                <Icon style={{ width: "22px", height: "22px", color: "#4A6FA5" }} strokeWidth={1.5} />
+                <Icon
+                    style={{ width: "22px", height: "22px", color: "var(--gold)" }}
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                />
             </div>
 
             {/* Title */}
             <h3
                 style={{
-                    fontFamily: "var(--font-lora), Georgia, serif",
+                    fontFamily: "var(--font-cormorant), Georgia, serif",
                     fontSize: "1.375rem",
                     fontWeight: 700,
-                    color: "#1A1A1A",
+                    color: "var(--green-primary)",
                     letterSpacing: "-0.015em",
                     lineHeight: 1.2,
                     marginBottom: "12px",
@@ -83,7 +88,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
                 style={{
                     fontFamily: "var(--font-inter)",
                     fontSize: "1rem",
-                    color: "#3D3D3D",
+                    color: "var(--text-body)",
                     lineHeight: 1.7,
                     marginBottom: "24px",
                     flex: 1,
@@ -99,11 +104,15 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
                     fontFamily: "var(--font-inter)",
                     fontSize: "0.875rem",
                     fontWeight: 500,
-                    color: "#4A6FA5",
+                    color: "var(--gold-dark)",
                     textDecoration: "none",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
-                onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+                onMouseEnter={(e) =>
+                    (e.currentTarget.style.textDecoration = "underline")
+                }
+                onMouseLeave={(e) =>
+                    (e.currentTarget.style.textDecoration = "none")
+                }
             >
                 {cta}
             </a>
@@ -113,15 +122,15 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
 
 export default function Services() {
     return (
-        <section className="section-pad section-canvas">
+        <section className="section-pad section-canvas" id="services">
             <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
                 <span className="micro-label">What We Do</span>
                 <h2
                     style={{
-                        fontFamily: "var(--font-lora), Georgia, serif",
+                        fontFamily: "var(--font-cormorant), Georgia, serif",
                         fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
                         fontWeight: 700,
-                        color: "#1A1A1A",
+                        color: "var(--text-dark)",
                         letterSpacing: "-0.02em",
                         lineHeight: 1.1,
                         marginBottom: "48px",

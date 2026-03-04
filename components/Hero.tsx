@@ -1,12 +1,13 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sprout } from "lucide-react";
 
 export default function Hero() {
     return (
         <section
             className="section-pad section-canvas"
-            style={{ paddingTop: "calc(120px + 64px)" }}
+            style={{ paddingTop: "calc(128px + 64px)" }}
+            aria-label="Hero"
         >
             <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
                 <div
@@ -29,11 +30,11 @@ export default function Hero() {
                                 display: "inline-flex",
                                 alignItems: "center",
                                 gap: "6px",
-                                backgroundColor: "#EEF5F1",
-                                border: "1px solid rgba(122,174,138,0.3)",
-                                color: "#7AAE8A",
+                                backgroundColor: "var(--gold-tint)",
+                                border: "1px solid rgba(201,160,68,0.3)",
+                                color: "var(--gold-dark)",
                                 fontSize: "0.75rem",
-                                fontWeight: 500,
+                                fontWeight: 600,
                                 padding: "5px 12px",
                                 borderRadius: "100px",
                                 marginBottom: "28px",
@@ -41,23 +42,37 @@ export default function Hero() {
                                 letterSpacing: "0.01em",
                             }}
                         >
+                            <Sprout
+                                style={{ width: "13px", height: "13px", color: "var(--gold)" }}
+                                strokeWidth={1.5}
+                                aria-hidden="true"
+                            />
+                            {/* {{HERO_BADGE_TEXT}} */}
                             vibe2real.codes — shipped in 24 hours →
                         </div>
 
                         {/* Headline */}
                         <h1
                             style={{
-                                fontFamily: "var(--font-lora), Georgia, serif",
+                                fontFamily: "var(--font-cormorant), Georgia, serif",
                                 fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
                                 fontWeight: 700,
-                                color: "#1A1A1A",
+                                color: "var(--text-dark)",
                                 lineHeight: 1.05,
                                 letterSpacing: "-0.03em",
                                 marginBottom: "24px",
                             }}
                         >
+                            {/* {{HERO_HEADLINE}} */}
                             We don&apos;t just advise on AI.{" "}
-                            <em style={{ fontStyle: "italic", color: "#4A6FA5" }}>We ship it.</em>
+                            <em
+                                style={{
+                                    fontStyle: "italic",
+                                    color: "var(--green-primary)",
+                                }}
+                            >
+                                We ship it.
+                            </em>
                         </h1>
 
                         {/* Sub-headline */}
@@ -66,49 +81,45 @@ export default function Hero() {
                                 fontFamily: "var(--font-inter)",
                                 fontSize: "1.125rem",
                                 fontWeight: 400,
-                                color: "#3D3D3D",
+                                color: "var(--text-body)",
                                 lineHeight: 1.7,
                                 maxWidth: "560px",
                                 marginBottom: "40px",
                             }}
                         >
+                            {/* {{HERO_SUBHEAD}} */}
                             Sahajta AI builds AI products the world can use — and brings that
                             same builder&apos;s instinct to your business. AI consulting and web
                             presence, without the complexity.
                         </p>
 
                         {/* CTA group */}
-                        <div style={{ display: "flex", alignItems: "center", gap: "24px", flexWrap: "wrap" }}>
+                        <div
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "24px",
+                                flexWrap: "wrap",
+                            }}
+                        >
                             <a
                                 href="#contact"
-                                style={{
-                                    display: "inline-flex",
-                                    alignItems: "center",
-                                    gap: "8px",
-                                    backgroundColor: "#4A6FA5",
-                                    color: "#FFFFFF",
-                                    fontFamily: "var(--font-inter)",
-                                    fontSize: "0.9375rem",
-                                    fontWeight: 600,
-                                    padding: "12px 24px",
-                                    borderRadius: "6px",
-                                    textDecoration: "none",
-                                    transition: "background-color 150ms ease",
-                                }}
-                                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#3A5A8A")}
-                                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#4A6FA5")}
+                                className="btn-gold"
                             >
                                 Book a Free Discovery Call
-                                <ArrowRight style={{ width: "16px", height: "16px" }} />
+                                <ArrowRight
+                                    style={{ width: "16px", height: "16px" }}
+                                    aria-hidden="true"
+                                />
                             </a>
 
                             <a
-                                href="#product"
+                                href="#ships"
                                 style={{
                                     fontFamily: "var(--font-inter)",
                                     fontSize: "0.9375rem",
                                     fontWeight: 500,
-                                    color: "#4A6FA5",
+                                    color: "var(--green-mid)",
                                     textDecoration: "none",
                                     display: "inline-flex",
                                     alignItems: "center",
@@ -116,26 +127,52 @@ export default function Hero() {
                                     borderBottom: "1px solid transparent",
                                     transition: "border-color 150ms ease",
                                 }}
-                                onMouseEnter={(e) => (e.currentTarget.style.borderBottomColor = "#4A6FA5")}
-                                onMouseLeave={(e) => (e.currentTarget.style.borderBottomColor = "transparent")}
+                                onMouseEnter={(e) =>
+                                    (e.currentTarget.style.borderBottomColor = "var(--green-mid)")
+                                }
+                                onMouseLeave={(e) =>
+                                    (e.currentTarget.style.borderBottomColor = "transparent")
+                                }
                             >
                                 See what we&apos;ve shipped →
                             </a>
                         </div>
                     </div>
 
-                    {/* RIGHT: vibe2real.codes card mockup — desktop only */}
+                    {/* RIGHT: product card — desktop only */}
                     <div className="hidden md:block">
                         <div
+                            className="card-hover"
                             style={{
-                                backgroundColor: "#FFFFFF",
-                                border: "1px solid #E2E0DC",
-                                borderRadius: "12px",
+                                backgroundColor: "var(--bg-white)",
+                                border: "1px solid var(--border)",
+                                borderRadius: "16px",
                                 overflow: "hidden",
+                                position: "relative",
                             }}
                         >
-                            {/* Top accent strip */}
-                            <div style={{ height: "3px", backgroundColor: "#7AAE8A" }} />
+                            {/* Gold top accent strip */}
+                            <div
+                                style={{ height: "3px", backgroundColor: "var(--gold)" }}
+                                aria-hidden="true"
+                            />
+
+                            {/* Faint sprout watermark — top right */}
+                            <div
+                                aria-hidden="true"
+                                style={{
+                                    position: "absolute",
+                                    top: "16px",
+                                    right: "16px",
+                                    width: "80px",
+                                    height: "80px",
+                                    opacity: 0.08,
+                                    backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A4D3A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 20s4-24 17 0'/%3E%3Cpath d='M5 20s0-20 12-12'/%3E%3Cpath d='M3 20s0-10 7-8'/%3E%3C/svg%3E\")",
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: "top right",
+                                    backgroundSize: "contain",
+                                }}
+                            />
 
                             <div style={{ padding: "32px" }}>
                                 <span
@@ -143,8 +180,8 @@ export default function Hero() {
                                         display: "block",
                                         fontSize: "0.6875rem",
                                         fontWeight: 500,
-                                        color: "#9A9A9A",
-                                        letterSpacing: "0.12em",
+                                        color: "var(--text-micro)",
+                                        letterSpacing: "0.14em",
                                         textTransform: "uppercase",
                                         marginBottom: "12px",
                                         fontFamily: "var(--font-inter)",
@@ -155,10 +192,10 @@ export default function Hero() {
 
                                 <h3
                                     style={{
-                                        fontFamily: "var(--font-lora), Georgia, serif",
+                                        fontFamily: "var(--font-cormorant), Georgia, serif",
                                         fontSize: "1.5rem",
                                         fontWeight: 700,
-                                        color: "#1A1A1A",
+                                        color: "var(--green-primary)",
                                         letterSpacing: "-0.02em",
                                         lineHeight: 1.1,
                                         marginBottom: "8px",
@@ -171,7 +208,7 @@ export default function Hero() {
                                     style={{
                                         fontFamily: "var(--font-inter)",
                                         fontSize: "0.9375rem",
-                                        color: "#6B6B6B",
+                                        color: "var(--text-muted)",
                                         lineHeight: 1.6,
                                         marginBottom: "28px",
                                     }}
@@ -184,8 +221,7 @@ export default function Hero() {
                                     style={{
                                         display: "grid",
                                         gridTemplateColumns: "1fr 1fr 1fr",
-                                        gap: "0",
-                                        borderTop: "1px solid #E2E0DC",
+                                        borderTop: "1px solid var(--border)",
                                         paddingTop: "20px",
                                         marginBottom: "24px",
                                     }}
@@ -198,10 +234,10 @@ export default function Hero() {
                                         <div key={i} style={{ textAlign: "center" }}>
                                             <p
                                                 style={{
-                                                    fontFamily: "var(--font-lora), Georgia, serif",
+                                                    fontFamily: "var(--font-cormorant), Georgia, serif",
                                                     fontSize: "1.5rem",
                                                     fontWeight: 700,
-                                                    color: "#7AAE8A",
+                                                    color: "var(--gold-dark)",
                                                     lineHeight: 1,
                                                     marginBottom: "4px",
                                                 }}
@@ -212,7 +248,7 @@ export default function Hero() {
                                                 style={{
                                                     fontFamily: "var(--font-inter)",
                                                     fontSize: "0.6875rem",
-                                                    color: "#9A9A9A",
+                                                    color: "var(--text-micro)",
                                                     letterSpacing: "0.04em",
                                                 }}
                                             >
@@ -230,11 +266,15 @@ export default function Hero() {
                                         fontFamily: "var(--font-inter)",
                                         fontSize: "0.875rem",
                                         fontWeight: 500,
-                                        color: "#4A6FA5",
+                                        color: "var(--gold-dark)",
                                         textDecoration: "none",
                                     }}
-                                    onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
-                                    onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+                                    onMouseEnter={(e) =>
+                                        (e.currentTarget.style.textDecoration = "underline")
+                                    }
+                                    onMouseLeave={(e) =>
+                                        (e.currentTarget.style.textDecoration = "none")
+                                    }
                                 >
                                     Explore vibe2real.codes →
                                 </a>

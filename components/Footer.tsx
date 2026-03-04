@@ -4,7 +4,8 @@ import { Sprout } from "lucide-react";
 
 const quickLinks = [
     { label: "What We Do", href: "#services" },
-    { label: "Our Product", href: "#product" },
+    { label: "How We Ship", href: "#process" },
+    { label: "Our Work", href: "#ships" },
     { label: "Team", href: "#team" },
     { label: "Book a Call", href: "#contact" },
 ];
@@ -13,8 +14,8 @@ export default function Footer() {
     return (
         <footer
             style={{
-                backgroundColor: "#EDECEA",
-                borderTop: "1px solid #C8C5BF",
+                backgroundColor: "var(--bg-cream-dark)",
+                borderTop: "1px solid var(--border-strong)",
                 padding: "48px 0",
             }}
         >
@@ -25,7 +26,6 @@ export default function Footer() {
                     padding: "0 24px",
                 }}
             >
-                {/* One-row layout on desktop */}
                 <div
                     style={{
                         display: "flex",
@@ -37,14 +37,25 @@ export default function Footer() {
                 >
                     {/* Brand */}
                     <div>
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                            <Sprout style={{ width: "16px", height: "16px", color: "#7AAE8A" }} strokeWidth={1.5} />
+                        <div
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "8px",
+                                marginBottom: "6px",
+                            }}
+                        >
+                            <Sprout
+                                style={{ width: "16px", height: "16px", color: "var(--gold)" }}
+                                strokeWidth={1.5}
+                                aria-hidden="true"
+                            />
                             <span
                                 style={{
-                                    fontFamily: "var(--font-lora), Georgia, serif",
-                                    fontWeight: 500,
+                                    fontFamily: "var(--font-cormorant), Georgia, serif",
+                                    fontWeight: 700,
                                     fontSize: "1rem",
-                                    color: "#1A1A1A",
+                                    color: "var(--green-primary)",
                                 }}
                             >
                                 Sahajta AI
@@ -52,18 +63,18 @@ export default function Footer() {
                         </div>
                         <p
                             style={{
-                                fontFamily: "var(--font-lora), Georgia, serif",
+                                fontFamily: "var(--font-cormorant), Georgia, serif",
                                 fontStyle: "italic",
-                                fontSize: "0.875rem",
-                                color: "#6B6B6B",
+                                fontSize: "0.9375rem",
+                                color: "var(--text-muted)",
                             }}
                         >
                             We have a passion for Simplicity.
                         </p>
                     </div>
 
-                    {/* Nav links — center */}
-                    <nav style={{ display: "flex", gap: "32px", flexWrap: "wrap" }}>
+                    {/* Nav links */}
+                    <nav aria-label="Footer navigation" style={{ display: "flex", gap: "28px", flexWrap: "wrap" }}>
                         {quickLinks.map((link) => (
                             <a
                                 key={link.href}
@@ -71,24 +82,28 @@ export default function Footer() {
                                 style={{
                                     fontFamily: "var(--font-inter)",
                                     fontSize: "0.875rem",
-                                    color: "#6B6B6B",
+                                    color: "var(--text-muted)",
                                     textDecoration: "none",
                                     transition: "color 150ms ease",
                                 }}
-                                onMouseEnter={(e) => (e.currentTarget.style.color = "#1A1A1A")}
-                                onMouseLeave={(e) => (e.currentTarget.style.color = "#6B6B6B")}
+                                onMouseEnter={(e) =>
+                                    (e.currentTarget.style.color = "var(--green-primary)")
+                                }
+                                onMouseLeave={(e) =>
+                                    (e.currentTarget.style.color = "var(--text-muted)")
+                                }
                             >
                                 {link.label}
                             </a>
                         ))}
                     </nav>
 
-                    {/* Copyright — right */}
+                    {/* Copyright */}
                     <p
                         style={{
                             fontFamily: "var(--font-inter)",
                             fontSize: "0.8125rem",
-                            color: "#9A9A9A",
+                            color: "var(--text-micro)",
                         }}
                     >
                         © 2026 Sahajta AI
