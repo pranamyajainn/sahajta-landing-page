@@ -1,55 +1,246 @@
-import { ArrowRight, Zap } from "lucide-react";
+"use client";
+
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
     return (
         <section
-            id="hero"
-            className="min-h-screen flex items-center justify-center bg-background pt-16 relative overflow-hidden"
+            className="section-pad section-canvas"
+            style={{ paddingTop: "calc(120px + 64px)" }}
         >
-            {/* Subtle background orb */}
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-sage/5 blur-3xl pointer-events-none" />
+            <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: "1fr",
+                        gap: "64px",
+                        alignItems: "center",
+                    }}
+                    className="md:grid-cols-[1fr_400px]"
+                >
+                    {/* LEFT: Text block */}
+                    <div style={{ maxWidth: "700px" }}>
+                        {/* Micro label */}
+                        <span className="micro-label">The Company</span>
 
-            <div className="relative max-w-6xl mx-auto px-6 py-24 text-center">
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 bg-sage-light border border-sage/30 text-sage-dark text-sm font-medium px-4 py-1.5 rounded-full mb-10 animate-fade-in">
-                    <Zap className="w-3.5 h-3.5" />
-                    <span>vibe2real.codes — shipped in 24 hours</span>
-                </div>
+                        {/* Proof badge */}
+                        <div
+                            style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "6px",
+                                backgroundColor: "#EEF5F1",
+                                border: "1px solid rgba(122,174,138,0.3)",
+                                color: "#7AAE8A",
+                                fontSize: "0.75rem",
+                                fontWeight: 500,
+                                padding: "5px 12px",
+                                borderRadius: "100px",
+                                marginBottom: "28px",
+                                fontFamily: "var(--font-inter)",
+                                letterSpacing: "0.01em",
+                            }}
+                        >
+                            vibe2real.codes — shipped in 24 hours →
+                        </div>
 
-                {/* Headline */}
-                <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-charcoal font-bold leading-[1.1] mb-6 text-balance animate-fade-up">
-                    We don&apos;t just advise on AI.{" "}
-                    <em className="text-slate-blue not-italic">We ship it.</em>
-                </h1>
+                        {/* Headline */}
+                        <h1
+                            style={{
+                                fontFamily: "var(--font-lora), Georgia, serif",
+                                fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
+                                fontWeight: 700,
+                                color: "#1A1A1A",
+                                lineHeight: 1.05,
+                                letterSpacing: "-0.03em",
+                                marginBottom: "24px",
+                            }}
+                        >
+                            We don&apos;t just advise on AI.{" "}
+                            <em style={{ fontStyle: "italic", color: "#4A6FA5" }}>We ship it.</em>
+                        </h1>
 
-                {/* Subheadline */}
-                <p className="text-gray-text text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-up animate-delay-100">
-                    Sahajta AI builds AI products the world can use — and brings that same
-                    builder&apos;s instinct to your business. AI consulting, web presence,
-                    and real products. Without the complexity.
-                </p>
+                        {/* Sub-headline */}
+                        <p
+                            style={{
+                                fontFamily: "var(--font-inter)",
+                                fontSize: "1.125rem",
+                                fontWeight: 400,
+                                color: "#3D3D3D",
+                                lineHeight: 1.7,
+                                maxWidth: "560px",
+                                marginBottom: "40px",
+                            }}
+                        >
+                            Sahajta AI builds AI products the world can use — and brings that
+                            same builder&apos;s instinct to your business. AI consulting and web
+                            presence, without the complexity.
+                        </p>
 
-                {/* CTAs */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up animate-delay-200">
-                    <a
-                        href="#contact"
-                        className="bg-slate-blue text-white font-semibold px-8 py-4 rounded-full hover:bg-slate-blue-dark transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2 text-base"
-                    >
-                        Book a Free Discovery Call
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <a
-                        href="#product"
-                        className="text-charcoal font-medium px-7 py-4 rounded-full border border-gray-200 hover:border-sage hover:text-sage-dark transition-all duration-200 flex items-center gap-2 text-base"
-                    >
-                        See what we&apos;ve shipped
-                        <ArrowRight className="w-4 h-4" />
-                    </a>
-                </div>
+                        {/* CTA group */}
+                        <div style={{ display: "flex", alignItems: "center", gap: "24px", flexWrap: "wrap" }}>
+                            <a
+                                href="#contact"
+                                style={{
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: "8px",
+                                    backgroundColor: "#4A6FA5",
+                                    color: "#FFFFFF",
+                                    fontFamily: "var(--font-inter)",
+                                    fontSize: "0.9375rem",
+                                    fontWeight: 600,
+                                    padding: "12px 24px",
+                                    borderRadius: "6px",
+                                    textDecoration: "none",
+                                    transition: "background-color 150ms ease",
+                                }}
+                                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#3A5A8A")}
+                                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#4A6FA5")}
+                            >
+                                Book a Free Discovery Call
+                                <ArrowRight style={{ width: "16px", height: "16px" }} />
+                            </a>
 
-                {/* Scroll hint */}
-                <div className="mt-24 flex justify-center animate-fade-in animate-delay-300">
-                    <div className="w-px h-14 bg-gradient-to-b from-sage/30 to-transparent" />
+                            <a
+                                href="#product"
+                                style={{
+                                    fontFamily: "var(--font-inter)",
+                                    fontSize: "0.9375rem",
+                                    fontWeight: 500,
+                                    color: "#4A6FA5",
+                                    textDecoration: "none",
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: "4px",
+                                    borderBottom: "1px solid transparent",
+                                    transition: "border-color 150ms ease",
+                                }}
+                                onMouseEnter={(e) => (e.currentTarget.style.borderBottomColor = "#4A6FA5")}
+                                onMouseLeave={(e) => (e.currentTarget.style.borderBottomColor = "transparent")}
+                            >
+                                See what we&apos;ve shipped →
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* RIGHT: vibe2real.codes card mockup — desktop only */}
+                    <div className="hidden md:block">
+                        <div
+                            style={{
+                                backgroundColor: "#FFFFFF",
+                                border: "1px solid #E2E0DC",
+                                borderRadius: "12px",
+                                overflow: "hidden",
+                            }}
+                        >
+                            {/* Top accent strip */}
+                            <div style={{ height: "3px", backgroundColor: "#7AAE8A" }} />
+
+                            <div style={{ padding: "32px" }}>
+                                <span
+                                    style={{
+                                        display: "block",
+                                        fontSize: "0.6875rem",
+                                        fontWeight: 500,
+                                        color: "#9A9A9A",
+                                        letterSpacing: "0.12em",
+                                        textTransform: "uppercase",
+                                        marginBottom: "12px",
+                                        fontFamily: "var(--font-inter)",
+                                    }}
+                                >
+                                    Our Product
+                                </span>
+
+                                <h3
+                                    style={{
+                                        fontFamily: "var(--font-lora), Georgia, serif",
+                                        fontSize: "1.5rem",
+                                        fontWeight: 700,
+                                        color: "#1A1A1A",
+                                        letterSpacing: "-0.02em",
+                                        lineHeight: 1.1,
+                                        marginBottom: "8px",
+                                    }}
+                                >
+                                    vibe2real.codes
+                                </h3>
+
+                                <p
+                                    style={{
+                                        fontFamily: "var(--font-inter)",
+                                        fontSize: "0.9375rem",
+                                        color: "#6B6B6B",
+                                        lineHeight: 1.6,
+                                        marginBottom: "28px",
+                                    }}
+                                >
+                                    From &ldquo;I built this&rdquo; to &ldquo;I know why this works.&rdquo;
+                                </p>
+
+                                {/* Stats */}
+                                <div
+                                    style={{
+                                        display: "grid",
+                                        gridTemplateColumns: "1fr 1fr 1fr",
+                                        gap: "0",
+                                        borderTop: "1px solid #E2E0DC",
+                                        paddingTop: "20px",
+                                        marginBottom: "24px",
+                                    }}
+                                >
+                                    {[
+                                        { num: "3", label: "modules" },
+                                        { num: "3h", label: "to complete" },
+                                        { num: "Free", label: "to play" },
+                                    ].map((s, i) => (
+                                        <div key={i} style={{ textAlign: "center" }}>
+                                            <p
+                                                style={{
+                                                    fontFamily: "var(--font-lora), Georgia, serif",
+                                                    fontSize: "1.5rem",
+                                                    fontWeight: 700,
+                                                    color: "#7AAE8A",
+                                                    lineHeight: 1,
+                                                    marginBottom: "4px",
+                                                }}
+                                            >
+                                                {s.num}
+                                            </p>
+                                            <p
+                                                style={{
+                                                    fontFamily: "var(--font-inter)",
+                                                    fontSize: "0.6875rem",
+                                                    color: "#9A9A9A",
+                                                    letterSpacing: "0.04em",
+                                                }}
+                                            >
+                                                {s.label}
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <a
+                                    href="https://vibe2real.codes"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        fontFamily: "var(--font-inter)",
+                                        fontSize: "0.875rem",
+                                        fontWeight: 500,
+                                        color: "#4A6FA5",
+                                        textDecoration: "none",
+                                    }}
+                                    onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
+                                    onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+                                >
+                                    Explore vibe2real.codes →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

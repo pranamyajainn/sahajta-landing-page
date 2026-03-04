@@ -1,89 +1,160 @@
-import { Calendar, Mail, Linkedin } from "lucide-react";
+"use client";
+
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
+import { Linkedin } from "lucide-react";
 
 export default function BookACall() {
+    useEffect(() => {
+        (async () => {
+            const cal = await getCalApi({ namespace: "30min" });
+            cal("ui", {
+                styles: { branding: { brandColor: "#4A6FA5" } },
+                hideEventTypeDetails: false,
+                layout: "month_view",
+            });
+        })();
+    }, []);
+
     return (
-        <section id="contact" className="bg-charcoal py-24">
-            <div className="max-w-6xl mx-auto px-6">
+        <section className="section-pad section-canvas" id="contact">
+            <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
                 {/* Header */}
-                <div className="text-center mb-14">
-                    <h2 className="font-serif text-4xl md:text-5xl text-white font-bold mb-4">
-                        Let&apos;s find out if we&apos;re a fit.
-                    </h2>
-                    <p className="text-white/55 text-lg max-w-xl mx-auto leading-relaxed">
-                        Not a sales call — a 20-minute conversation to understand what
-                        you&apos;re building and whether we can help. No pitch deck. No
-                        pressure.
-                    </p>
+                <span className="micro-label">Let&apos;s Talk</span>
+                <h2
+                    style={{
+                        fontFamily: "var(--font-lora), Georgia, serif",
+                        fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
+                        fontWeight: 700,
+                        color: "#1A1A1A",
+                        letterSpacing: "-0.02em",
+                        lineHeight: 1.1,
+                        marginBottom: "12px",
+                    }}
+                >
+                    Let&apos;s find out if we&apos;re a fit.
+                </h2>
+                <p
+                    style={{
+                        fontFamily: "var(--font-inter)",
+                        fontSize: "1.0625rem",
+                        color: "#6B6B6B",
+                        lineHeight: 1.7,
+                        maxWidth: "480px",
+                        marginBottom: "48px",
+                    }}
+                >
+                    A 20-minute conversation to understand what you&apos;re building and
+                    whether we can help. No pitch deck. No pressure.
+                </p>
+
+                {/* Cal.com inline embed */}
+                <div
+                    style={{
+                        border: "1px solid #E2E0DC",
+                        borderRadius: "12px",
+                        overflow: "hidden",
+                        marginBottom: "40px",
+                    }}
+                >
+                    <Cal
+                        namespace="30min"
+                        calLink="pranamyajain/30min"
+                        style={{ width: "100%", height: "600px", overflow: "scroll" }}
+                        config={{ layout: "month_view" }}
+                    />
                 </div>
 
-                {/* Two equal-weight CTAs */}
-                <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                    {/* Calendar */}
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-all duration-300">
-                        <div className="w-12 h-12 rounded-xl bg-sage/20 flex items-center justify-center mb-5">
-                            <Calendar className="w-6 h-6 text-sage" />
-                        </div>
-                        <h3 className="text-white font-serif text-xl font-bold mb-2">
-                            Book a 20-min call
-                        </h3>
-                        <p className="text-white/50 text-sm mb-6 leading-relaxed">
-                            Pick a time that works for you. We&apos;ll come prepared.
-                        </p>
-                        <a
-                            href="https://cal.com/pranamyajain/30min"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-block bg-sage text-white font-semibold px-6 py-3 rounded-full hover:bg-sage-dark transition-colors duration-200 text-sm"
+                {/* Email — equal visual weight to the calendar CTA */}
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "32px",
+                        flexWrap: "wrap",
+                        paddingTop: "24px",
+                        borderTop: "1px solid #E2E0DC",
+                    }}
+                >
+                    <div>
+                        <p
+                            style={{
+                                fontFamily: "var(--font-inter)",
+                                fontSize: "0.75rem",
+                                color: "#9A9A9A",
+                                letterSpacing: "0.12em",
+                                textTransform: "uppercase",
+                                marginBottom: "6px",
+                            }}
                         >
-                            Open Calendar →
-                        </a>
-                    </div>
-
-                    {/* Email — equal prominence */}
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-all duration-300">
-                        <div className="w-12 h-12 rounded-xl bg-slate-blue/30 flex items-center justify-center mb-5">
-                            <Mail className="w-6 h-6 text-[#93BAEA]" />
-                        </div>
-                        <h3 className="text-white font-serif text-xl font-bold mb-2">
                             Prefer email?
-                        </h3>
-                        <p className="text-white/50 text-sm mb-6 leading-relaxed">
-                            Drop us a message — we respond within 24 hours.
                         </p>
                         <a
                             href="mailto:jain@pranamya.tech"
-                            className="inline-block bg-slate-blue text-white font-semibold px-6 py-3 rounded-full hover:bg-slate-blue-dark transition-colors duration-200 text-sm"
+                            style={{
+                                fontFamily: "var(--font-inter)",
+                                fontSize: "1rem",
+                                fontWeight: 500,
+                                color: "#4A6FA5",
+                                textDecoration: "none",
+                            }}
+                            onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
+                            onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
                         >
                             jain@pranamya.tech
                         </a>
                     </div>
-                </div>
 
-                {/* LinkedIn — equal treatment */}
-                <div className="text-center mt-12">
-                    <p className="text-white/35 text-xs uppercase tracking-widest mb-5">
-                        Or connect on LinkedIn
-                    </p>
-                    <div className="flex items-center justify-center gap-8">
-                        <a
-                            href="https://www.linkedin.com/in/pranamya-jainn/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-white/55 hover:text-white text-sm transition-colors"
+                    <div
+                        style={{
+                            width: "1px",
+                            height: "32px",
+                            backgroundColor: "#E2E0DC",
+                            flexShrink: 0,
+                        }}
+                    />
+
+                    <div>
+                        <p
+                            style={{
+                                fontFamily: "var(--font-inter)",
+                                fontSize: "0.75rem",
+                                color: "#9A9A9A",
+                                letterSpacing: "0.12em",
+                                textTransform: "uppercase",
+                                marginBottom: "6px",
+                            }}
                         >
-                            <Linkedin className="w-4 h-4" />
-                            Pranamya Jain
-                        </a>
-                        <span className="text-white/20">·</span>
-                        <a
-                            href="https://www.linkedin.com/in/shubhangsethi/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-white/55 hover:text-white text-sm transition-colors"
-                        >
-                            <Linkedin className="w-4 h-4" />
-                            Shubhang Sethi
-                        </a>
+                            Connect on LinkedIn
+                        </p>
+                        <div style={{ display: "flex", gap: "20px" }}>
+                            {[
+                                { name: "Pranamya Jain", href: "https://www.linkedin.com/in/pranamya-jainn/" },
+                                { name: "Shubhang Sethi", href: "https://www.linkedin.com/in/shubhangsethi/" },
+                            ].map((person) => (
+                                <a
+                                    key={person.href}
+                                    href={person.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        display: "inline-flex",
+                                        alignItems: "center",
+                                        gap: "5px",
+                                        fontFamily: "var(--font-inter)",
+                                        fontSize: "0.9375rem",
+                                        fontWeight: 500,
+                                        color: "#4A6FA5",
+                                        textDecoration: "none",
+                                    }}
+                                    onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
+                                    onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
+                                >
+                                    <Linkedin style={{ width: "14px", height: "14px" }} />
+                                    {person.name}
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -9,39 +9,55 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                background: {
-                    DEFAULT: "#F8F7F4",
-                    alt: "#EDECEA",
-                },
-                sage: {
-                    DEFAULT: "#7AAE8A",
-                    light: "#EEF5F1",
-                    dark: "#5A9270",
-                },
-                charcoal: "#2D2D2D",
-                "gray-text": "#6B6B6B",
-                "slate-blue": {
+                canvas: "#F8F7F4",
+                surface: "#EDECEA",
+                card: "#FFFFFF",
+                testimony: "#EEF5F1",
+                heading: "#1A1A1A",
+                prose: "#3D3D3D",
+                muted: "#6B6B6B",
+                micro: "#9A9A9A",
+                sage: "#7AAE8A",
+                ink: {
                     DEFAULT: "#4A6FA5",
-                    dark: "#3A5A8C",
+                    dark: "#3A5A8A",
                 },
+                rule: "#E2E0DC",
+                "rule-strong": "#C8C5BF",
             },
             fontFamily: {
                 serif: ["var(--font-lora)", "Georgia", "serif"],
                 sans: ["var(--font-inter)", "system-ui", "sans-serif"],
             },
-            keyframes: {
-                fadeUp: {
-                    "0%": { opacity: "0", transform: "translateY(24px)" },
-                    "100%": { opacity: "1", transform: "translateY(0)" },
-                },
-                fadeIn: {
-                    "0%": { opacity: "0" },
-                    "100%": { opacity: "1" },
-                },
+            fontSize: {
+                "6xl": ["3.75rem", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
+                "4xl": ["2.25rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+                "2xl": ["1.5rem", { lineHeight: "1.1", letterSpacing: "-0.015em" }],
             },
-            animation: {
-                "fade-up": "fadeUp 0.7s ease-out forwards",
-                "fade-in": "fadeIn 0.5s ease-out forwards",
+            letterSpacing: {
+                hero: "-0.03em",
+                section: "-0.02em",
+                label: "0.12em",
+            },
+            lineHeight: {
+                editorial: "1.05",
+                tight: "1.1",
+                body: "1.7",
+            },
+            borderRadius: {
+                card: "12px",
+                icon: "10px",
+                button: "6px",
+            },
+            maxWidth: {
+                content: "1100px",
+                hero: "700px",
+                sub: "560px",
+            },
+            boxShadow: {
+                card: "0 8px 32px rgba(0,0,0,0.07)",
+                "card-green": "inset 0 2px 0 0 #7AAE8A, 0 8px 32px rgba(0,0,0,0.07)",
+                cta: "0 1px 3px rgba(74,111,165,0.3)",
             },
         },
     },

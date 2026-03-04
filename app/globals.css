@@ -2,22 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-primary: #F8F7F4;
+  --bg-secondary: #EDECEA;
+  --bg-card: #FFFFFF;
+  --bg-testimony: #EEF5F1;
+  --text-primary: #1A1A1A;
+  --text-body: #3D3D3D;
+  --text-muted: #6B6B6B;
+  --text-micro: #9A9A9A;
+  --accent-green: #7AAE8A;
+  --accent-blue: #4A6FA5;
+  --accent-blue-dark: #3A5A8A;
+  --border: #E2E0DC;
+  --border-strong: #C8C5BF;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #F8F7F4;
-  color: #2D2D2D;
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+  font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Section rhythm */
+.section-pad {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.section-canvas {
+  background-color: var(--bg-primary);
+}
+
+.section-surface {
+  background-color: var(--bg-secondary);
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding-top: 72px;
+    padding-bottom: 72px;
   }
-  .animate-delay-100 { animation-delay: 100ms; }
-  .animate-delay-200 { animation-delay: 200ms; }
-  .animate-delay-300 { animation-delay: 300ms; }
+}
+
+/* Micro label — appears above every section headline */
+.micro-label {
+  display: block;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-micro);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* Divider-line between two-column layouts */
+.col-divider {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .col-divider {
+    display: block;
+    width: 1px;
+    background-color: var(--border);
+    align-self: stretch;
+    flex-shrink: 0;
+  }
 }

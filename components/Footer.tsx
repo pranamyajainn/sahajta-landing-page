@@ -1,3 +1,5 @@
+"use client";
+
 import { Sprout } from "lucide-react";
 
 const quickLinks = [
@@ -9,41 +11,88 @@ const quickLinks = [
 
 export default function Footer() {
     return (
-        <footer className="bg-charcoal border-t border-white/5 py-14">
-            <div className="max-w-6xl mx-auto px-6">
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <footer
+            style={{
+                backgroundColor: "#EDECEA",
+                borderTop: "1px solid #C8C5BF",
+                padding: "48px 0",
+            }}
+        >
+            <div
+                style={{
+                    maxWidth: "1100px",
+                    margin: "0 auto",
+                    padding: "0 24px",
+                }}
+            >
+                {/* One-row layout on desktop */}
+                <div
+                    style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        flexWrap: "wrap",
+                        gap: "24px",
+                    }}
+                >
                     {/* Brand */}
                     <div>
-                        <div className="flex items-center gap-2 mb-2">
-                            <Sprout className="w-4 h-4 text-sage" strokeWidth={1.5} />
-                            <span className="font-serif font-semibold text-white text-base">
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                            <Sprout style={{ width: "16px", height: "16px", color: "#7AAE8A" }} strokeWidth={1.5} />
+                            <span
+                                style={{
+                                    fontFamily: "var(--font-lora), Georgia, serif",
+                                    fontWeight: 500,
+                                    fontSize: "1rem",
+                                    color: "#1A1A1A",
+                                }}
+                            >
                                 Sahajta AI
                             </span>
                         </div>
-                        <p className="text-white/35 text-sm italic">
+                        <p
+                            style={{
+                                fontFamily: "var(--font-lora), Georgia, serif",
+                                fontStyle: "italic",
+                                fontSize: "0.875rem",
+                                color: "#6B6B6B",
+                            }}
+                        >
                             We have a passion for Simplicity.
                         </p>
                     </div>
 
-                    {/* Quick links */}
-                    <nav className="flex flex-wrap gap-6">
+                    {/* Nav links — center */}
+                    <nav style={{ display: "flex", gap: "32px", flexWrap: "wrap" }}>
                         {quickLinks.map((link) => (
                             <a
                                 key={link.href}
                                 href={link.href}
-                                className="text-white/45 text-sm hover:text-white transition-colors duration-200"
+                                style={{
+                                    fontFamily: "var(--font-inter)",
+                                    fontSize: "0.875rem",
+                                    color: "#6B6B6B",
+                                    textDecoration: "none",
+                                    transition: "color 150ms ease",
+                                }}
+                                onMouseEnter={(e) => (e.currentTarget.style.color = "#1A1A1A")}
+                                onMouseLeave={(e) => (e.currentTarget.style.color = "#6B6B6B")}
                             >
                                 {link.label}
                             </a>
                         ))}
                     </nav>
-                </div>
 
-                <div className="mt-10 pt-6 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-3">
-                    <p className="text-white/25 text-xs">
-                        © 2026 Sahajta AI. All rights reserved.
+                    {/* Copyright — right */}
+                    <p
+                        style={{
+                            fontFamily: "var(--font-inter)",
+                            fontSize: "0.8125rem",
+                            color: "#9A9A9A",
+                        }}
+                    >
+                        © 2026 Sahajta AI
                     </p>
-                    <p className="text-white/20 text-xs">Built with ♥ and AI</p>
                 </div>
             </div>
         </footer>
