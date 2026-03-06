@@ -2,6 +2,12 @@
 
 import { ArrowRight, Sprout } from "lucide-react";
 
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
+import { TextReveal } from "@/components/ui/text-reveal";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { BlurFade } from "@/components/ui/blur-fade";
+
 export default function Hero() {
     return (
         <section
@@ -22,58 +28,30 @@ export default function Hero() {
                     {/* LEFT: Text block */}
                     <div style={{ maxWidth: "700px" }}>
                         {/* Micro label */}
-                        <span className="micro-label">The Company</span>
+                        <BlurFade delay={0.1} inView>
+                            <span className="micro-label">The Company</span>
+                        </BlurFade>
 
                         {/* Proof badge */}
-                        <div
-                            style={{
-                                display: "inline-flex",
-                                alignItems: "center",
-                                gap: "6px",
-                                backgroundColor: "var(--gold-tint)",
-                                border: "1px solid rgba(201,160,68,0.3)",
-                                color: "var(--gold-dark)",
-                                fontSize: "0.75rem",
-                                fontWeight: 600,
-                                padding: "5px 12px",
-                                borderRadius: "100px",
-                                marginBottom: "28px",
-                                fontFamily: "var(--font-inter)",
-                                letterSpacing: "0.01em",
-                            }}
-                        >
+                        <div className="hero-badge">
                             <Sprout
                                 style={{ width: "13px", height: "13px", color: "var(--gold)" }}
                                 strokeWidth={1.5}
                                 aria-hidden="true"
                             />
-                            {/* {{HERO_BADGE_TEXT}} */}
-                            vibe2real.codes — shipped in 24 hours →
+                            <AnimatedShinyText shimmerWidth={120}>
+                                ✦ vibe2real.codes — shipped in 24 hours
+                            </AnimatedShinyText>
                         </div>
 
-                        {/* Headline */}
-                        <h1
-                            style={{
-                                fontFamily: "var(--font-cormorant), Georgia, serif",
-                                fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
-                                fontWeight: 700,
-                                color: "var(--text-dark)",
-                                lineHeight: 1.05,
-                                letterSpacing: "-0.03em",
-                                marginBottom: "24px",
-                            }}
-                        >
-                            {/* {{HERO_HEADLINE}} */}
-                            We don&apos;t just advise on AI.{" "}
-                            <em
-                                style={{
-                                    fontStyle: "italic",
-                                    color: "var(--green-primary)",
-                                }}
-                            >
+                        {/* Headline — 3-line split, Cormorant Black 900 */}
+                        <div className="hero-headline" style={{ marginBottom: "28px" }}>
+                            We don&apos;t just<br />
+                            advise on AI.<br />
+                            <em style={{ fontStyle: "italic", color: "var(--green-primary)" }}>
                                 We ship it.
                             </em>
-                        </h1>
+                        </div>
 
                         {/* Sub-headline */}
                         <p
@@ -84,14 +62,19 @@ export default function Hero() {
                                 color: "var(--text-body)",
                                 lineHeight: 1.7,
                                 maxWidth: "560px",
-                                marginBottom: "40px",
+                                marginBottom: "8px",
                             }}
                         >
-                            {/* {{HERO_SUBHEAD}} */}
                             Sahajta AI builds AI products the world can use — and brings that
                             same builder&apos;s instinct to your business. AI consulting and web
                             presence, without the complexity.
                         </p>
+
+                        {/* Hero proof line */}
+                        <div className="hero-proof-line" style={{ marginBottom: "32px" }}>
+                            <span className="mono-label">LIVE PRODUCT →</span>
+                            vibe2real.codes — concept to deployment in 24 hours
+                        </div>
 
                         {/* CTA group */}
                         <div
@@ -102,15 +85,22 @@ export default function Hero() {
                                 flexWrap: "wrap",
                             }}
                         >
-                            <a
-                                href="#contact"
-                                className="btn-gold"
-                            >
-                                Book a Free Discovery Call
-                                <ArrowRight
-                                    style={{ width: "16px", height: "16px" }}
-                                    aria-hidden="true"
-                                />
+                            <a href="#contact" style={{ textDecoration: 'none' }}>
+                                <ShimmerButton
+                                    shimmerColor="var(--gold-tint)"
+                                    shimmerSize="0.08em"
+                                    shimmerDuration="2.5s"
+                                    background="var(--gold)"
+                                    className="hero-cta-button"
+                                >
+                                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        Book a Free Discovery Call
+                                        <ArrowRight
+                                            style={{ width: "16px", height: "16px" }}
+                                            aria-hidden="true"
+                                        />
+                                    </span>
+                                </ShimmerButton>
                             </a>
 
                             <a
@@ -279,6 +269,13 @@ export default function Hero() {
                                     Explore vibe2real.codes →
                                 </a>
                             </div>
+                            <BorderBeam
+                                size={80}
+                                duration={10}
+                                colorFrom="var(--gold)"
+                                colorTo="var(--green-primary)"
+                                borderWidth={1.5}
+                            />
                         </div>
                     </div>
                 </div>

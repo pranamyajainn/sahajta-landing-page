@@ -1,35 +1,27 @@
 "use client";
 
-import { MessageSquare, Lock, Hammer, Rocket } from "lucide-react";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 const steps = [
     {
-        num: "1",
-        icon: MessageSquare,
-        title: "Vibe Capture",
-        duration: "4h",
-        description: "We listen deeply and map exactly what you need to ship.",
+        num: "01",
+        title: "Vibe",
+        description: "You share the idea. We ask the right questions.",
     },
     {
-        num: "2",
-        icon: Lock,
-        title: "Scope Lock",
-        duration: "4h",
-        description: "Tight brief, clear deliverables, zero scope creep.",
+        num: "02",
+        title: "Scope",
+        description: "We map exactly what gets built and what doesn\u2019t.",
     },
     {
-        num: "3",
-        icon: Hammer,
-        title: "Build & Iterate",
-        duration: "12h",
-        description: "We build fast, share progress, and refine in real-time.",
+        num: "03",
+        title: "Build",
+        description: "We ship. You watch it go live.",
     },
     {
-        num: "4",
-        icon: Rocket,
-        title: "Ship + Certify",
-        duration: "4h",
-        description: "Deployed, tested, and handed over with documentation.",
+        num: "04",
+        title: "Iterate",
+        description: "Real feedback. Real improvements. Real fast.",
     },
 ];
 
@@ -41,24 +33,25 @@ export default function HowSahajtaShips() {
             aria-label="How Sahajta Ships"
         >
             <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-                <span className="micro-label">The 24-Hour Process</span>
-                <h2
-                    style={{
-                        fontFamily: "var(--font-cormorant), Georgia, serif",
-                        fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)",
-                        fontWeight: 600,
-                        color: "var(--text-dark)",
-                        letterSpacing: "-0.02em",
-                        lineHeight: 1.1,
-                        marginBottom: "64px",
-                        maxWidth: "560px",
-                    }}
-                >
-                    Four steps. One promise.{" "}
-                    <em style={{ fontStyle: "italic", color: "var(--green-primary)" }}>
-                        We ship it.
-                    </em>
-                </h2>
+                <BlurFade delay={0.1} inView>
+                    <span className="micro-label">The Process</span>
+                </BlurFade>
+                <BlurFade delay={0.2} inView>
+                    <h2
+                        style={{
+                            fontFamily: "var(--font-cormorant), Georgia, serif",
+                            fontSize: "clamp(2rem, 4vw, 3rem)",
+                            fontWeight: 700,
+                            color: "var(--text-dark)",
+                            letterSpacing: "-0.02em",
+                            lineHeight: 1.05,
+                            marginBottom: "64px",
+                            maxWidth: "560px",
+                        }}
+                    >
+                        From your idea to live product.
+                    </h2>
+                </BlurFade>
 
                 {/* Timeline container — relative for the gold line */}
                 <div
@@ -94,7 +87,6 @@ export default function HowSahajtaShips() {
                         className="md:grid-cols-4"
                     >
                         {steps.map((step) => {
-                            const IconComponent = step.icon;
                             return (
                                 <div
                                     key={step.num}
@@ -105,14 +97,14 @@ export default function HowSahajtaShips() {
                                     }}
                                     role="listitem"
                                 >
-                                    {/* Circle with icon */}
+                                    {/* Step number circle — JetBrains Mono */}
                                     <div
                                         style={{
                                             width: "48px",
                                             height: "48px",
                                             borderRadius: "50%",
                                             backgroundColor: "var(--gold-tint)",
-                                            border: "1.5px solid rgba(201,160,68,0.4)",
+                                            border: "1.5px solid var(--gold)",
                                             display: "flex",
                                             alignItems: "center",
                                             justifyContent: "center",
@@ -121,30 +113,33 @@ export default function HowSahajtaShips() {
                                         }}
                                         aria-hidden="true"
                                     >
-                                        <IconComponent
+                                        <span
                                             style={{
-                                                width: "20px",
-                                                height: "20px",
+                                                fontFamily: "var(--font-mono), 'JetBrains Mono', monospace",
+                                                fontSize: "16px",
+                                                fontWeight: 500,
                                                 color: "var(--gold)",
+                                                lineHeight: 1,
                                             }}
-                                            strokeWidth={1.5}
-                                        />
+                                        >
+                                            {step.num}
+                                        </span>
                                     </div>
 
-                                    {/* Step number */}
+                                    {/* Step number label */}
                                     <span
                                         style={{
-                                            fontFamily: "var(--font-inter)",
+                                            fontFamily: "var(--font-mono), 'JetBrains Mono', monospace",
                                             fontSize: "0.6875rem",
                                             fontWeight: 500,
                                             color: "var(--gold-dark)",
                                             textTransform: "uppercase",
                                             letterSpacing: "0.14em",
                                             marginBottom: "8px",
+                                            display: "block",
                                         }}
-                                        aria-label={`Step ${step.num} — ${step.duration}`}
                                     >
-                                        {step.num} · {step.duration}
+                                        STEP {step.num}
                                     </span>
 
                                     {/* Title */}

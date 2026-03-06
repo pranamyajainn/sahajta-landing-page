@@ -1,25 +1,31 @@
 "use client";
 
 import { Sprout } from "lucide-react";
+import { NumberTicker } from "@/components/ui/number-ticker";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export default function FeaturedProduct() {
     return (
         <section className="section-pad section-surface" id="product">
             <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-                <span className="micro-label">Our Latest Launch</span>
-                <h2
-                    style={{
-                        fontFamily: "var(--font-cormorant), Georgia, serif",
-                        fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-                        fontWeight: 700,
-                        color: "var(--text-dark)",
-                        letterSpacing: "-0.02em",
-                        lineHeight: 1.1,
-                        marginBottom: "48px",
-                    }}
-                >
-                    vibe2real.codes
-                </h2>
+                <BlurFade delay={0.1} inView>
+                    <span className="micro-label">Our Latest Launch</span>
+                </BlurFade>
+                <BlurFade delay={0.2} inView>
+                    <h2
+                        style={{
+                            fontFamily: "var(--font-cormorant), Georgia, serif",
+                            fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
+                            fontWeight: 700,
+                            color: "var(--text-dark)",
+                            letterSpacing: "-0.02em",
+                            lineHeight: 1.1,
+                            marginBottom: "48px",
+                        }}
+                    >
+                        We built this. In 24 hours.
+                    </h2>
+                </BlurFade>
 
                 {/* Testimonial — left gold border */}
                 <div
@@ -123,36 +129,55 @@ export default function FeaturedProduct() {
                                 marginBottom: "32px",
                             }}
                         >
-                            {[
-                                { num: "3", label: "Modules" },
-                                { num: "3h", label: "To Complete" },
-                                { num: "₹1,499", label: "Certificate" },
-                            ].map((s, i) => (
-                                <div key={i} style={{ textAlign: "center", padding: "0 8px" }}>
-                                    <p
-                                        style={{
-                                            fontFamily: "var(--font-cormorant), Georgia, serif",
-                                            fontSize: "2rem",
-                                            fontWeight: 700,
-                                            color: "var(--gold-dark)",
-                                            lineHeight: 1,
-                                            marginBottom: "6px",
-                                        }}
-                                    >
-                                        {s.num}
-                                    </p>
-                                    <p
-                                        style={{
-                                            fontFamily: "var(--font-inter)",
-                                            fontSize: "0.75rem",
-                                            color: "var(--text-muted)",
-                                            letterSpacing: "0.04em",
-                                        }}
-                                    >
-                                        {s.label}
-                                    </p>
+                            <div style={{ textAlign: "center", padding: "0 8px" }}>
+                                <div style={{ marginBottom: "6px" }}>
+                                    <NumberTicker value={3} className="stat-number" />
                                 </div>
-                            ))}
+                                <p
+                                    style={{
+                                        fontFamily: "var(--font-inter)",
+                                        fontSize: "0.75rem",
+                                        color: "var(--text-muted)",
+                                        letterSpacing: "0.04em",
+                                    }}
+                                >
+                                    Modules
+                                </p>
+                            </div>
+
+                            <div style={{ textAlign: "center", padding: "0 8px" }}>
+                                <div style={{ marginBottom: "6px" }}>
+                                    <NumberTicker value={3} className="stat-number" />
+                                    <span className="stat-number">h</span>
+                                </div>
+                                <p
+                                    style={{
+                                        fontFamily: "var(--font-inter)",
+                                        fontSize: "0.75rem",
+                                        color: "var(--text-muted)",
+                                        letterSpacing: "0.04em",
+                                    }}
+                                >
+                                    To Complete
+                                </p>
+                            </div>
+
+                            <div style={{ textAlign: "center", padding: "0 8px" }}>
+                                <div style={{ marginBottom: "6px" }}>
+                                    <span className="rupee-prefix">₹</span>
+                                    <NumberTicker value={1499} className="stat-number" />
+                                </div>
+                                <p
+                                    style={{
+                                        fontFamily: "var(--font-inter)",
+                                        fontSize: "0.75rem",
+                                        color: "var(--text-muted)",
+                                        letterSpacing: "0.04em",
+                                    }}
+                                >
+                                    Certificate
+                                </p>
+                            </div>
                         </div>
 
                         <a

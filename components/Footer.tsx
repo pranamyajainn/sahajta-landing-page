@@ -1,6 +1,6 @@
 "use client";
 
-import { Sprout } from "lucide-react";
+import Image from "next/image";
 
 const quickLinks = [
     { label: "What We Do", href: "#services" },
@@ -45,21 +45,13 @@ export default function Footer() {
                                 marginBottom: "6px",
                             }}
                         >
-                            <Sprout
-                                style={{ width: "16px", height: "16px", color: "var(--gold)" }}
-                                strokeWidth={1.5}
-                                aria-hidden="true"
+                            <Image
+                                src="/sahajta-logo.png"
+                                alt="Sahajta AI Logo"
+                                width={120}
+                                height={32}
+                                style={{ objectFit: "contain" }}
                             />
-                            <span
-                                style={{
-                                    fontFamily: "var(--font-cormorant), Georgia, serif",
-                                    fontWeight: 700,
-                                    fontSize: "1rem",
-                                    color: "var(--green-primary)",
-                                }}
-                            >
-                                Sahajta AI
-                            </span>
                         </div>
                         <p
                             style={{

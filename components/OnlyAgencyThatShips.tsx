@@ -1,10 +1,12 @@
+import { Marquee } from "@/components/ui/marquee";
+import { BlurFade } from "@/components/ui/blur-fade";
+
 const proofItems = [
-    "vibe2real.codes — live in 24h",
-    "3 modules · 3 hours · Free to play",
-    "Concept to deployed product in 24 hours",
-    "Real users. Open source. Business model.",
-    "Shipped under pressure. Debugged in production.",
-    "The only AI agency that also publishes its own products.",
+    "vibe2real.codes — live and public",
+    "Shipped in 24 hours",
+    "Open source",
+    "Real users",
+    "Certificate of completion",
 ];
 
 export default function OnlyAgencyThatShips() {
@@ -29,45 +31,14 @@ export default function OnlyAgencyThatShips() {
     return (
         <section className="section-pad section-surface">
             {/* Proof ticker */}
-            <div
-                aria-hidden="true"
-                style={{
-                    overflow: "hidden",
-                    backgroundColor: "var(--green-primary)",
-                    padding: "14px 0",
-                    marginBottom: "80px",
-                    maxWidth: "100vw",
-                }}
-            >
-                <div className="ticker-track" style={{ gap: "0" }}>
-                    {tickerItems.map((item, i) => (
-                        <span
-                            key={i}
-                            style={{
-                                fontFamily: "var(--font-inter), system-ui, sans-serif",
-                                fontSize: "0.8125rem",
-                                fontWeight: 500,
-                                color: "var(--bg-cream)",
-                                whiteSpace: "nowrap",
-                                padding: "0 48px",
-                                letterSpacing: "0.02em",
-                                flexShrink: 0,
-                            }}
-                        >
-                            {item}
-                            <span
-                                style={{
-                                    color: "var(--gold)",
-                                    margin: "0 12px",
-                                    opacity: 0.8,
-                                }}
-                            >
-                                ✦
-                            </span>
-                        </span>
-                    ))}
-                </div>
-            </div>
+            <Marquee pauseOnHover className="proof-ticker">
+                {[...proofItems, ...proofItems].map((item, i) => (
+                    <span key={i} className="proof-item">
+                        {item}
+                        <span className="separator">·</span>
+                    </span>
+                ))}
+            </Marquee>
 
             <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
                 <div
@@ -80,23 +51,24 @@ export default function OnlyAgencyThatShips() {
                 >
                     {/* Left column */}
                     <div style={{ flex: "1" }}>
-                        <span className="micro-label">Why Sahajta AI</span>
-                        <h2
-                            style={{
-                                fontFamily: "var(--font-cormorant), Georgia, serif",
-                                fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-                                fontWeight: 700,
-                                color: "var(--text-dark)",
-                                letterSpacing: "-0.02em",
-                                lineHeight: 1.1,
-                                marginBottom: "20px",
-                            }}
-                        >
-                            Most AI agencies talk about what&apos;s possible.{" "}
-                            <em style={{ fontStyle: "italic", color: "var(--green-primary)" }}>
-                                We&apos;ve already done it.
-                            </em>
-                        </h2>
+                        <BlurFade delay={0.1} inView>
+                            <span className="micro-label">Why Sahajta AI</span>
+                        </BlurFade>
+                        <BlurFade delay={0.2} inView>
+                            <h2
+                                style={{
+                                    fontFamily: "var(--font-cormorant), Georgia, serif",
+                                    fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
+                                    fontWeight: 700,
+                                    color: "var(--text-dark)",
+                                    letterSpacing: "-0.02em",
+                                    lineHeight: 1.1,
+                                    marginBottom: "20px",
+                                }}
+                            >
+                                We&apos;ve already done what most agencies only talk about.
+                            </h2>
+                        </BlurFade>
                         <p
                             style={{
                                 fontFamily: "var(--font-inter)",
@@ -117,7 +89,9 @@ export default function OnlyAgencyThatShips() {
 
                     {/* Right column: evidence */}
                     <div style={{ flex: "1" }}>
-                        <span className="micro-label">The Proof</span>
+                        <BlurFade delay={0.1} inView>
+                            <span className="micro-label">The Proof</span>
+                        </BlurFade>
                         <ul
                             style={{
                                 listStyle: "none",
@@ -146,10 +120,10 @@ export default function OnlyAgencyThatShips() {
                                         style={{ flexShrink: 0, marginTop: "3px" }}
                                         aria-hidden="true"
                                     >
-                                        <circle cx="9" cy="9" r="8.5" stroke="#C9A044" />
+                                        <circle cx="9" cy="9" r="8.5" stroke="var(--gold)" />
                                         <path
                                             d="M5 9l3 3 5-5"
-                                            stroke="#C9A044"
+                                            stroke="var(--gold)"
                                             strokeWidth="1.5"
                                             strokeLinecap="round"
                                             strokeLinejoin="round"

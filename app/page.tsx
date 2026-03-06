@@ -1,11 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import IndustryVoices from "@/components/IndustryVoices";
 import OnlyAgencyThatShips from "@/components/OnlyAgencyThatShips";
 import HowSahajtaShips from "@/components/HowSahajtaShips";
 import Services from "@/components/Services";
 import RecentShips from "@/components/RecentShips";
 import Testimonials from "@/components/Testimonials";
 import FeaturedProduct from "@/components/FeaturedProduct";
+import WhoWeHelpSection from "@/components/WhoWeHelpSection";
 import Team from "@/components/Team";
 import UrgencyBanner from "@/components/UrgencyBanner";
 import BookACall from "@/components/BookACall";
@@ -19,6 +21,9 @@ export default function Home() {
 
             {/* 2. Hero */}
             <Hero />
+
+            {/* Industry Voices Marquee */}
+            <IndustryVoices />
 
             {/* 3. OnlyAgencyThatShips (includes proof ticker + two-column proof) */}
             <OnlyAgencyThatShips />
@@ -35,7 +40,10 @@ export default function Home() {
             {/* 7. Testimonials — 2×2 grid */}
             <Testimonials />
 
-            {/* 8. FeaturedProduct — transformation block + stats */}
+            {/* 8. Who We Help — 6-card quote grid */}
+            <WhoWeHelpSection />
+
+            {/* 9. FeaturedProduct — transformation block + stats */}
             <FeaturedProduct />
 
             {/* 9. Team — with sprout bio bullets */}

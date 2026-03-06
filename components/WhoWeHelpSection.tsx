@@ -1,0 +1,154 @@
+"use client";
+
+import { BlurFade } from "@/components/ui/blur-fade";
+
+const cards = [
+    {
+        quote:
+            "I need an AI tool to automate content creation and distribution across all our platforms.",
+        attribution: "Founder at a D2C startup.",
+    },
+    {
+        quote:
+            "I want to integrate AI into my business but don't know where to start without wasting money.",
+        attribution: "Owner of a mid-size service business.",
+    },
+    {
+        quote:
+            "How do I build an AI-powered product fast enough to validate before my runway runs out?",
+        attribution: "Early-stage startup founder.",
+    },
+    {
+        quote:
+            "I know AI belongs in my workflow. I just need someone to architect it properly.",
+        attribution: "Product lead at a SaaS company.",
+    },
+    {
+        quote:
+            "I need a web presence that actually converts — not just looks good.",
+        attribution: "Entrepreneur launching a new venture.",
+    },
+    {
+        quote:
+            "I have the idea. I need a team that can ship it in days, not months.",
+        attribution: "CTO at an early-stage startup.",
+    },
+];
+
+export default function WhoWeHelpSection() {
+    return (
+        <section
+            className="section-pad section-tint"
+            id="who-we-help"
+            aria-label="Who We Help"
+        >
+            <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+                <BlurFade delay={0.1} inView>
+                    <span className="micro-label">Who We Help</span>
+                </BlurFade>
+                <BlurFade delay={0.2} inView>
+                    <h2
+                        style={{
+                            fontFamily: "var(--font-cormorant), Georgia, serif",
+                            fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
+                            fontWeight: 700,
+                            color: "var(--text-dark)",
+                            letterSpacing: "-0.02em",
+                            lineHeight: 1.1,
+                            marginBottom: "48px",
+                        }}
+                    >
+                        One of these is you.
+                    </h2>
+                </BlurFade>
+
+                <div
+                    style={{ display: "grid", gap: "24px" }}
+                    className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                >
+                    {cards.map((card, i) => (
+                        <BlurFade key={i} delay={0.1 + i * 0.07} inView>
+                            <div
+                                style={{
+                                    backgroundColor: "var(--bg-white)",
+                                    border: "1px solid var(--border)",
+                                    borderRadius: "10px",
+                                    padding: "32px",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    height: "100%",
+                                }}
+                            >
+                                {/* Quote icon */}
+                                <div
+                                    style={{
+                                        width: "32px",
+                                        height: "32px",
+                                        borderRadius: "6px",
+                                        backgroundColor: "var(--gold)",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        marginBottom: "20px",
+                                        flexShrink: 0,
+                                    }}
+                                    aria-hidden="true"
+                                >
+                                    <span
+                                        style={{
+                                            fontFamily: "var(--font-inter), system-ui, sans-serif",
+                                            fontWeight: 700,
+                                            fontSize: "18px",
+                                            color: "var(--bg-white)",
+                                            lineHeight: 1,
+                                            letterSpacing: "-0.02em",
+                                        }}
+                                    >
+                                        &#8220;
+                                    </span>
+                                </div>
+
+                                {/* Body */}
+                                <p
+                                    style={{
+                                        fontFamily: "var(--font-inter), system-ui, sans-serif",
+                                        fontWeight: 400,
+                                        fontSize: "1rem",
+                                        color: "var(--text-body)",
+                                        lineHeight: 1.75,
+                                        flex: 1,
+                                        margin: 0,
+                                    }}
+                                >
+                                    {card.quote}
+                                </p>
+
+                                {/* Attribution */}
+                                <div
+                                    style={{
+                                        marginTop: "24px",
+                                        paddingTop: "16px",
+                                        borderTop: "1px solid var(--border)",
+                                    }}
+                                >
+                                    <p
+                                        style={{
+                                            fontFamily:
+                                                "var(--font-cormorant), Georgia, serif",
+                                            fontStyle: "italic",
+                                            fontSize: "0.875rem",
+                                            color: "var(--green-primary)",
+                                            margin: 0,
+                                        }}
+                                    >
+                                        {card.attribution}
+                                    </p>
+                                </div>
+                            </div>
+                        </BlurFade>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

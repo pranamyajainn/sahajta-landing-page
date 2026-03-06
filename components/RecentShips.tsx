@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink } from "lucide-react";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 const ships = [
     {
@@ -138,20 +139,24 @@ export default function RecentShips() {
             aria-label="Recent Ships"
         >
             <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-                <span className="micro-label">Recent Ships — All Live</span>
-                <h2
-                    style={{
-                        fontFamily: "var(--font-cormorant), Georgia, serif",
-                        fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-                        fontWeight: 700,
-                        color: "var(--text-dark)",
-                        letterSpacing: "-0.02em",
-                        lineHeight: 1.1,
-                        marginBottom: "48px",
-                    }}
-                >
-                    Proof travels faster than promises.
-                </h2>
+                <BlurFade delay={0.1} inView>
+                    <span className="micro-label">Recent Ships — All Live</span>
+                </BlurFade>
+                <BlurFade delay={0.2} inView>
+                    <h2
+                        style={{
+                            fontFamily: "var(--font-cormorant), Georgia, serif",
+                            fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
+                            fontWeight: 700,
+                            color: "var(--text-dark)",
+                            letterSpacing: "-0.02em",
+                            lineHeight: 1.1,
+                            marginBottom: "48px",
+                        }}
+                    >
+                        Proof travels faster than promises.
+                    </h2>
+                </BlurFade>
 
                 <div
                     style={{ display: "grid", gap: "32px" }}

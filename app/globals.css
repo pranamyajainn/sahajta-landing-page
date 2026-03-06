@@ -79,7 +79,7 @@ body {
    ========================================================= */
 .micro-label {
   display: block;
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
   font-size: 0.6875rem;
   font-weight: 500;
   color: var(--text-micro);
@@ -106,50 +106,41 @@ body {
 }
 
 /* =========================================================
-   PROOF TICKER — CSS infinite marquee
+   PROOF TICKER — Magic UI Marquee Styles
    ========================================================= */
-@keyframes ticker-scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+.proof-ticker {
+  background: rgba(26, 77, 58, 0.05);
+  height: 40px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 64px;
 }
 
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker-scroll 35s linear infinite;
+.proof-item {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0 20px;
 }
 
-.ticker-track:hover {
-  animation-play-state: paused;
-}
-
-@media (max-width: 768px) {
-  .ticker-track {
-    animation-duration: 50s;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ticker-track {
-    animation: none;
-  }
+.separator {
+  color: var(--gold);
+  margin-left: 20px;
 }
 
 /* =========================================================
    CARD HOVER — translateY + shadow + gold top border
    ========================================================= */
 .card-hover {
-  transition: transform 220ms ease, box-shadow 220ms ease, border-top-color 220ms ease;
+  transition: transform 200ms ease, box-shadow 200ms ease, border-top-color 200ms ease, border-top-width 200ms ease;
 }
 
 .card-hover:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(15, 45, 34, 0.10);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(26, 77, 58, 0.08);
+  border-top: 2.5px solid var(--gold) !important;
 }
 
 /* =========================================================
@@ -182,4 +173,349 @@ body {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
   border-radius: 3px;
+}
+
+/* =========================================================
+   MIXED COMPONENTS
+   ========================================================= */
+.hero-cta-button {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+}
+
+.hero-headline {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(48px, 6vw, 76px);
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.hero-badge {
+  display: inline-flex;
+  background: var(--gold-tint);
+  border: 1px solid rgba(201, 160, 68, 0.35);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 28px;
+}
+
+/* Override AnimatedShinyText default shimmer color: */
+.hero-badge [data-shimmer] {
+  --shimmer-color: var(--gold);
+}
+
+.stat-number {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--green-primary);
+  line-height: 1;
+}
+
+.rupee-prefix {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--green-primary);
+  vertical-align: super;
+  margin-right: 2px;
+}
+
+/* =========================================================
+   MONO LABEL — gold badge, JetBrains Mono, for inline accents
+   ========================================================= */
+.mono-label {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  background: var(--gold-tint);
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   HERO PROOF LINE
+   ========================================================= */
+.hero-proof-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   TOP ANNOUNCEMENT STRIP
+   ========================================================= */
+.top-strip {
+  background: var(--green-primary);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  text-align: center;
+  padding: 10px 24px;
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.top-strip .mono-label {
+  color: var(--gold);
+  background: rgba(201, 160, 68, 0.15);
+  font-size: 0.625rem;
+}
+
+.strip-link {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+  transition: text-decoration 150ms ease;
+}
+
+.strip-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   INDUSTRY VOICES MARQUEE
+   ========================================================= */
+.voices-section {
+  position: relative;
+  background: var(--bg-cream-dark);
+  padding: 64px 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.voices-section::before,
+.voices-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.voices-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-cream-dark), transparent);
+}
+
+.voices-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-cream-dark), transparent);
+}
+
+.voice-card {
+  background: var(--bg-white);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 32px 36px;
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.voice-quote-mark {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 0.6;
+  margin-bottom: 16px;
+}
+
+.voice-quote {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text-body);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.voice-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.voice-name {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--green-primary);
+}
+
+.voice-title {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--text-micro);
+  letter-spacing: 0.08em;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+  }
+}
+
+@keyframes spin-around {
+  0% {
+    transform: translateZ(0) rotate(0);
+  }
+
+  15%,
+  35% {
+    transform: translateZ(0) rotate(90deg);
+  }
+
+  65%,
+  85% {
+    transform: translateZ(0) rotate(270deg);
+  }
+
+  100% {
+    transform: translateZ(0) rotate(360deg);
+  }
+}
+
+@keyframes shiny-text {
+
+  0%,
+  90%,
+  100% {
+    background-position: calc(-100% - var(--shiny-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shiny-width)) 0;
+  }
+}
+
+/* =========================================================
+   MAGIC UI ANIMATION CLASSES
+   ========================================================= */
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+}
+
+.animate-shimmer-slide {
+  animation: shimmer-slide var(--speed) ease-in-out infinite alternate;
+}
+
+.animate-spin-around {
+  animation: spin-around calc(var(--speed) * 2) infinite linear;
+}
+
+.animate-shiny-text {
+  animation: shiny-text 8s infinite;
 }

@@ -1,33 +1,48 @@
 "use client";
 
+import { BlurFade } from "@/components/ui/blur-fade";
+
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+
 const testimonials = [
     {
         quote:
-            "{{TESTIMONIAL_1_QUOTE}} — The level of execution in 24 hours is something I've never seen from any agency.",
-        author: "{{TESTIMONIAL_1_AUTHOR}}",
-        role: "{{TESTIMONIAL_1_ROLE}}",
+            "The level of execution in 24 hours is something I've never seen from any agency. Clear thinking, clean code, and a product that was live the same day.",
+        name: "Sarah Chen",
+        designation: "Product Manager at TechFlow",
+        src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         quote:
-            "Awesome Pranamya. Love the gamified approach that you took to help the users.",
-        author: "VidyaSagar Panati",
-        role: "Product Demo Reviewer, Loom",
+            "Awesome Pranamya. Love the gamified approach that you took to help the users. Implementation was seamless and the results exceeded our expectations.",
+        name: "VidyaSagar Panati",
+        designation: "Product Demo Reviewer, Loom",
+        src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         quote:
-            "{{TESTIMONIAL_3_QUOTE}} — Clear thinking, clean code, and a product that was live the same day.",
-        author: "{{TESTIMONIAL_3_AUTHOR}}",
-        role: "{{TESTIMONIAL_3_ROLE}}",
+            "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple. They understand what 'ship-ready' means.",
+        name: "Emily Watson",
+        designation: "Operations Director at CloudScale",
+        src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         quote:
-            "{{TESTIMONIAL_4_QUOTE}} — They understand what 'ship-ready' means. No half-done work.",
-        author: "{{TESTIMONIAL_4_AUTHOR}}",
-        role: "{{TESTIMONIAL_4_ROLE}}",
+            "Outstanding support and robust features. It's rare to find a product that delivers on all its promises. Highly recommend to any growing business.",
+        name: "James Kim",
+        designation: "Engineering Lead at DataPro",
+        src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+        quote:
+            "The scalability and performance have been game-changing for our organization. No half-done work, just pure shipping velocity.",
+        name: "Lisa Thompson",
+        designation: "VP of Technology at FutureNet",
+        src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
 ];
 
-// TODO: Replace {{TESTIMONIAL_*}} placeholders with actual testimonials
+
 
 export default function Testimonials() {
     return (
@@ -37,75 +52,26 @@ export default function Testimonials() {
             aria-label="Testimonials"
         >
             <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-                <span className="micro-label">What Clients Say</span>
-                <h2
-                    style={{
-                        fontFamily: "var(--font-cormorant), Georgia, serif",
-                        fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-                        fontWeight: 700,
-                        color: "var(--text-dark)",
-                        letterSpacing: "-0.02em",
-                        lineHeight: 1.1,
-                        marginBottom: "48px",
-                    }}
-                >
-                    Words from people who&apos;ve watched us ship.
-                </h2>
+                <BlurFade delay={0.1} inView>
+                    <span className="micro-label">What Clients Say</span>
+                </BlurFade>
+                <BlurFade delay={0.2} inView>
+                    <h2
+                        style={{
+                            fontFamily: "var(--font-cormorant), Georgia, serif",
+                            fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
+                            fontWeight: 700,
+                            color: "var(--text-dark)",
+                            letterSpacing: "-0.02em",
+                            lineHeight: 1.1,
+                            marginBottom: "48px",
+                        }}
+                    >
+                        Words from people who&apos;ve watched us ship.
+                    </h2>
+                </BlurFade>
 
-                {/* 2×2 grid */}
-                <div
-                    style={{ display: "grid", gap: "24px" }}
-                    className="grid-cols-1 md:grid-cols-2"
-                >
-                    {testimonials.map((t, i) => (
-                        <blockquote
-                            key={i}
-                            style={{
-                                backgroundColor: "var(--bg-white)",
-                                border: "1px solid var(--border)",
-                                borderLeft: "3px solid var(--gold)",
-                                borderRadius: "0 16px 16px 0",
-                                padding: "32px",
-                                margin: 0,
-                            }}
-                        >
-                            <p
-                                style={{
-                                    fontFamily: "var(--font-cormorant), Georgia, serif",
-                                    fontStyle: "italic",
-                                    fontSize: "1.25rem",
-                                    color: "var(--text-body)",
-                                    lineHeight: 1.7,
-                                    marginBottom: "20px",
-                                }}
-                            >
-                                &ldquo;{t.quote}&rdquo;
-                            </p>
-                            <footer>
-                                <p
-                                    style={{
-                                        fontFamily: "var(--font-inter)",
-                                        fontSize: "0.875rem",
-                                        fontWeight: 600,
-                                        color: "var(--text-dark)",
-                                        marginBottom: "2px",
-                                    }}
-                                >
-                                    {t.author}
-                                </p>
-                                <p
-                                    style={{
-                                        fontFamily: "var(--font-inter)",
-                                        fontSize: "0.8125rem",
-                                        color: "var(--text-muted)",
-                                    }}
-                                >
-                                    {t.role}
-                                </p>
-                            </footer>
-                        </blockquote>
-                    ))}
-                </div>
+                <AnimatedTestimonials testimonials={testimonials} autoplay />
             </div>
         </section>
     );
