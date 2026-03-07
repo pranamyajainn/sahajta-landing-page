@@ -4,11 +4,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const navLinks = [
-    { label: "What We Do", href: "#services" },
-    { label: "How We Ship", href: "#process" },
-    { label: "Our Work", href: "#ships" },
-    { label: "Team", href: "#team" },
-    { label: "Contact", href: "#contact" },
+    { label: "Work", href: "#ships" },
+    { label: "Process", href: "#process" },
+    { label: "Founders", href: "#team" },
 ];
 
 export default function Navbar() {
@@ -22,19 +20,7 @@ export default function Navbar() {
 
     return (
         <div style={{ position: "sticky", top: 0, zIndex: 50, width: "100%", display: "flex", flexDirection: "column" }}>
-            {/* Announcement strip */}
-            <div className="top-strip">
-                <span className="mono-label">NEW</span>
-                vibe2real.codes is live — free to play, ₹1,499 for certificate
-                <a
-                    href="https://vibe2real.codes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="strip-link"
-                >
-                    Try it →
-                </a>
-            </div>
+            {/* Announcement strip removed to focus on Hero badge */}
 
             <header
                 role="banner"
@@ -137,7 +123,7 @@ export default function Navbar() {
                         className="btn-gold"
                         style={{ padding: "8px 18px", fontSize: "0.875rem" }}
                     >
-                        Book a Free Call
+                        Book a Call
                     </a>
                 </div>
             </header>

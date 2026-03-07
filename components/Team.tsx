@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sprout, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const founders = [
@@ -16,9 +16,10 @@ const founders = [
             "Builds full-stack AI systems for real-world deployment — not demos.",
             "Specializes in LLMs, agentic workflows, and production-grade AI infrastructure.",
         ],
-        stat: "AI BUILDER · CLASS OF 2026",
+        stat: "AI BUILDER · DEVELOPER",
         linkedin: "https://www.linkedin.com/in/pranamya-jainn/",
-        twitter: null,
+        twitter: "https://x.com/pranamyajain_",
+        instagram: null,
     },
     {
         name: "Shubhang Sethi",
@@ -33,215 +34,101 @@ const founders = [
         stat: "SERIAL FOUNDER · 2+ VENTURES",
         linkedin: "https://www.linkedin.com/in/shubhangsethi/",
         twitter: null,
+        instagram: "https://www.instagram.com/shubhangsethi",
     },
 ];
 
-function FounderCard({ founder }: { founder: (typeof founders)[0] }) {
-    const [hovered, setHovered] = useState(false);
-
+function FounderCard({
+    founder,
+    objectPosition = "object-center"
+}: {
+    founder: (typeof founders)[0];
+    objectPosition?: string;
+}) {
     return (
         <div
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            style={{
-                backgroundColor: "var(--bg-white)",
-                border: `1px solid var(--border)`,
-                borderTop: hovered ? "2px solid var(--gold)" : "1px solid var(--border)",
-                borderRadius: "12px",
-                overflow: "hidden",
-                padding: 0,
-                boxShadow: hovered
-                    ? "0 12px 40px rgba(26, 77, 58, 0.09)"
-                    : "none",
-                transform: hovered ? "translateY(-3px)" : "translateY(0)",
-                transition: "all 220ms ease",
-                display: "flex",
-                flexDirection: "column",
-            }}
+            className="border border-[#1A1A1A]/10 rounded-xl bg-white p-6 flex flex-col transition-all duration-200 hover:translate-y-[-2px] hover:shadow-lg h-full"
         >
-            {/* Photo block */}
-            {founder.photo ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                    src={founder.photo}
-                    alt={founder.name}
-                    style={{
-                        width: "100%",
-                        aspectRatio: "1 / 1",
-                        objectFit: "cover",
-                        objectPosition: "center",
-                        display: "block",
-                    }}
-                />
-            ) : (
-                <div
-                    style={{
-                        background: "var(--bg-cream-dark)",
-                        width: "100%",
-                        aspectRatio: "1 / 1",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        borderRadius: "12px 12px 0 0",
-                    }}
-                    aria-hidden="true"
-                >
-                    <span
-                        style={{
-                            fontFamily: "var(--font-cormorant), Georgia, serif",
-                            fontWeight: 700,
-                            fontSize: "3rem",
-                            color: "var(--gold)",
-                            letterSpacing: "-0.02em",
-                        }}
-                    >
-                        {founder.initials}
-                    </span>
-                </div>
-            )}
-
-            {/* Content block */}
-            <div style={{ padding: "28px 32px 32px", flex: 1, display: "flex", flexDirection: "column" }}>
-                {/* Name */}
-                <h3
-                    style={{
-                        fontFamily: "var(--font-cormorant), Georgia, serif",
-                        fontWeight: 600,
-                        fontSize: "1.625rem",
-                        color: "var(--green-primary)",
-                        letterSpacing: "-0.01em",
-                        marginBottom: "4px",
-                    }}
-                >
-                    {founder.name}
-                </h3>
-
-                {/* Role */}
-                <p
-                    style={{
-                        fontFamily: "var(--font-inter), system-ui, sans-serif",
-                        fontWeight: 500,
-                        fontSize: "0.6875rem",
-                        letterSpacing: "0.12em",
-                        textTransform: "uppercase",
-                        color: "var(--text-micro)",
-                        marginBottom: "20px",
-                    }}
-                >
-                    {founder.role}
-                </p>
-
-                {/* Thin divider */}
-                <div
-                    style={{
-                        height: "1px",
-                        backgroundColor: "var(--border)",
-                        marginBottom: "20px",
-                    }}
-                    aria-hidden="true"
-                />
-
-                {/* Result bullets */}
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, flex: 1 }}>
-                    {founder.bullets.map((bullet, i) => (
-                        <li
-                            key={i}
-                            style={{
-                                display: "flex",
-                                gap: "10px",
-                                marginBottom: i < founder.bullets.length - 1 ? "10px" : 0,
-                                alignItems: "flex-start",
-                            }}
-                        >
-                            <Sprout
-                                style={{
-                                    width: "14px",
-                                    height: "14px",
-                                    color: "var(--gold)",
-                                    flexShrink: 0,
-                                    marginTop: "3px",
-                                }}
-                                strokeWidth={1.75}
-                                aria-hidden="true"
-                            />
-                            <span
-                                style={{
-                                    fontFamily: "var(--font-inter), system-ui, sans-serif",
-                                    fontWeight: 400,
-                                    fontSize: "0.875rem",
-                                    color: "var(--text-body)",
-                                    lineHeight: 1.6,
-                                }}
-                            >
-                                {bullet}
-                            </span>
-                        </li>
-                    ))}
-                </ul>
-
-                {/* Bottom row: stat + social */}
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        marginTop: "24px",
-                        paddingTop: "20px",
-                        borderTop: "1px solid var(--border)",
-                        flexWrap: "wrap",
-                        gap: "12px",
-                    }}
-                >
-                    <span
-                        style={{
-                            fontFamily: "var(--font-inter), system-ui, sans-serif",
-                            fontWeight: 500,
-                            fontSize: "0.6875rem",
-                            letterSpacing: "0.12em",
-                            textTransform: "uppercase",
-                            color: "var(--text-micro)",
-                        }}
-                    >
-                        {founder.stat}
-                    </span>
-
-                    {/* Social icons */}
-                    <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-                        {founder.linkedin && (
-                            <a
-                                href={founder.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`${founder.name} on LinkedIn`}
-                                style={{ color: "var(--text-muted)", transition: "color 150ms ease" }}
-                                onMouseEnter={(e) =>
-                                    (e.currentTarget.style.color = "var(--gold)")
-                                }
-                                onMouseLeave={(e) =>
-                                    (e.currentTarget.style.color = "var(--text-muted)")
-                                }
-                            >
-                                <Linkedin style={{ width: "18px", height: "18px" }} />
-                            </a>
-                        )}
-                        {founder.twitter && (
-                            <a
-                                href={founder.twitter}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`${founder.name} on X`}
-                                style={{ color: "var(--text-muted)", transition: "color 150ms ease" }}
-                                onMouseEnter={(e) =>
-                                    (e.currentTarget.style.color = "var(--gold)")
-                                }
-                                onMouseLeave={(e) =>
-                                    (e.currentTarget.style.color = "var(--text-muted)")
-                                }
-                            >
-                                <Twitter style={{ width: "18px", height: "18px" }} />
-                            </a>
-                        )}
+            {/* Image container */}
+            <div className="relative w-full h-[320px] overflow-hidden rounded-lg mb-6">
+                {founder.photo ? (
+                    <Image
+                        src={founder.photo}
+                        alt={founder.name}
+                        fill
+                        className={`object-cover ${objectPosition}`}
+                    />
+                ) : (
+                    <div className="absolute inset-0 bg-bg-cream-dark flex items-center justify-center">
+                        <span className="font-serif font-bold text-5xl text-gold">
+                            {founder.initials}
+                        </span>
                     </div>
+                )}
+            </div>
+
+            {/* Name & Title */}
+            <h3 className="font-serif font-black text-2xl text-[#0B422A]">
+                {founder.name}
+            </h3>
+            <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#121212]/50 mt-1">
+                {founder.role}
+            </p>
+
+            {/* Divider */}
+            <hr className="border-[#1A1A1A]/10 my-4" />
+
+            {/* Bullet points */}
+            <div className="flex-1 space-y-3">
+                {founder.bullets.map((bullet, i) => (
+                    <div key={i} className="flex gap-3 items-start">
+                        <div className="w-1.5 h-1.5 bg-[#D9B75B] mt-1.5 shrink-0 rounded-sm" />
+                        <span className="font-sans text-sm text-[#121212]/70 leading-snug">
+                            {bullet}
+                        </span>
+                    </div>
+                ))}
+            </div>
+
+            {/* Card Footer */}
+            <div className="flex justify-between items-center mt-6 pt-4 border-t border-[#1A1A1A]/10">
+                <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-[#121212]/40">
+                    {founder.stat}
+                </span>
+                <div className="flex items-center gap-3">
+                    {founder.linkedin && (
+                        <a
+                            href={founder.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#0B422A] hover:text-gold transition-colors"
+                            aria-label={`${founder.name} LinkedIn`}
+                        >
+                            <Linkedin size={16} />
+                        </a>
+                    )}
+                    {founder.twitter && (
+                        <a
+                            href={founder.twitter}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#0B422A] hover:text-gold transition-colors"
+                            aria-label={`${founder.name} Twitter`}
+                        >
+                            <Twitter size={16} />
+                        </a>
+                    )}
+                    {founder.instagram && (
+                        <a
+                            href={founder.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#0B422A] hover:text-gold transition-colors"
+                            aria-label={`${founder.name} Instagram`}
+                        >
+                            <Instagram size={16} />
+                        </a>
+                    )}
                 </div>
             </div>
         </div>
@@ -251,65 +138,32 @@ function FounderCard({ founder }: { founder: (typeof founders)[0] }) {
 export default function Team() {
     return (
         <section className="section-pad section-canvas" id="team">
-            <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+            <div className="max-w-[1100px] mx-auto px-6">
                 {/* Header */}
                 <BlurFade delay={0.1} inView>
-                    <span
-                        style={{
-                            fontFamily: "var(--font-inter), system-ui, sans-serif",
-                            fontSize: "0.6875rem",
-                            fontWeight: 500,
-                            letterSpacing: "0.14em",
-                            textTransform: "uppercase",
-                            color: "var(--text-micro)",
-                            display: "block",
-                            marginBottom: "16px",
-                        }}
-                    >
-                        The People
-                    </span>
+                    <span className="micro-label">The People</span>
                 </BlurFade>
 
                 <BlurFade delay={0.2} inView>
-                    <h2
-                        style={{
-                            fontFamily: "var(--font-cormorant), Georgia, serif",
-                            fontSize: "clamp(2rem, 4vw, 3rem)",
-                            fontWeight: 700,
-                            color: "var(--text-dark)",
-                            letterSpacing: "-0.02em",
-                            lineHeight: 1.1,
-                            marginBottom: "16px",
-                        }}
-                    >
+                    <h2 className="font-serif font-black text-4xl md:text-5xl lg:text-6xl text-text-dark tracking-[-0.02em] leading-[1.1] mb-4">
                         The people behind every deadline met.
                     </h2>
                 </BlurFade>
 
                 <BlurFade delay={0.3} inView>
-                    <p
-                        style={{
-                            fontFamily: "var(--font-inter), system-ui, sans-serif",
-                            fontWeight: 400,
-                            fontSize: "1rem",
-                            color: "var(--text-muted)",
-                            lineHeight: 1.7,
-                            maxWidth: "600px",
-                            marginBottom: "56px",
-                        }}
-                    >
+                    <p className="font-sans text-lg text-text-muted leading-relaxed max-w-2xl mb-14">
                         Every project we take on is held to the same standard we hold our own products. If we wouldn&apos;t ship it, we won&apos;t hand it to you.
                     </p>
                 </BlurFade>
 
                 {/* Cards grid */}
-                <div
-                    style={{ display: "grid", gap: "32px" }}
-                    className="grid-cols-1 md:grid-cols-2"
-                >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                     {founders.map((founder, i) => (
                         <BlurFade key={i} delay={0.2 + i * 0.1} inView>
-                            <FounderCard founder={founder} />
+                            <FounderCard
+                                founder={founder}
+                                objectPosition={founder.name === "Pranamya Jain" ? "object-top" : "object-[center_20%]"}
+                            />
                         </BlurFade>
                     ))}
                 </div>

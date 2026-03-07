@@ -7,23 +7,23 @@
    ========================================================= */
 :root {
   /* Backgrounds */
-  --bg-cream: #F5F0E8;
-  --bg-cream-dark: #EDE7D9;
-  --bg-white: #FDFCFA;
+  --bg-cream: #FDFCF0;
+  --bg-cream-dark: #F0EFE6;
+  --bg-white: #FFFFFF;
   --bg-green-tint: #EBF2EE;
 
   /* Brand Colors */
-  --green-primary: #1A4D3A;
+  --green-primary: #0B422A;
   --green-mid: #2D6E54;
   --green-light: #4A8C6F;
-  --gold: #C9A044;
+  --gold: #D9B75B;
   --gold-dark: #A67F2E;
   --gold-hover: #B8902F;
   --gold-tint: #F5EDD6;
 
   /* Text */
-  --text-dark: #0F2D22;
-  --text-body: #2A3D35;
+  --text-dark: #121212;
+  --text-body: #121212;
   --text-muted: #6B7E76;
   --text-micro: #9AA89F;
 

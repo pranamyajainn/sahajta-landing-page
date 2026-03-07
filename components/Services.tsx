@@ -8,21 +8,21 @@ import { BlurFade } from "@/components/ui/blur-fade";
 const services = [
     {
         Icon: Brain,
-        title: "We Build AI Products",
-        body: "From concept to deployed product. We design, architect, and ship AI systems built for real-world use — not just demos. vibe2real.codes is our proof.",
+        title: "MVP Engineering",
+        body: "From zero to live product with full auth, db, and AI core. We do not build prototypes. We ship products ready for real users.",
         cta: "Work with us on your AI product →",
     },
     {
         Icon: Lightbulb,
-        title: "We Help You Use AI",
-        body: "If you know AI belongs in your business but don't know where to start — we do. We map the opportunity, design the system, and help you implement without the jargon.",
-        cta: "Book a free discovery call →",
+        title: "AI Feature Integration",
+        body: "Dropping intelligence into an existing Next.js monolith safely. We map the opportunity, design the system, and implement seamlessly.",
+        cta: "Discuss AI integration →",
     },
     {
         Icon: Globe,
-        title: "We Build Your Web Presence",
-        body: "Landing pages, websites, and digital presences that are clean, on-brand, and designed to convert. We build for impact, not just aesthetics.",
-        cta: "Get a web presence that converts →",
+        title: "Performance Hardening",
+        body: "Bringing P99 latency down, edge caching, and scalable state. We build for impact, performance, and elite engineering standards.",
+        cta: "Get a performance audit →",
     },
 ];
 

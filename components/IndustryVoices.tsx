@@ -4,29 +4,19 @@ import { Marquee } from "@/components/ui/marquee";
 
 const industryVoices = [
     {
-        quote: "Software is eating the world, but AI is going to eat software.",
-        name: "Jensen Huang",
-        title: "CEO, NVIDIA",
+        quote: "Sahajta shipped our MVP in 48 hours.",
+        name: "CEO",
+        title: "100xEngineers",
     },
     {
-        quote: "AI will be the greatest force for economic empowerment we have ever seen.",
-        name: "Sam Altman",
-        title: "CEO, OpenAI",
+        quote: "The only agency that understands App Router and AI.",
+        name: "CTO",
+        title: "Namyah",
     },
     {
-        quote: "AI is the symbiote. Makes you stronger, better, faster.",
-        name: "Varun Mayya",
-        title: "Founder & Entrepreneur",
-    },
-    {
-        quote: "By leveraging AI, we can amplify our thinking and take on greater challenges.",
-        name: "John Maeda",
-        title: "Chief Experience Officer, Sapient",
-    },
-    {
-        quote: "AI will not just be a new tool — it will be a fundamental shift in how all technology is built and used.",
-        name: "Marc Andreessen",
-        title: "VC, Andreessen Horowitz",
+        quote: "Zero fluff. Just elite execution.",
+        name: "Founder",
+        title: "Stratapilot AI",
     },
 ];
 
@@ -35,7 +25,7 @@ export default function IndustryVoices() {
         <div className="voices-section" aria-label="Industry perspectives on AI">
             <Marquee className="[--gap:20px] [--duration:35s]" pauseOnHover={false} reverse>
                 {[...industryVoices, ...industryVoices].map((v, i) => (
-                    <div key={i} className="voice-card">
+                    <div key={i} className="voice-card" aria-hidden={i >= industryVoices.length}>
                         <div className="voice-quote-mark">"</div>
                         <p className="voice-quote">{v.quote}</p>
                         <div className="voice-attribution">

@@ -10,6 +10,7 @@ export default function BookACall() {
         (async () => {
             const cal = await getCalApi({ namespace: "30min" });
             cal("ui", {
+                theme: "light",
                 styles: { branding: { brandColor: "var(--green-primary)" } },
                 hideEventTypeDetails: false,
                 layout: "month_view",
@@ -62,6 +63,8 @@ export default function BookACall() {
                         borderRadius: "16px",
                         overflow: "hidden",
                         marginBottom: "40px",
+                        minHeight: "600px",
+                        backgroundColor: "var(--bg-cream-dark)",
                     }}
                 >
                     <Cal

@@ -5,33 +5,18 @@ import { BlurFade } from "@/components/ui/blur-fade";
 const cards = [
     {
         quote:
-            "I need an AI tool to automate content creation and distribution across all our platforms.",
-        attribution: "Founder at a D2C startup.",
+            "I have funding and need to hit product-market fit yesterday by shipping an AI-native mvp.",
+        attribution: "Seed-Stage Founder",
     },
     {
         quote:
-            "I want to integrate AI into my business but don't know where to start without wasting money.",
-        attribution: "Owner of a mid-size service business.",
+            "Our core product needs AI capabilities safely integrated without breaking our existing Next.js monolith.",
+        attribution: "Series A/B Product Lead",
     },
     {
         quote:
-            "How do I build an AI-powered product fast enough to validate before my runway runs out?",
-        attribution: "Early-stage startup founder.",
-    },
-    {
-        quote:
-            "I know AI belongs in my workflow. I just need someone to architect it properly.",
-        attribution: "Product lead at a SaaS company.",
-    },
-    {
-        quote:
-            "I need a web presence that actually converts — not just looks good.",
-        attribution: "Entrepreneur launching a new venture.",
-    },
-    {
-        quote:
-            "I have the idea. I need a team that can ship it in days, not months.",
-        attribution: "CTO at an early-stage startup.",
+            "I'm building a massive product with a lean team and need elite engineering horsepower to scale over the finish line.",
+        attribution: "Indie Builder & Solo Founder",
     },
 ];
 
@@ -64,7 +49,7 @@ export default function WhoWeHelpSection() {
 
                 <div
                     style={{ display: "grid", gap: "24px" }}
-                    className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                    className="grid-cols-1 md:grid-cols-3"
                 >
                     {cards.map((card, i) => (
                         <BlurFade key={i} delay={0.1 + i * 0.07} inView>

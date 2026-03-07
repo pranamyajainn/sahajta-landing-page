@@ -33,16 +33,16 @@ export default function UrgencyBanner() {
                         color: "var(--text-body)",
                     }}
                 >
-                    Only{" "}
+                    We partner with {" "}
                     <strong
                         style={{
                             color: "var(--green-primary)",
                             fontWeight: 700,
                         }}
                     >
-                        4 discovery calls
+                        max 3 clients per quarter
                     </strong>{" "}
-                    remaining this week.
+                    to ensure elite engineering standards.
                 </p>
 
                 {/* CTA group */}

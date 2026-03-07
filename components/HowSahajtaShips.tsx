@@ -5,23 +5,23 @@ import { BlurFade } from "@/components/ui/blur-fade";
 const steps = [
     {
         num: "01",
-        title: "Vibe",
-        description: "You share the idea. We ask the right questions.",
+        title: "Discovery",
+        description: "Zero BS architecture review and sync.",
     },
     {
         num: "02",
-        title: "Scope",
-        description: "We map exactly what gets built and what doesn\u2019t.",
+        title: "The SLA",
+        description: "24–48 hours to live product environment.",
     },
     {
         num: "03",
-        title: "Build",
-        description: "We ship. You watch it go live.",
+        title: "Implementation",
+        description: "SSR-first, fully typed brutalist delivery.",
     },
     {
         num: "04",
-        title: "Iterate",
-        description: "Real feedback. Real improvements. Real fast.",
+        title: "Handover",
+        description: "You own the code.",
     },
 ];
 
