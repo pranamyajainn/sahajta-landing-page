@@ -1,98 +1,94 @@
 import React from "react";
 
-export const RagSearchIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <rect x="3" y="2" width="13" height="16" rx="1.5" />
-        <line x1="6" y1="7" x2="13" y2="7" />
-        <line x1="6" y1="10" x2="13" y2="10" />
-        <line x1="6" y1="13" x2="10" y2="13" />
-        <circle cx="17" cy="17" r="3.5" />
-        <line x1="19.5" y1="19.5" x2="22" y2="22" />
+// Shared primitive for the 4-point star "sparkle" seen in all icons.
+const Sparkle = () => (
+    <path
+        d="M12 2 L13.5 10.5 L22 12 L13.5 13.5 L12 22 L10.5 13.5 L2 12 L10.5 10.5 Z"
+        fill="currentColor"
+        stroke="none"
+        transform="scale(0.5) translate(4, 4)"
+    />
+);
+
+export const ImageGenIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <rect x="6" y="8" width="20" height="16" rx="1.5" />
+        <path d="M6 18 L12 12 L18 18 L20 16 L26 22" />
+        <Sparkle />
     </svg>
 );
 
-export const VoiceAgentsIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <rect x="9" y="2" width="6" height="11" rx="3" />
-        <path d="M5 11 A7 7 0 0 0 19 11" />
-        <line x1="12" y1="18" x2="12" y2="22" />
-        <line x1="8" y1="22" x2="16" y2="22" />
-        <path d="M3 9 A3 3 0 0 0 3 15" />
-        <path d="M21 9 A3 3 0 0 0 21 15" />
+export const VoiceAssistantsIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M12 18 A5 5 0 0 1 20 18" />
+        <path d="M8 24 A9 9 0 0 1 24 24" />
+        <path d="M25 8 A4 4 0 0 1 25 16" />
+        <path d="M28 5 A8 8 0 0 1 28 19" />
+        <circle cx="16" cy="12" r="3" stroke="none" />
+        <g transform="translate(4, -2)"><Sparkle /></g>
     </svg>
 );
 
-export const WorkflowIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <circle cx="12" cy="3" r="2" />
-        <circle cx="4" cy="19" r="2" />
-        <circle cx="20" cy="19" r="2" />
-        <line x1="10.5" y1="4.5" x2="5.5" y2="17.5" />
-        <line x1="13.5" y1="4.5" x2="18.5" y2="17.5" />
-        <polyline points="4,15 4,19 8,19" />
-        <polyline points="16,19 20,19 20,15" />
+export const WorkflowAutomationIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <rect x="12" y="8" width="8" height="5" rx="1" />
+        <rect x="12" y="19" width="8" height="5" rx="1" />
+        <path d="M8 10 h4" />
+        <path d="M20 10 h4 v7 h-4" />
+        <path d="M8 21 h4" />
+        <path d="M8 10 v11" />
+        <g transform="translate(-2, 0)"><Sparkle /></g>
     </svg>
 );
 
-export const VideoGenIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <polygon points="10,9 10,15 16,12" />
-        <line x1="2" y1="8" x2="6" y2="8" />
-        <line x1="18" y1="8" x2="22" y2="8" />
-        <line x1="2" y1="16" x2="6" y2="16" />
-        <line x1="18" y1="16" x2="22" y2="16" />
+export const VideoGenIcon2 = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <rect x="4" y="6" width="24" height="20" rx="1" />
+        <line x1="8" y1="6" x2="8" y2="26" />
+        <line x1="24" y1="6" x2="24" y2="26" />
+        <line x1="4" y1="11" x2="8" y2="11" />
+        <line x1="4" y1="16" x2="8" y2="16" />
+        <line x1="4" y1="21" x2="8" y2="21" />
+        <line x1="24" y1="11" x2="28" y2="11" />
+        <line x1="24" y1="16" x2="28" y2="16" />
+        <line x1="24" y1="21" x2="28" y2="21" />
+        <g transform="translate(6, 6)"><Sparkle /></g>
     </svg>
 );
 
 export const ContextualAgentsIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <circle cx="12" cy="8" r="5" />
-        <line x1="9" y1="4" x2="7" y2="2" />
-        <circle cx="7" cy="2" r="1" />
-        <line x1="15" y1="4" x2="17" y2="2" />
-        <circle cx="17" cy="2" r="1" />
-        <rect x="7" y="13" width="10" height="7" rx="2" />
-        <line x1="7" y1="15" x2="3" y2="15" />
-        <line x1="17" y1="15" x2="21" y2="15" />
-        <circle cx="10" cy="8" r="1" fill="currentColor" stroke="none" />
-        <circle cx="14" cy="8" r="1" fill="currentColor" stroke="none" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M16 4 C10 4 6 8 6 14 C6 18 8 20 8 23 C8 24 10 26 12 26 L12 22 C14 22 15 21 16 20 C19 20 22 17 22 14 C22 8 19 4 16 4 Z" />
+        <path d="M22 14 C24 14 25 15 25 17 C25 18 24 19 22 19" />
+        <g transform="translate(4, 4)"><Sparkle /></g>
     </svg>
 );
 
-export const AnalyticsIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <rect x="3" y="16" width="4" height="5" />
-        <rect x="10" y="11" width="4" height="10" />
-        <rect x="17" y="6" width="4" height="15" />
-        <polyline points="5,14 12,9 19,4" />
-        <circle cx="19" cy="4" r="1.5" fill="currentColor" stroke="none" />
-        <line x1="2" y1="21" x2="22" y2="21" />
+export const RealtimeAgentsIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <path d="M6 16 A 10 10 0 1 1 26 16 A 10 10 0 0 1 12 25.8 L8 28 L8 24.5 A 10 10 0 0 1 6 16 Z" />
+        <line x1="12" y1="12" x2="12" y2="20" />
+        <line x1="16" y1="10" x2="16" y2="22" />
+        <line x1="20" y1="14" x2="20" y2="18" />
+        <g transform="translate(10, -4) scale(0.8)"><Sparkle /></g>
     </svg>
 );
 
 export const InternalToolsIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <rect x="2" y="14" width="12" height="4" rx="2" transform="rotate(-45 8 16)" />
-        <path d="M14 4 A4 4 0 0 1 20 10" />
-        <path d="M20 10 L17 13 L14 10 L17 7 Z" />
-        <circle cx="17" cy="17" r="4" />
-        <circle cx="17" cy="17" r="1.5" />
-        <rect x="16" y="11" width="2" height="2" />
-        <rect x="16" y="21" width="2" height="2" />
-        <rect x="11" y="16" width="2" height="2" />
-        <rect x="21" y="16" width="2" height="2" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <rect x="4" y="8" width="24" height="16" rx="1" />
+        <line x1="4" y1="12" x2="28" y2="12" />
+        <rect x="18" y="18" width="2" height="6" />
+        <rect x="22" y="14" width="2" height="10" />
+        <rect x="14" y="21" width="2" height="3" />
+        <g transform="translate(0, 4) scale(0.8)"><Sparkle /></g>
     </svg>
 );
 
-export const ContentPipelinesIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <rect x="4" y="3" width="16" height="4" rx="1" />
-        <rect x="4" y="10" width="16" height="4" rx="1" />
-        <rect x="4" y="17" width="16" height="4" rx="1" />
-        <line x1="12" y1="7" x2="12" y2="10" />
-        <polyline points="10,9 12,11 14,9" />
-        <line x1="12" y1="14" x2="12" y2="17" />
-        <polyline points="10,16 12,18 14,16" />
+export const ContentCreationIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+        <rect x="10" y="4" width="12" height="24" rx="2" />
+        <line x1="14" y1="24" x2="18" y2="24" />
+        <g transform="translate(-2, 10)"><Sparkle /></g>
     </svg>
 );

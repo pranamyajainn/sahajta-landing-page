@@ -1,26 +1,26 @@
 "use client";
 
 import {
-    RagSearchIcon,
-    VoiceAgentsIcon,
-    WorkflowIcon,
-    VideoGenIcon,
+    ImageGenIcon,
+    VoiceAssistantsIcon,
+    WorkflowAutomationIcon,
+    VideoGenIcon2,
     ContextualAgentsIcon,
-    AnalyticsIcon,
+    RealtimeAgentsIcon,
     InternalToolsIcon,
-    ContentPipelinesIcon
+    ContentCreationIcon
 } from "@/components/icons/RealityIcons";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const capabilities = [
-    { icon: RagSearchIcon, label: "RAG & Search" },
-    { icon: VoiceAgentsIcon, label: "Voice Agents" },
-    { icon: WorkflowIcon, label: "Workflow Automation" },
-    { icon: VideoGenIcon, label: "Video Generation" },
-    { icon: ContextualAgentsIcon, label: "Contextual Agents" },
-    { icon: AnalyticsIcon, label: "Realtime Analytics" },
-    { icon: InternalToolsIcon, label: "Internal Tools" },
-    { icon: ContentPipelinesIcon, label: "Content Pipelines" },
+    { icon: ImageGenIcon, label: "Image\nGeneration" },
+    { icon: VoiceAssistantsIcon, label: "Voice\nAssistants" },
+    { icon: WorkflowAutomationIcon, label: "Workflow\nAutomation" },
+    { icon: VideoGenIcon2, label: "Video\nGeneration" },
+    { icon: ContextualAgentsIcon, label: "Contextual\nAgents" },
+    { icon: RealtimeAgentsIcon, label: "Realtime\nAgents" },
+    { icon: InternalToolsIcon, label: "Internal\nTools" },
+    { icon: ContentCreationIcon, label: "Content\nCreation" },
 ];
 
 export default function Reality() {
@@ -51,14 +51,20 @@ export default function Reality() {
                 </div>
 
                 {/* Capability Grid */}
-                <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
                     {capabilities.map((item, index) => (
                         <BlurFade key={index} delay={0.1 + index * 0.05} inView>
-                            <div className="border border-[#121212]/10 rounded-xl p-6 bg-white/50 flex flex-row items-center gap-4 hover:border-[#0B422A]/30 hover:shadow-sm transition-all duration-200 group">
-                                <div className="p-3 rounded-xl bg-[#0B422A]/10 flex items-center justify-center shrink-0 group-hover:bg-[#0B422A]/20 transition-colors">
-                                    <item.icon className="w-7 h-7 text-[#0B422A]" />
+                            <div className="relative p-6 bg-[#EFEFEF]/50 flex flex-row items-center gap-4 transition-all duration-200 group border border-transparent hover:bg-[#EFEFEF]/80 min-h-[96px]">
+                                {/* 4 Corner Accent Markers */}
+                                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#FF5A36]"></div>
+                                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#FF5A36]"></div>
+                                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#FF5A36]"></div>
+                                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#FF5A36]"></div>
+
+                                <div className="flex items-center justify-center shrink-0">
+                                    <item.icon className="w-10 h-10 text-[#FF5A36] group-hover:scale-105 transition-transform duration-300" />
                                 </div>
-                                <span className="font-sans font-semibold text-sm text-[#121212] leading-snug">
+                                <span className="font-sans font-medium text-[15px] text-[#555] leading-tight whitespace-pre-line">
                                     {item.label}
                                 </span>
                             </div>
