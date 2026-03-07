@@ -60,9 +60,10 @@ export const VideoGenIcon2 = (props: React.SVGProps<SVGSVGElement>) => (
 
 export const ContextualAgentsIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        {/* Curving Human Profile Outline */}
-        <path d="M 12 28 C 12 28 12 26 14 25 C 16 24 17 22 17 20 C 17 19 19 20 20 21 C 21 22 22 21 21 19 C 20 17 19 16.5 20 16 C 21 15.5 22 15 22 14 C 22 8 19 4 15 4 C 10 4 6 8 6 15 C 6 22 9 26 12 28 Z" />
-        <g transform="scale(0.5) translate(8, 12)"><Sparkle /></g>
+        {/* Right-Facing Human Profile Silhouette */}
+        <path d="M 12 28 C 12 28 10 26 10 23 C 10 18 6 18 6 12 C 6 6 10 2 16 2 C 22 2 26 6 26 12 C 26 13 25 14 24 14.5 C 26 15.5 27 16 27 17 C 27 18 26 19 25 19 C 25 21 26 23 26 24 C 26 25 24 26 22 26 C 22 26 20 28 20 28" />
+        {/* Right-Facing Sparkle Overlay */}
+        <g transform="scale(0.8) translate(8, 6)"><Sparkle /></g>
     </svg>
 );
 
