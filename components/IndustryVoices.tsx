@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Marquee } from "@/components/ui/marquee";
 
 const leaderImages = [
@@ -13,16 +12,13 @@ const leaderImages = [
 export default function IndustryVoices() {
     return (
         <div className="voices-section py-8" aria-label="Industry perspectives on AI">
-            <Marquee className="[--gap:24px] [--duration:40s]" pauseOnHover={false} reverse>
+            <Marquee className="[--gap:0px] [--duration:40s]" pauseOnHover={false} reverse>
                 {[...leaderImages, ...leaderImages].map((imgSrc, i) => (
-                    <div key={i} className="flex-shrink-0" aria-hidden={i >= leaderImages.length}>
-                        <Image
+                    <div key={i} className="flex-shrink-0 border-r border-[#121212]/10" aria-hidden={i >= leaderImages.length}>
+                        <img
                             src={imgSrc}
                             alt={`Leader Testimonial ${i + 1}`}
-                            width={340} // Approximate dimensions based on standard tweet card structure
-                            height={180}
-                            className="rounded-xl border border-black/10 shadow-sm object-contain h-auto"
-                            unoptimized // Use unoptimized if there are weird NextImage caching issues on these raw screenshots
+                            className="h-[280px] md:h-[320px] w-auto object-contain bg-white"
                         />
                     </div>
                 ))}
