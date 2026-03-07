@@ -1,26 +1,26 @@
 "use client";
 
 import {
-    Image as ImageIcon,
-    Mic,
-    Workflow,
-    Video,
-    Bot,
-    BarChart2,
-    Wrench,
-    FileText
-} from "lucide-react";
+    RagSearchIcon,
+    VoiceAgentsIcon,
+    WorkflowIcon,
+    VideoGenIcon,
+    ContextualAgentsIcon,
+    AnalyticsIcon,
+    InternalToolsIcon,
+    ContentPipelinesIcon
+} from "@/components/icons/RealityIcons";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const capabilities = [
-    { icon: ImageIcon, label: "RAG & Search" },
-    { icon: Mic, label: "Voice Agents" },
-    { icon: Workflow, label: "Workflow Automation" },
-    { icon: Video, label: "Video Generation" },
-    { icon: Bot, label: "Contextual Agents" },
-    { icon: BarChart2, label: "Realtime Analytics" },
-    { icon: Wrench, label: "Internal Tools" },
-    { icon: FileText, label: "Content Pipelines" },
+    { icon: RagSearchIcon, label: "RAG & Search" },
+    { icon: VoiceAgentsIcon, label: "Voice Agents" },
+    { icon: WorkflowIcon, label: "Workflow Automation" },
+    { icon: VideoGenIcon, label: "Video Generation" },
+    { icon: ContextualAgentsIcon, label: "Contextual Agents" },
+    { icon: AnalyticsIcon, label: "Realtime Analytics" },
+    { icon: InternalToolsIcon, label: "Internal Tools" },
+    { icon: ContentPipelinesIcon, label: "Content Pipelines" },
 ];
 
 export default function Reality() {
@@ -55,8 +55,8 @@ export default function Reality() {
                     {capabilities.map((item, index) => (
                         <BlurFade key={index} delay={0.1 + index * 0.05} inView>
                             <div className="border border-[#121212]/10 rounded-xl p-6 bg-white/50 flex flex-row items-center gap-4 hover:border-[#0B422A]/30 hover:shadow-sm transition-all duration-200 group">
-                                <div className="w-10 h-10 rounded-lg bg-[#0B422A]/10 flex items-center justify-center shrink-0 group-hover:bg-[#0B422A]/20 transition-colors">
-                                    <item.icon size={20} className="text-[#0B422A]" />
+                                <div className="p-3 rounded-xl bg-[#0B422A]/10 flex items-center justify-center shrink-0 group-hover:bg-[#0B422A]/20 transition-colors">
+                                    <item.icon className="w-7 h-7 text-[#0B422A]" />
                                 </div>
                                 <span className="font-sans font-semibold text-sm text-[#121212] leading-snug">
                                     {item.label}
