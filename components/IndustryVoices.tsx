@@ -1,37 +1,29 @@
 "use client";
 
+import Image from "next/image";
 import { Marquee } from "@/components/ui/marquee";
 
-const industryVoices = [
-    {
-        quote: "Sahajta shipped our MVP in 48 hours.",
-        name: "CEO",
-        title: "100xEngineers",
-    },
-    {
-        quote: "The only agency that understands App Router and AI.",
-        name: "CTO",
-        title: "Namyah",
-    },
-    {
-        quote: "Zero fluff. Just elite execution.",
-        name: "Founder",
-        title: "Stratapilot AI",
-    },
+const leaderImages = [
+    "/images/leaders-say/Screenshot 2026-03-07 at 23.31.20.png",
+    "/images/leaders-say/Screenshot 2026-03-07 at 23.31.34.png",
+    "/images/leaders-say/Screenshot 2026-03-07 at 23.31.56.png",
+    "/images/leaders-say/Screenshot 2026-03-07 at 23.32.16.png",
 ];
 
 export default function IndustryVoices() {
     return (
-        <div className="voices-section" aria-label="Industry perspectives on AI">
-            <Marquee className="[--gap:20px] [--duration:35s]" pauseOnHover={false} reverse>
-                {[...industryVoices, ...industryVoices].map((v, i) => (
-                    <div key={i} className="voice-card" aria-hidden={i >= industryVoices.length}>
-                        <div className="voice-quote-mark">"</div>
-                        <p className="voice-quote">{v.quote}</p>
-                        <div className="voice-attribution">
-                            <span className="voice-name">{v.name}</span>
-                            <span className="voice-title">{v.title}</span>
-                        </div>
+        <div className="voices-section py-8" aria-label="Industry perspectives on AI">
+            <Marquee className="[--gap:24px] [--duration:40s]" pauseOnHover={false} reverse>
+                {[...leaderImages, ...leaderImages].map((imgSrc, i) => (
+                    <div key={i} className="flex-shrink-0" aria-hidden={i >= leaderImages.length}>
+                        <Image
+                            src={imgSrc}
+                            alt={`Leader Testimonial ${i + 1}`}
+                            width={340} // Approximate dimensions based on standard tweet card structure
+                            height={180}
+                            className="rounded-xl border border-black/10 shadow-sm object-contain h-auto"
+                            unoptimized // Use unoptimized if there are weird NextImage caching issues on these raw screenshots
+                        />
                     </div>
                 ))}
             </Marquee>
