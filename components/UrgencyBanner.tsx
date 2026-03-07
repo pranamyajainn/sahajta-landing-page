@@ -92,7 +92,7 @@ export default function UrgencyBanner() {
                     </span>
 
                     <a
-                        href="mailto:hello@sahajta.ai"
+                        href="mailto:sahajta.ai@gmail.com"
                         style={{
                             fontFamily: "var(--font-inter)",
                             fontSize: "0.875rem",
@@ -107,7 +107,7 @@ export default function UrgencyBanner() {
                             (e.currentTarget.style.textDecoration = "none")
                         }
                     >
-                        Or email hello@sahajta.ai
+                        Or email sahajta.ai@gmail.com
                     </a>
                 </div>
             </div>

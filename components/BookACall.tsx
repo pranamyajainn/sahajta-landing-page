@@ -101,7 +101,7 @@ export default function BookACall() {
                             Prefer email?
                         </p>
                         <a
-                            href="mailto:hello@sahajta.ai"
+                            href="mailto:sahajta.ai@gmail.com"
                             style={{
                                 fontFamily: "var(--font-inter)",
                                 fontSize: "1rem",
@@ -117,7 +117,7 @@ export default function BookACall() {
                             }
                         >
                             {/* {{CONTACT_EMAIL}} */}
-                            hello@sahajta.ai
+                            sahajta.ai@gmail.com
                         </a>
                     </div>
 
