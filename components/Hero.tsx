@@ -9,7 +9,7 @@ import { BlurFade } from "@/components/ui/blur-fade";
 export default function Hero() {
     return (
         <section
-            className="relative flex flex-col pt-[calc(64px+48px)] pb-24 bg-bg-cream text-text-body px-4"
+            className="relative flex flex-col items-center pt-[calc(64px+48px)] pb-24 bg-bg-cream text-text-body px-4"
             aria-label="Hero"
         >
             <div className="w-full max-w-4xl flex flex-col items-center text-center">
