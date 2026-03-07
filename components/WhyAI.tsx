@@ -71,7 +71,7 @@ export default function WhyAI() {
                                 <div className="flex-1 flex items-center">
                                     <div className="w-full rounded-lg overflow-hidden mix-blend-multiply">
                                         <Image
-                                            src="/curve.avif"
+                                            src="/curve_green.avif"
                                             alt="AI Adoption Curve"
                                             width={400}
                                             height={200}
