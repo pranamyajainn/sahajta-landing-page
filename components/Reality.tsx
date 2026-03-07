@@ -56,13 +56,13 @@ export default function Reality() {
                         <BlurFade key={index} delay={0.1 + index * 0.05} inView>
                             <div className="relative p-6 bg-[#EFEFEF]/50 flex flex-row items-center gap-4 transition-all duration-200 group border border-transparent hover:bg-[#EFEFEF]/80 min-h-[96px]">
                                 {/* 4 Corner Accent Markers */}
-                                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#FF5A36]"></div>
-                                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#FF5A36]"></div>
-                                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#FF5A36]"></div>
-                                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#FF5A36]"></div>
+                                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#2D5016]"></div>
+                                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#2D5016]"></div>
+                                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#2D5016]"></div>
+                                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-[#2D5016]"></div>
 
                                 <div className="flex items-center justify-center shrink-0">
-                                    <item.icon className="w-10 h-10 text-[#FF5A36] group-hover:scale-105 transition-transform duration-300" />
+                                    <item.icon className="w-10 h-10 text-[#2D5016] group-hover:scale-105 transition-transform duration-300" />
                                 </div>
                                 <span className="font-sans font-medium text-[15px] text-[#555] leading-tight whitespace-pre-line">
                                     {item.label}
