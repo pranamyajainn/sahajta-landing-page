@@ -20,12 +20,14 @@ export const ImageGenIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export const VoiceAssistantsIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M12 18 A5 5 0 0 1 20 18" />
-        <path d="M8 24 A9 9 0 0 1 24 24" />
-        <path d="M25 8 A4 4 0 0 1 25 16" />
-        <path d="M28 5 A8 8 0 0 1 28 19" />
-        <circle cx="16" cy="12" r="3" stroke="none" />
-        <g transform="translate(4, -2)"><Sparkle /></g>
+        {/* Shoulders */}
+        <path d="M 6 26 A 8 8 0 0 1 22 26" />
+        {/* Head opening top-left */}
+        <path d="M 12 8 A 5 5 0 1 1 9 13" />
+        {/* Sound Waves */}
+        <path d="M 23 11 A 3 3 0 0 1 23 17" />
+        <path d="M 27 7 A 7 7 0 0 1 27 21" />
+        <g transform="scale(0.5) translate(4, 4)"><Sparkle /></g>
     </svg>
 );
 
@@ -58,9 +60,9 @@ export const VideoGenIcon2 = (props: React.SVGProps<SVGSVGElement>) => (
 
 export const ContextualAgentsIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M16 4 C10 4 6 8 6 14 C6 18 8 20 8 23 C8 24 10 26 12 26 L12 22 C14 22 15 21 16 20 C19 20 22 17 22 14 C22 8 19 4 16 4 Z" />
-        <path d="M22 14 C24 14 25 15 25 17 C25 18 24 19 22 19" />
-        <g transform="translate(4, 4)"><Sparkle /></g>
+        {/* Profile Outline */}
+        <path d="M 12 28 L 12 25 A 9 9 0 1 1 21 16 L 23 18 L 21 21 L 22 23 L 19 25 L 18 28 Z" />
+        <g transform="scale(0.5) translate(8, 12)"><Sparkle /></g>
     </svg>
 );
 
