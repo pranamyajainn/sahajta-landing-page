@@ -114,14 +114,18 @@ ${budget ? `Budget: ${budget}` : ''}
 Project: ${project}
         `.trim();
 
-        await transporter.sendMail({
-            from: `"Sahajta AI Website" <${process.env.GMAIL_USER}>`,
-            to: RECIPIENT_EMAILS.join(', '),
-            replyTo: email,
-            subject: `🚀 New Lead: ${name} — ${budget || 'No budget specified'}`,
-            text: textBody,
-            html: htmlBody,
-        });
+        await Promise.all(
+            RECIPIENT_EMAILS.map((recipient) =>
+                transporter.sendMail({
+                    from: `"Sahajta AI Website" <${process.env.GMAIL_USER}>`,
+                    to: recipient,
+                    replyTo: email,
+                    subject: `🚀 New Lead: ${name} — ${budget || 'No budget specified'}`,
+                    text: textBody,
+                    html: htmlBody,
+                })
+            )
+        );
 
         console.log('✅ Email sent successfully to all recipients');
 
