@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Cal, { getCalApi } from "@calcom/embed-react";
+import { useState } from "react";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const BUDGET_OPTIONS = [
@@ -31,17 +30,7 @@ export default function BookACall() {
     const [submitState, setSubmitState] = useState<SubmitState>("idle");
     const [errorMsg, setErrorMsg] = useState("");
 
-    useEffect(() => {
-        (async () => {
-            const cal = await getCalApi({ namespace: "30min" });
-            cal("ui", {
-                theme: "light",
-                styles: { branding: { brandColor: "var(--green-primary)" } },
-                hideEventTypeDetails: false,
-                layout: "month_view",
-            });
-        })();
-    }, []);
+
 
     const handleChange = (
         e: React.ChangeEvent<
@@ -104,9 +93,9 @@ export default function BookACall() {
                         >
                             20 minutes.
                             <br />
-                            No pitch.
+                            Start a conversation.
                             <br />
-                            Just clarity.
+                            We&apos;ll take it from there.
                         </h2>
                     </BlurFade>
                 </div>
@@ -121,8 +110,7 @@ export default function BookACall() {
                                     01 — TELL US ABOUT YOUR PROJECT
                                 </p>
                                 <p className="text-[#0B2818]/50 text-sm leading-relaxed">
-                                    Not ready to start? Fill this in. We&apos;ll
-                                    respond within 24 hours with a clear next
+                                    Tell us what you&apos;re building. We respond within 24 hours with a clear next
                                     step — no pitch, no proposal deck.
                                 </p>
                             </div>
@@ -263,19 +251,23 @@ export default function BookACall() {
                                 </p>
                             </div>
 
-                            {/* CAL.COM EMBED — preserved from original */}
-                            <div className="flex-1 min-h-[500px]">
-                                <Cal
-                                    namespace="30min"
-                                    calLink="pranamyajain/30min"
-                                    style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        minHeight: "500px",
-                                        overflow: "scroll",
-                                    }}
-                                    config={{ layout: "month_view" }}
-                                />
+                            {/* CAL.COM FALLBACK — direct link button */}
+                            <div className="flex-1 min-h-[400px] flex flex-col items-start justify-center gap-6">
+                                <p className="font-[var(--font-inter)] text-sm text-[#0B2818]/50 leading-relaxed">
+                                    Pick a slot that works for you. 20 minutes. We&apos;ll come prepared with questions about your project.
+                                </p>
+                                <a
+                                    href="https://cal.com/pranamyajain/30min"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-3 bg-[#0B2818] text-[#F5F0E8] px-8 py-4 rounded-none font-mono text-sm tracking-[0.12em] uppercase hover:bg-[#2D5016] transition-colors duration-200"
+                                >
+                                    View Available Slots
+                                    <span className="text-[#C9A84C]">→</span>
+                                </a>
+                                <p className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">
+                                    Opens Cal.com · 20 min · No pitch
+                                </p>
                             </div>
                         </div>
                     </div>

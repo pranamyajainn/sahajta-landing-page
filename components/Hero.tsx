@@ -15,7 +15,7 @@ export default function Hero() {
             <div className="w-full max-w-4xl flex flex-col items-center text-center">
                 {/* Badge */}
                 <BlurFade delay={0.1}>
-                    <div className="inline-flex items-center justify-center rounded-full border border-border-strong/30 px-4 py-1.5 mb-8 bg-gold-tint/50">
+                    <div className="inline-flex items-center justify-center rounded-none border border-border-strong/30 px-4 py-1.5 mb-8 bg-gold-tint/50">
                         <AnimatedShinyText className="text-sm font-mono font-bold uppercase tracking-wider text-green-primary flex items-center gap-2">
                             <Sprout className="w-4 h-4 text-gold" strokeWidth={2} />
                             Accepting 2 New Projects This Month

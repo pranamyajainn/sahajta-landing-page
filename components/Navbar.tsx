@@ -5,23 +5,32 @@ import Image from "next/image";
 
 const navLinks = [
     { label: "Work", href: "#ships" },
+    { label: "Services", href: "#services" },
     { label: "Process", href: "#process" },
-    { label: "Founders", href: "#team" },
+    { label: "Team", href: "#team" },
 ];
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+            setMenuOpen(false);
+        };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Lock body scroll when menu open
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
+    }, [menuOpen]);
+
     return (
         <div style={{ position: "sticky", top: 0, zIndex: 50, width: "100%", display: "flex", flexDirection: "column" }}>
-            {/* Announcement strip removed to focus on Hero badge */}
-
             <header
                 role="banner"
                 style={{
@@ -68,7 +77,7 @@ export default function Navbar() {
                         />
                     </a>
 
-                    {/* Desktop nav — with gold sprout divider */}
+                    {/* Desktop nav */}
                     <nav
                         aria-label="Main navigation"
                         className="hidden md:flex items-center"
@@ -117,16 +126,50 @@ export default function Navbar() {
                         </div>
                     </nav>
 
-                    {/* Gold CTA */}
+                    {/* Mobile burger button */}
+                    <button
+                        onClick={() => setMenuOpen(prev => !prev)}
+                        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                        className="md:hidden flex flex-col gap-1.5 p-2"
+                    >
+                        <span className={`block w-5 h-px bg-[#0B2818] transition-transform duration-200 ${menuOpen ? 'rotate-45 translate-y-[5px]' : ''}`} />
+                        <span className={`block w-5 h-px bg-[#0B2818] transition-opacity duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
+                        <span className={`block w-5 h-px bg-[#0B2818] transition-transform duration-200 ${menuOpen ? '-rotate-45 -translate-y-[5px]' : ''}`} />
+                    </button>
+
+                    {/* Gold CTA — desktop only */}
                     <a
                         href="#contact"
-                        className="btn-gold"
+                        className="btn-gold hidden md:inline-flex"
                         style={{ padding: "8px 18px", fontSize: "0.875rem" }}
                     >
                         Start a Project
                     </a>
                 </div>
             </header>
+
+            {/* Mobile menu overlay */}
+            {menuOpen && (
+                <div className="fixed inset-0 z-30 bg-[#F5F0E8] flex flex-col pt-24 px-8 gap-8 md:hidden">
+                    {navLinks.map((link, i) => (
+                        <a
+                            key={i}
+                            href={link.href}
+                            onClick={() => setMenuOpen(false)}
+                            className="font-mono text-xs tracking-[0.2em] uppercase text-[#0B2818]/60 hover:text-[#0B2818] transition-colors py-4 border-b border-[#2D5016]/10"
+                        >
+                            {link.label}
+                        </a>
+                    ))}
+                    <a
+                        href="#contact"
+                        onClick={() => setMenuOpen(false)}
+                        className="mt-4 inline-flex items-center gap-3 bg-[#0B2818] text-[#F5F0E8] px-8 py-4 rounded-none font-mono text-xs tracking-[0.12em] uppercase self-start"
+                    >
+                        Start a Project <span className="text-[#C9A84C]">→</span>
+                    </a>
+                </div>
+            )}
         </div>
     );
 }

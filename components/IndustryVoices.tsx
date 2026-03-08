@@ -3,10 +3,10 @@
 import { Marquee } from "@/components/ui/marquee";
 
 const leaderImages = [
-    "/images/leaders-say/Screenshot 2026-03-07 at 23.31.20.png",
-    "/images/leaders-say/Screenshot 2026-03-07 at 23.31.34.png",
-    "/images/leaders-say/Screenshot 2026-03-07 at 23.31.56.png",
-    "/images/leaders-say/Screenshot 2026-03-07 at 23.32.16.png",
+    { src: "/images/leaders-say/leader-quote-1.png", alt: "Industry leader on AI adoption" },
+    { src: "/images/leaders-say/leader-quote-2.png", alt: "Founder on moving fast with AI" },
+    { src: "/images/leaders-say/leader-quote-3.png", alt: "Product lead on AI integration" },
+    { src: "/images/leaders-say/leader-quote-4.png", alt: "Startup leader on AI-first strategy" },
 ];
 
 export default function IndustryVoices() {
@@ -62,11 +62,11 @@ export default function IndustryVoices() {
             <section className="voices-section py-8 bg-white" aria-label="Industry perspectives on AI">
                 <div className="relative border-y border-[#121212]/10 bg-white">
                     <Marquee className="[--gap:0px] [--duration:40s]" pauseOnHover={false} reverse>
-                        {[...leaderImages, ...leaderImages].map((imgSrc, i) => (
+                        {[...leaderImages, ...leaderImages].map((img, i) => (
                             <div key={i} className="flex-shrink-0 border-r border-[#121212]/10 bg-white" aria-hidden={i >= leaderImages.length}>
                                 <img
-                                    src={imgSrc}
-                                    alt={`Leader Testimonial ${i + 1}`}
+                                    src={img.src}
+                                    alt={img.alt}
                                     className="h-[280px] md:h-[320px] w-auto object-contain bg-white block"
                                 />
                             </div>

@@ -57,7 +57,7 @@ export default function WhoWeHelpSection() {
                                 style={{
                                     backgroundColor: "var(--bg-white)",
                                     border: "1px solid var(--border)",
-                                    borderRadius: "10px",
+                                    borderRadius: "0px",
                                     padding: "32px",
                                     display: "flex",
                                     flexDirection: "column",
@@ -69,7 +69,7 @@ export default function WhoWeHelpSection() {
                                     style={{
                                         width: "32px",
                                         height: "32px",
-                                        borderRadius: "6px",
+                                        borderRadius: "0px",
                                         backgroundColor: "var(--gold)",
                                         display: "flex",
                                         alignItems: "center",

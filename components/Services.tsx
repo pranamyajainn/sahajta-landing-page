@@ -1,6 +1,6 @@
 "use client";
 
-import { Brain, Lightbulb, Globe } from "lucide-react";
+import { Brain, Lightbulb, Globe, Layout } from "lucide-react";
 import { useState } from "react";
 import { MagicCard } from "@/components/ui/magic-card";
 import { BlurFade } from "@/components/ui/blur-fade";
@@ -24,6 +24,12 @@ const services = [
         body: "n8n pipelines, agentic workflows, LLM integrations, and custom AI agents — built to run your operations on autopilot. We engineer from scratch. No templates, no generic setups.",
         cta: "Build your automation →",
     },
+    {
+        Icon: Layout,
+        title: "Website Design & Development",
+        body: "Clean, fast, conversion-focused websites built for founders who need to move. From landing pages to full marketing sites — designed, developed, and deployed.",
+        cta: "Start a Project →",
+    },
 ];
 
 function ServiceCard({ service }: { service: (typeof services)[0] }) {
@@ -38,7 +44,7 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
                 backgroundColor: "var(--bg-white)",
                 border: `1px solid ${hovered ? "var(--gold)" : "var(--border)"}`,
                 borderTop: `3px solid ${hovered ? "var(--gold)" : "transparent"}`,
-                borderRadius: "16px",
+                borderRadius: "0px",
                 display: "flex",
                 flexDirection: "column",
                 boxShadow: hovered
@@ -62,7 +68,7 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
                         style={{
                             width: "48px",
                             height: "48px",
-                            borderRadius: "10px",
+                            borderRadius: "0px",
                             backgroundColor: "var(--gold-tint)",
                             display: "flex",
                             alignItems: "center",
@@ -150,13 +156,13 @@ export default function Services() {
                             marginBottom: "48px",
                         }}
                     >
-                        Three ways we ship for you.
+                        Four ways we ship for you.
                     </h2>
                 </BlurFade>
 
                 <div
                     style={{ display: "grid", gap: "32px" }}
-                    className="grid-cols-1 md:grid-cols-3"
+                    className="grid-cols-1 md:grid-cols-2"
                 >
                     {services.map((s, i) => (
                         <ServiceCard key={i} service={s} />

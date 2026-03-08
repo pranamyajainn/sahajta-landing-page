@@ -47,10 +47,10 @@ function FounderCard({
 }) {
     return (
         <div
-            className="border border-[#1A1A1A]/10 rounded-xl bg-white p-6 flex flex-col transition-all duration-200 hover:translate-y-[-2px] hover:shadow-lg h-full"
+            className="border border-[#1A1A1A]/10 rounded-none bg-white p-6 flex flex-col transition-all duration-200 hover:translate-y-[-2px] hover:shadow-lg h-full"
         >
             {/* Image container */}
-            <div className="relative w-full h-[320px] overflow-hidden rounded-lg mb-6">
+            <div className="relative w-full h-[320px] overflow-hidden rounded-none mb-6">
                 {founder.photo ? (
                     <Image
                         src={founder.photo}

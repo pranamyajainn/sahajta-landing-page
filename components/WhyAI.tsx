@@ -30,7 +30,7 @@ export default function WhyAI() {
 
                 {/* Three-Column Grid */}
                 <BlurFade delay={0.4} inView>
-                    <div className="border border-[#121212]/10 rounded-xl overflow-hidden bg-white">
+                    <div className="border border-[#121212]/10 rounded-none overflow-hidden bg-white">
                         <div className="grid grid-cols-1 md:grid-cols-3">
                             {/* COLUMN 1: THE OPPORTUNITY */}
                             <div className="p-8 border-b md:border-b-0 md:border-r border-[#121212]/10">
@@ -69,7 +69,7 @@ export default function WhyAI() {
                                     THE AI ADOPTION CURVE
                                 </span>
                                 <div className="flex-1 flex items-center">
-                                    <div className="w-full rounded-lg overflow-hidden mix-blend-multiply">
+                                    <div className="w-full rounded-none overflow-hidden mix-blend-multiply">
                                         <Image
                                             src="/curve_green.avif"
                                             alt="AI Adoption Curve"
