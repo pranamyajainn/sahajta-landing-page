@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     ],
     authors: [{ name: 'Pranamya Jain' }, { name: 'Shubhang Sethi' }],
     creator: 'Sahajta AI Solution Pvt Ltd',
-    metadataBase: new URL('https://sahajta-landing-page.vercel.app'),
+    metadataBase: new URL('https://sahajta.com'),
     alternates: {
         canonical: '/',
     },
     openGraph: {
         title: 'Sahajta AI | AI-Powered MVP Studio',
         description: 'We build AI-powered MVPs for founders who need to move fast. From concept to live product in 24–48 hours.',
-        url: 'https://sahajta-landing-page.vercel.app',
+        url: 'https://sahajta.com',
         siteName: 'Sahajta AI',
         locale: 'en_IN',
         type: 'website',

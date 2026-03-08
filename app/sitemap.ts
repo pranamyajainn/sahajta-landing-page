@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
-            url: 'https://sahajta-landing-page.vercel.app',
+            url: 'https://sahajta.com',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 1,

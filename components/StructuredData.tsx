@@ -5,8 +5,8 @@ export function StructuredData() {
         name: 'Sahajta AI Solution Pvt Ltd',
         alternateName: 'Sahajta AI',
         description: 'AI-powered MVP development studio for founders and early-stage startups. Ships production-grade AI products in 24–48 hours. No outsourcing.',
-        url: 'https://sahajta-landing-page.vercel.app',
-        logo: 'https://sahajta-landing-page.vercel.app/sahajta-logo.png',
+        url: 'https://sahajta.com',
+        logo: 'https://sahajta.com/sahajta-logo.png',
         foundingDate: '2024',
         address: {
             '@type': 'PostalAddress',
