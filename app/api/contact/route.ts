@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const { name, email, project, budget } = body;
+        const { name, email, phone, project, budget, source } = body;
 
         // Validate required fields
         if (!name || !email || !project) {
@@ -24,8 +24,10 @@ export async function POST(req: NextRequest) {
 
         // Log to console (Vercel captures these as function logs)
         console.log('=== NEW CONTACT SUBMISSION ===');
+        console.log(`Source: ${source || 'form'}`);
         console.log(`Name: ${name}`);
         console.log(`Email: ${email}`);
+        console.log(`Phone: ${phone || 'Not provided'}`);
         console.log(`Project: ${project}`);
         console.log(`Budget: ${budget || 'Not specified'}`);
         console.log(`Timestamp: ${new Date().toISOString()}`);

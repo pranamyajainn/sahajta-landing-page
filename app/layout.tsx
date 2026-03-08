@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ProjectPopup } from '@/components/ProjectPopup';
 
 const cormorant = Cormorant({
     subsets: ["latin"],
@@ -64,7 +65,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className={`${cormorant.variable} ${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
-            <body className="font-sans antialiased" suppressHydrationWarning>{children}</body>
+            <body className="font-sans antialiased" suppressHydrationWarning>
+                {children}
+                <ProjectPopup />
+            </body>
         </html>
     );
 }
