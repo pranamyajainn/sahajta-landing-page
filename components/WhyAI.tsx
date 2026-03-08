@@ -38,7 +38,7 @@ export default function WhyAI() {
                                     SHIPPED
                                 </span>
                                 <div className="mb-8 flex flex-col">
-                                    <div className="font-serif font-black text-[120px] leading-none flex items-baseline">
+                                    <div className="font-serif font-black text-[90px] leading-none flex items-baseline">
                                         <span className="text-[#121212]">25</span>
                                         <span className="text-[#D9B75B]">+</span>
                                     </div>
