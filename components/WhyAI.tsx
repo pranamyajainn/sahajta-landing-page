@@ -11,19 +11,19 @@ export default function WhyAI() {
                 <div className="mb-16">
                     <BlurFade delay={0.1} inView>
                         <span className="font-mono text-xs uppercase tracking-widest text-[#0B422A]/60 mb-4 block">
-                            WHY AI. WHY NOW.
+                            THE NUMBERS
                         </span>
                     </BlurFade>
 
                     <BlurFade delay={0.2} inView>
                         <h2 className="font-serif font-black text-5xl md:text-6xl text-[#121212] leading-tight">
-                            In AI, the early movers capture everything.
+                            What we&apos;ve shipped. What it took.
                         </h2>
                     </BlurFade>
 
                     <BlurFade delay={0.3} inView>
                         <p className="font-sans text-sm text-[#121212]/50 mt-4 max-w-2xl leading-relaxed">
-                            The window to build with AI before it becomes table stakes is closing. Sahajta exists to get you through it fast.
+                            No inflated metrics. Just the record.
                         </p>
                     </BlurFade>
                 </div>
@@ -35,23 +35,23 @@ export default function WhyAI() {
                             {/* COLUMN 1: THE OPPORTUNITY */}
                             <div className="p-8 border-b md:border-b-0 md:border-r border-[#121212]/10">
                                 <span className="font-mono text-[10px] uppercase tracking-widest text-[#0B422A] mb-8 block">
-                                    THE OPPORTUNITY
+                                    SHIPPED
                                 </span>
                                 <div className="mb-8 flex flex-col">
                                     <div className="font-serif font-black text-[120px] leading-none flex items-baseline">
-                                        <span className="text-[#121212]">10</span>
-                                        <span className="text-[#D9B75B]">x</span>
+                                        <span className="text-[#121212]">1</span>
+                                        <span className="text-[#D9B75B]"> </span>
                                     </div>
                                     <div className="font-serif font-bold text-2xl text-[#121212]/60 -mt-2">
-                                        revenue multiplier
+                                        live product
                                     </div>
                                 </div>
                                 <ul className="space-y-4">
                                     {[
-                                        "Ship AI products before competitors",
-                                        "Unlock revenue from existing data",
-                                        "Build systems, not just features",
-                                        "Compress 6-month timelines to weeks"
+                                        "vibe2real.codes — live, open, public",
+                                        "Concept to deployed product in 24 hours",
+                                        "Used by real developers — not just a demo",
+                                        "Built by the same team that builds for you"
                                     ].map((list, i) => (
                                         <li key={i} className="flex gap-3 items-start">
                                             <div className="w-1.5 h-1.5 bg-[#D9B75B] mt-1.5 shrink-0" />
@@ -120,7 +120,7 @@ export default function WhyAI() {
                         {/* BOTTOM ROW */}
                         <div className="border-t border-[#121212]/10 px-8 py-8 bg-[#FDFCF0]/50">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[#121212]/40 mb-6 block text-center">
-                                TRUSTED BY TEAMS AT
+                                BUILT WITH TEAMS AT
                             </span>
                             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
                                 {[

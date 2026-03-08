@@ -42,6 +42,18 @@ export default function FeaturedProduct() {
                     />
                 </a>
             </ContainerScroll>
+
+            {/* DEMO REVIEW */}
+            <div className="max-w-4xl mx-auto px-6">
+                <div className="mt-8 border-l-2 border-[#2D5016]/20 pl-4">
+                    <p className="font-[var(--font-inter)] text-sm text-[#0B2818]/60 italic leading-relaxed">
+                        &ldquo;Awesome Pranamya. Love the gamified approach that you took to help the users.&rdquo;
+                    </p>
+                    <p className="font-mono text-xs text-[#2D5016]/50 tracking-widest uppercase mt-2">
+                        VidyaSagar Panati — Product Demo Reviewer, Loom
+                    </p>
+                </div>
+            </div>
         </section>
     );
 }

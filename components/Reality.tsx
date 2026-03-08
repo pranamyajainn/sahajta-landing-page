@@ -13,14 +13,14 @@ import {
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const capabilities = [
-    { icon: ImageGenIcon, label: "Image\nGeneration" },
-    { icon: VoiceAssistantsIcon, label: "Voice\nAssistants" },
-    { icon: WorkflowAutomationIcon, label: "Workflow\nAutomation" },
-    { icon: VideoGenIcon2, label: "Video\nGeneration" },
-    { icon: ContextualAgentsIcon, label: "Contextual\nAgents" },
+    { icon: ImageGenIcon, label: "RAG\nSystems" },
+    { icon: VoiceAssistantsIcon, label: "LLM\nPipelines" },
+    { icon: WorkflowAutomationIcon, label: "Agentic\nWorkflows" },
+    { icon: VideoGenIcon2, label: "Custom Model\nInfra" },
+    { icon: ContextualAgentsIcon, label: "AI Intake\nAgents" },
     { icon: RealtimeAgentsIcon, label: "Realtime\nAgents" },
-    { icon: InternalToolsIcon, label: "Internal\nTools" },
-    { icon: ContentCreationIcon, label: "Content\nCreation" },
+    { icon: InternalToolsIcon, label: "AI Feature\nDrops" },
+    { icon: ContentCreationIcon, label: "Conversational\nUIs" },
 ];
 
 export default function Reality() {
@@ -31,21 +31,21 @@ export default function Reality() {
                 <div className="text-center mb-16">
                     <BlurFade delay={0.1} inView>
                         <span className="font-mono text-xs uppercase tracking-widest text-[#0B422A]/60 mb-4 block">
-                            THE REALITY
+                            WHAT WE SHIP
                         </span>
                     </BlurFade>
 
                     <BlurFade delay={0.2} inView>
                         <h2 className="font-serif font-black text-5xl md:text-6xl text-center leading-tight">
-                            <span className="text-[#121212]">AI is not just the future.</span>
+                            <span className="text-[#121212]">The AI layer your</span>
                             <br />
-                            <span className="text-[#D9B75B]">It is the present.</span>
+                            <span className="text-[#D9B75B]">product is missing.</span>
                         </h2>
                     </BlurFade>
 
                     <BlurFade delay={0.3} inView>
                         <p className="font-sans text-sm text-[#121212]/50 mt-4 max-w-2xl mx-auto text-center leading-relaxed">
-                            Founders and product leads already know that AI is not a distant promise. It is reshaping their competitive edge today.
+                            These are the systems we've built. Not theoretical — deployed, tested, and running in production.
                         </p>
                     </BlurFade>
                 </div>

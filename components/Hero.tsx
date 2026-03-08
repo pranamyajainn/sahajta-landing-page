@@ -35,8 +35,7 @@ export default function Hero() {
                 {/* Supporting Copy */}
                 <BlurFade delay={0.3}>
                     <p className="font-sans text-xl md:text-2xl max-w-2xl text-center mt-2 text-text-body/80 mb-12">
-                        Elite AI engineering for founders who need to move faster.
-                        Stop talking about AI. Start scaling it.
+                        We shipped our own AI product in 24 hours. We bring that same velocity to yours. Stop planning. Start shipping.
                     </p>
                 </BlurFade>
 
@@ -52,7 +51,7 @@ export default function Hero() {
                                 className="hero-cta-button shadow-xl hover:shadow-2xl transition-all"
                             >
                                 <span className="flex items-center gap-2 text-text-dark">
-                                    Book your deep dive
+                                    Start a Project
                                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                                 </span>
                             </ShimmerButton>

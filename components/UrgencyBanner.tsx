@@ -33,16 +33,16 @@ export default function UrgencyBanner() {
                         color: "var(--text-body)",
                     }}
                 >
-                    We partner with {" "}
+                    We take on {" "}
                     <strong
                         style={{
                             color: "var(--green-primary)",
                             fontWeight: 700,
                         }}
                     >
-                        max 3 clients per quarter
-                    </strong>{" "}
-                    to ensure elite engineering standards.
+                        3 clients per quarter
+                    </strong>
+                    . We write every line of code ourselves. That&apos;s the trade-off.
                 </p>
 
                 {/* CTA group */}
@@ -73,7 +73,7 @@ export default function UrgencyBanner() {
                             (e.currentTarget.style.textDecoration = "none")
                         }
                     >
-                        Secure your slot before Q2 closes
+                        See if there&apos;s a slot open
                         <ArrowRight
                             style={{ width: "14px", height: "14px" }}
                             aria-hidden="true"

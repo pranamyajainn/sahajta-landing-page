@@ -121,7 +121,7 @@ export default function BookACall() {
                                     01 — TELL US ABOUT YOUR PROJECT
                                 </p>
                                 <p className="text-[#0B2818]/50 text-sm leading-relaxed">
-                                    Not ready to book? Fill this in. We&apos;ll
+                                    Not ready to start? Fill this in. We&apos;ll
                                     respond within 24 hours with a clear next
                                     step — no pitch, no proposal deck.
                                 </p>
@@ -255,7 +255,7 @@ export default function BookACall() {
                         <div className="bg-[var(--bg-cream,#F5F0E8)] p-10 flex flex-col gap-6">
                             <div>
                                 <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016]/60 mb-2">
-                                    02 — BOOK DIRECTLY
+                                    02 — SCHEDULE DIRECTLY
                                 </p>
                                 <p className="text-[#0B2818]/50 text-sm leading-relaxed">
                                     Ready to talk now? Pick a slot. 20 minutes.

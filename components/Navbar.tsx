@@ -123,7 +123,7 @@ export default function Navbar() {
                         className="btn-gold"
                         style={{ padding: "8px 18px", fontSize: "0.875rem" }}
                     >
-                        Book a Call
+                        Start a Project
                     </a>
                 </div>
             </header>

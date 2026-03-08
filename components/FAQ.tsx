@@ -23,7 +23,7 @@ const faqItems = [
     },
     {
         question: "How much does it cost?",
-        answer: "Projects are scoped and priced per engagement. Book a call and we'll give you a number within 24 hours.",
+        answer: "Projects are scoped and priced per engagement. Tell us what you\u0027re building and we\u0027ll give you a number within 24 hours.",
     },
     {
         question: "Why only 3 clients per quarter?",

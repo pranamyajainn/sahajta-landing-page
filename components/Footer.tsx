@@ -8,7 +8,7 @@ const quickLinks = [
     { label: "How We Ship", href: "#process" },
     { label: "Our Work", href: "#ships" },
     { label: "Team", href: "#team" },
-    { label: "Book a Call", href: "#contact" },
+    { label: "Start a Project", href: "#contact" },
 ];
 
 export default function Footer() {
@@ -139,7 +139,7 @@ export default function Footer() {
                                 background: "linear-gradient(to right, var(--bg-cream-dark) 70%, transparent 100%)",
                             }}
                         >
-                            We have a passion for Simplicity.
+                            We ship. That&apos;s it.
                         </p>
                     </div>
 

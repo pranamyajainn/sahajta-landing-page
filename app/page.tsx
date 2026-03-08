@@ -15,6 +15,8 @@ import BookACall from "@/components/BookACall";
 import WhyAI from "@/components/WhyAI";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import RecentShips from "@/components/RecentShips";
+import { Pricing } from "@/components/Pricing";
 
 export default function Home() {
     return (
@@ -32,6 +34,8 @@ export default function Home() {
             <Reality />
             <Team />
             <UrgencyBanner />
+            <RecentShips />
+            <Pricing />
             <BookACall />
             <WhyAI />
             <FAQ />

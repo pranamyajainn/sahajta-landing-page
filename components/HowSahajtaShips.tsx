@@ -16,7 +16,7 @@ const steps = [
     {
         num: "03",
         title: "Implementation",
-        description: "SSR-first, fully typed brutalist delivery.",
+        description: "Production-grade code, deployed daily. No half-builds.",
     },
     {
         num: "04",

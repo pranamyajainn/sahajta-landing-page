@@ -15,7 +15,7 @@ const cards = [
     },
     {
         quote:
-            "I'm building a massive product with a lean team and need elite engineering horsepower to scale over the finish line.",
+            "I'm building everything myself. Nights, weekends, caffeine. The AI layer is the one thing I can't fake — I need someone who actually knows how to ship it.",
         attribution: "Indie Builder & Solo Founder",
     },
 ];

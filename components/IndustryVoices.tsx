@@ -24,13 +24,13 @@ export default function IndustryVoices() {
                         className="font-[var(--font-cormorant)] font-black text-[clamp(3rem,7vw,5.5rem)] leading-[1.0] tracking-tight text-[#0B2818] mb-8"
                         style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 900 }}
                     >
-                        The AI revolution<br />
-                        won&apos;t wait for you.
+                        Your competitor just shipped<br />
+                        an AI feature. You haven&apos;t.
                     </h2>
 
                     {/* BODY */}
                     <p className="font-[var(--font-inter)] text-lg text-[#0B2818]/60 max-w-xl mx-auto mb-12 leading-relaxed">
-                        Founders who move now compound the advantage. Those who wait close the gap on nothing.
+                        Every week without AI in your product is a week your competitor is building their moat. We exist to close that gap in days, not months.
                     </p>
 
                     {/* CTA ROW */}
@@ -39,12 +39,12 @@ export default function IndustryVoices() {
                             href="#contact"
                             className="inline-flex items-center gap-3 bg-[#0B2818] text-[var(--bg-cream)] px-10 py-4 rounded-none font-mono text-sm tracking-[0.12em] uppercase hover:bg-[#2D5016] transition-colors duration-200 border-2 border-[#0B2818] hover:border-[#2D5016]"
                         >
-                            Book a Discovery Call
+                            Start a Project
                             <span className="text-[var(--gold)] font-mono">→</span>
                         </a>
 
                         <p className="font-mono text-xs text-[#0B2818]/40 tracking-widest uppercase shrink-0">
-                            20 min · No pitch · Just clarity
+                            Tell us what you&apos;re building. We&apos;ll take it from there.
                         </p>
                     </div>
 

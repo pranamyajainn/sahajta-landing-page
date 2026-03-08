@@ -15,14 +15,14 @@ const services = [
     {
         Icon: Lightbulb,
         title: "AI Feature Integration",
-        body: "Dropping intelligence into an existing Next.js monolith safely. We map the opportunity, design the system, and implement seamlessly.",
+        body: "Dropping intelligence into an existing Next.js monolith safely. We map the opportunity, design the system, and ship it this week.",
         cta: "Discuss AI integration →",
     },
     {
         Icon: Globe,
-        title: "Performance Hardening",
-        body: "Bringing P99 latency down, edge caching, and scalable state. We build for impact, performance, and elite engineering standards.",
-        cta: "Get a performance audit →",
+        title: "AI Automation & Agents",
+        body: "n8n pipelines, agentic workflows, LLM integrations, and custom AI agents — built to run your operations on autopilot. We engineer from scratch. No templates, no generic setups.",
+        cta: "Build your automation →",
     },
 ];
 
