@@ -1,11 +1,36 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
-import { Linkedin } from "lucide-react";
 import { BlurFade } from "@/components/ui/blur-fade";
 
+const BUDGET_OPTIONS = [
+    "Under ₹1L",
+    "₹1L – ₹3L",
+    "₹3L – ₹10L",
+    "₹10L+",
+    "Let\u2019s discuss",
+] as const;
+
+type FormState = {
+    name: string;
+    email: string;
+    project: string;
+    budget: string;
+};
+
+type SubmitState = "idle" | "loading" | "success" | "error";
+
 export default function BookACall() {
+    const [form, setForm] = useState<FormState>({
+        name: "",
+        email: "",
+        project: "",
+        budget: "",
+    });
+    const [submitState, setSubmitState] = useState<SubmitState>("idle");
+    const [errorMsg, setErrorMsg] = useState("");
+
     useEffect(() => {
         (async () => {
             const cal = await getCalApi({ namespace: "30min" });
@@ -18,169 +43,277 @@ export default function BookACall() {
         })();
     }, []);
 
+    const handleChange = (
+        e: React.ChangeEvent<
+            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >
+    ) => {
+        setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const handleSubmit = async () => {
+        if (!form.name || !form.email || !form.project) {
+            setErrorMsg(
+                "Name, email, and project description are required."
+            );
+            return;
+        }
+        setSubmitState("loading");
+        setErrorMsg("");
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                setErrorMsg(data.error || "Something went wrong.");
+                setSubmitState("error");
+            } else {
+                setSubmitState("success");
+                setForm({ name: "", email: "", project: "", budget: "" });
+            }
+        } catch {
+            setErrorMsg("Network error. Please try again.");
+            setSubmitState("error");
+        }
+    };
+
     return (
-        <section className="section-pad section-canvas" id="contact">
-            <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-                {/* {{CAL_LINK}} — replace with actual Cal.com link */}
-
-                {/* Header */}
-                <BlurFade delay={0.1} inView>
-                    <span className="micro-label">Let&apos;s Talk</span>
-                </BlurFade>
-                <BlurFade delay={0.2} inView>
-                    <h2
-                        style={{
-                            fontFamily: "var(--font-cormorant), Georgia, serif",
-                            fontSize: "clamp(1.75rem, 3vw, 2.25rem)",
-                            fontWeight: 700,
-                            color: "var(--text-dark)",
-                            letterSpacing: "-0.02em",
-                            lineHeight: 1.1,
-                            marginBottom: "12px",
-                        }}
-                    >
-                        20 minutes. No pitch. Just clarity.
-                    </h2>
-                </BlurFade>
-                <p
-                    style={{
-                        fontFamily: "var(--font-inter)",
-                        fontSize: "1.0625rem",
-                        color: "var(--text-muted)",
-                        lineHeight: 1.7,
-                        maxWidth: "480px",
-                        marginBottom: "48px",
-                    }}
-                >
-                    A 20-minute conversation to understand what you&apos;re building and
-                    whether we can help. No pitch deck. No pressure.
-                </p>
-
-                {/* Cal.com inline embed */}
-                <div
-                    style={{
-                        border: "1px solid var(--border)",
-                        borderRadius: "16px",
-                        overflow: "hidden",
-                        marginBottom: "40px",
-                        minHeight: "600px",
-                        backgroundColor: "var(--bg-cream-dark)",
-                    }}
-                >
-                    <Cal
-                        namespace="30min"
-                        calLink="pranamyajain/30min"
-                        style={{ width: "100%", height: "600px", overflow: "scroll" }}
-                        config={{ layout: "month_view" }}
-                    />
+        <section
+            className="py-24 bg-[var(--bg-cream-dark,#EDEADE)] border-t border-[#2D5016]/10"
+            id="contact"
+            aria-label="Contact Sahajta"
+        >
+            <div className="max-w-6xl mx-auto px-6">
+                {/* SECTION HEADER */}
+                <div className="mb-16">
+                    <BlurFade delay={0.1} inView>
+                        <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016]/60 mb-4">
+                            LET&apos;S TALK
+                        </p>
+                    </BlurFade>
+                    <BlurFade delay={0.2} inView>
+                        <h2
+                            className="font-black text-[clamp(2.5rem,5vw,4rem)] leading-[1.0] text-[#0B2818] max-w-2xl"
+                            style={{
+                                fontFamily: "var(--font-cormorant)",
+                                fontWeight: 900,
+                            }}
+                        >
+                            20 minutes.
+                            <br />
+                            No pitch.
+                            <br />
+                            Just clarity.
+                        </h2>
+                    </BlurFade>
                 </div>
 
-                {/* Email + LinkedIn — equal visual weight */}
-                <div
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "32px",
-                        flexWrap: "wrap",
-                        paddingTop: "24px",
-                        borderTop: "1px solid var(--border)",
-                    }}
-                >
-                    {/* Email */}
-                    <div>
-                        <p
-                            style={{
-                                fontFamily: "var(--font-inter)",
-                                fontSize: "0.6875rem",
-                                color: "var(--text-micro)",
-                                letterSpacing: "0.14em",
-                                textTransform: "uppercase",
-                                marginBottom: "6px",
-                            }}
-                        >
-                            Prefer email?
-                        </p>
-                        <a
-                            href="mailto:sahajta.ai@gmail.com"
-                            style={{
-                                fontFamily: "var(--font-inter)",
-                                fontSize: "1rem",
-                                fontWeight: 500,
-                                color: "var(--gold-dark)",
-                                textDecoration: "none",
-                            }}
-                            onMouseEnter={(e) =>
-                                (e.currentTarget.style.textDecoration = "underline")
-                            }
-                            onMouseLeave={(e) =>
-                                (e.currentTarget.style.textDecoration = "none")
-                            }
-                        >
-                            {/* {{CONTACT_EMAIL}} */}
-                            sahajta.ai@gmail.com
-                        </a>
-                    </div>
+                {/* TWO-COLUMN LAYOUT */}
+                <BlurFade delay={0.3} inView>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#2D5016]/10 border border-[#2D5016]/10">
+                        {/* LEFT — INTAKE FORM */}
+                        <div className="bg-[var(--bg-cream,#F5F0E8)] p-10 flex flex-col gap-8">
+                            <div>
+                                <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016]/60 mb-2">
+                                    01 — TELL US ABOUT YOUR PROJECT
+                                </p>
+                                <p className="text-[#0B2818]/50 text-sm leading-relaxed">
+                                    Not ready to book? Fill this in. We&apos;ll
+                                    respond within 24 hours with a clear next
+                                    step — no pitch, no proposal deck.
+                                </p>
+                            </div>
 
-                    <div
-                        style={{
-                            width: "1px",
-                            height: "32px",
-                            backgroundColor: "var(--border)",
-                            flexShrink: 0,
-                        }}
-                        aria-hidden="true"
-                    />
-
-                    {/* LinkedIn */}
-                    <div>
-                        <p
-                            style={{
-                                fontFamily: "var(--font-inter)",
-                                fontSize: "0.6875rem",
-                                color: "var(--text-micro)",
-                                letterSpacing: "0.14em",
-                                textTransform: "uppercase",
-                                marginBottom: "6px",
-                            }}
-                        >
-                            Connect on LinkedIn
-                        </p>
-                        <div style={{ display: "flex", gap: "20px" }}>
-                            {[
-                                { name: "Pranamya Jain", href: "https://www.linkedin.com/in/pranamya-jainn/" },
-                                { name: "Shubhang Sethi", href: "https://www.linkedin.com/in/shubhangsethi/" },
-                            ].map((person) => (
-                                <a
-                                    key={person.href}
-                                    href={person.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={`${person.name} on LinkedIn`}
-                                    style={{
-                                        display: "inline-flex",
-                                        alignItems: "center",
-                                        gap: "5px",
-                                        fontFamily: "var(--font-inter)",
-                                        fontSize: "0.9375rem",
-                                        fontWeight: 500,
-                                        color: "var(--gold-dark)",
-                                        textDecoration: "none",
-                                    }}
-                                    onMouseEnter={(e) =>
-                                        (e.currentTarget.style.textDecoration = "underline")
-                                    }
-                                    onMouseLeave={(e) =>
-                                        (e.currentTarget.style.textDecoration = "none")
-                                    }
-                                >
-                                    <Linkedin
-                                        style={{ width: "14px", height: "14px", color: "var(--green-light)" }}
-                                        aria-hidden="true"
+                            {/* FORM FIELDS */}
+                            <div className="flex flex-col gap-5">
+                                {/* NAME */}
+                                <div className="flex flex-col gap-1.5">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                        Your Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={form.name}
+                                        onChange={handleChange}
+                                        placeholder="Pranamya Jain"
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm"
                                     />
-                                    {person.name}
+                                </div>
+
+                                {/* EMAIL */}
+                                <div className="flex flex-col gap-1.5">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                        Email *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={form.email}
+                                        onChange={handleChange}
+                                        placeholder="you@startup.com"
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm"
+                                    />
+                                </div>
+
+                                {/* PROJECT */}
+                                <div className="flex flex-col gap-1.5">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                        What are you building? *
+                                    </label>
+                                    <textarea
+                                        name="project"
+                                        value={form.project}
+                                        onChange={handleChange}
+                                        placeholder="Brief description — what problem, who it's for, where you are now."
+                                        rows={4}
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm resize-none"
+                                    />
+                                </div>
+
+                                {/* BUDGET */}
+                                <div className="flex flex-col gap-1.5">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                        Budget Range
+                                    </label>
+                                    <select
+                                        name="budget"
+                                        value={form.budget}
+                                        onChange={handleChange}
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm appearance-none cursor-pointer"
+                                    >
+                                        <option
+                                            value=""
+                                            className="bg-[#F5F0E8]"
+                                        >
+                                            Select a range
+                                        </option>
+                                        {BUDGET_OPTIONS.map((opt) => (
+                                            <option
+                                                key={opt}
+                                                value={opt}
+                                                className="bg-[#F5F0E8]"
+                                            >
+                                                {opt}
+                                            </option>
+                                        ))}
+                                    </select>
+                                </div>
+                            </div>
+
+                            {/* ERROR */}
+                            {errorMsg && (
+                                <p className="font-mono text-xs text-red-600 tracking-wide">
+                                    {errorMsg}
+                                </p>
+                            )}
+
+                            {/* SUCCESS */}
+                            {submitState === "success" && (
+                                <div className="border border-[#2D5016]/20 p-4">
+                                    <p className="font-mono text-xs text-[#2D5016] tracking-wide uppercase">
+                                        Received. We&apos;ll respond within 24
+                                        hours.
+                                    </p>
+                                </div>
+                            )}
+
+                            {/* SUBMIT BUTTON */}
+                            {submitState !== "success" && (
+                                <button
+                                    onClick={handleSubmit}
+                                    disabled={submitState === "loading"}
+                                    className="self-start inline-flex items-center gap-3 bg-[#0B2818] text-[var(--bg-cream,#F5F0E8)] px-8 py-4 rounded-none font-mono text-sm tracking-[0.12em] uppercase hover:bg-[#2D5016] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    {submitState === "loading"
+                                        ? "Sending..."
+                                        : "Send Project Brief"}
+                                    {submitState !== "loading" && (
+                                        <span className="text-[var(--gold,#C9A84C)]">
+                                            →
+                                        </span>
+                                    )}
+                                </button>
+                            )}
+
+                            {/* DIRECT EMAIL FALLBACK */}
+                            <p className="font-mono text-xs text-[#0B2818]/30 tracking-widest">
+                                OR EMAIL DIRECTLY —{" "}
+                                <a
+                                    href="mailto:sahajta.ai@gmail.com"
+                                    className="text-[#2D5016]/60 hover:text-[#2D5016] transition-colors underline underline-offset-4"
+                                >
+                                    sahajta.ai@gmail.com
                                 </a>
-                            ))}
+                            </p>
                         </div>
+
+                        {/* RIGHT — CAL.COM BOOKING */}
+                        <div className="bg-[var(--bg-cream,#F5F0E8)] p-10 flex flex-col gap-6">
+                            <div>
+                                <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016]/60 mb-2">
+                                    02 — BOOK DIRECTLY
+                                </p>
+                                <p className="text-[#0B2818]/50 text-sm leading-relaxed">
+                                    Ready to talk now? Pick a slot. 20 minutes.
+                                    We&apos;ll come prepared.
+                                </p>
+                            </div>
+
+                            {/* CAL.COM EMBED — preserved from original */}
+                            <div className="flex-1 min-h-[500px]">
+                                <Cal
+                                    namespace="30min"
+                                    calLink="pranamyajain/30min"
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        minHeight: "500px",
+                                        overflow: "scroll",
+                                    }}
+                                    config={{ layout: "month_view" }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </BlurFade>
+
+                {/* BOTTOM METADATA STRIP */}
+                <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div className="flex items-center gap-6">
+                        <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">
+                            Response within 24h
+                        </span>
+                        <span className="w-1 h-1 bg-[#0B2818]/20 rounded-full hidden sm:block" />
+                        <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">
+                            No retainer lock-in
+                        </span>
+                        <span className="w-1 h-1 bg-[#0B2818]/20 rounded-full hidden sm:block" />
+                        <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">
+                            3 clients / quarter
+                        </span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <a
+                            href="https://www.linkedin.com/in/pranamya-jainn/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-mono text-xs text-[#2D5016]/50 hover:text-[#2D5016] tracking-widest uppercase transition-colors"
+                        >
+                            Pranamya — LinkedIn
+                        </a>
+                        <span className="text-[#0B2818]/20">|</span>
+                        <a
+                            href="https://www.linkedin.com/in/shubhangsethi/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-mono text-xs text-[#2D5016]/50 hover:text-[#2D5016] tracking-widest uppercase transition-colors"
+                        >
+                            Shubhang — LinkedIn
+                        </a>
                     </div>
                 </div>
             </div>
