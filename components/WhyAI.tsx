@@ -39,19 +39,19 @@ export default function WhyAI() {
                                 </span>
                                 <div className="mb-8 flex flex-col">
                                     <div className="font-serif font-black text-[120px] leading-none flex items-baseline">
-                                        <span className="text-[#121212]">1</span>
-                                        <span className="text-[#D9B75B]"> </span>
+                                        <span className="text-[#121212]">25</span>
+                                        <span className="text-[#D9B75B]">+</span>
                                     </div>
                                     <div className="font-serif font-bold text-2xl text-[#121212]/60 -mt-2">
-                                        live product
+                                        AI projects & websites
                                     </div>
                                 </div>
                                 <ul className="space-y-4">
                                     {[
-                                        "vibe2real.codes — live, open, public",
-                                        "Concept to deployed product in 24 hours",
-                                        "Used by real developers — not just a demo",
-                                        "Built by the same team that builds for you"
+                                        "AI products, automations, and websites shipped",
+                                        "From MVPs to agent pipelines to marketing sites",
+                                        "Clients across India and global early-stage teams",
+                                        "Every project scoped, built, and shipped by us — no outsourcing"
                                     ].map((list, i) => (
                                         <li key={i} className="flex gap-3 items-start">
                                             <div className="w-1.5 h-1.5 bg-[#D9B75B] mt-1.5 shrink-0" />
