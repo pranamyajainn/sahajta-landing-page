@@ -7,21 +7,6 @@ import { BlurFade } from "@/components/ui/blur-fade";
 
 const founders = [
     {
-        name: "Pranamya Jain",
-        role: "CO-FOUNDER & SOLUTIONS ARCHITECT",
-        initials: "PJ",
-        photo: "/team/pranamya.png",
-        bullets: [
-            "Launched vibe2real.codes from idea to live product in 24 hours.",
-            "Builds full-stack AI systems for real-world deployment — not demos.",
-            "Specializes in LLMs, agentic workflows, and production-grade AI infrastructure.",
-        ],
-        stat: "AI BUILDER · DEVELOPER",
-        linkedin: "https://www.linkedin.com/in/pranamya-jainn/",
-        twitter: "https://x.com/pranamyajain_",
-        instagram: null,
-    },
-    {
         name: "Shubhang Sethi",
         role: "CO-FOUNDER & CEO",
         initials: "SS",
@@ -35,6 +20,21 @@ const founders = [
         linkedin: "https://www.linkedin.com/in/shubhangsethi/",
         twitter: null,
         instagram: "https://www.instagram.com/shubhangsethi",
+    },
+    {
+        name: "Pranamya Jain",
+        role: "CO-FOUNDER & SOLUTIONS ARCHITECT",
+        initials: "PJ",
+        photo: "/team/pranamya.png",
+        bullets: [
+            "Launched vibe2real.codes from idea to live product in 24 hours.",
+            "Builds full-stack AI systems for real-world deployment — not demos.",
+            "Specializes in LLMs, agentic workflows, and production-grade AI infrastructure.",
+        ],
+        stat: "AI BUILDER · DEVELOPER",
+        linkedin: "https://www.linkedin.com/in/pranamya-jainn/",
+        twitter: "https://x.com/pranamyajain_",
+        instagram: null,
     },
 ];
 
