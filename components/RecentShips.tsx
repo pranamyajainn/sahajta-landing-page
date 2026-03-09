@@ -1,6 +1,7 @@
 'use client';
 
 import { BlurFade } from "@/components/ui/blur-fade";
+import { MagicCard } from "@/components/ui/magic-card";
 
 const CASE_STUDIES = [
     {
@@ -89,9 +90,10 @@ export default function RecentShips() {
                 <BlurFade delay={0.4} inView>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#2D5016]/10 border border-[#2D5016]/10">
                         {CASE_STUDIES.map((study) => (
-                            <div
+                            <MagicCard
                                 key={study.index}
-                                className="bg-[var(--bg-cream)] border border-[#2D5016]/10 p-8 flex flex-col gap-5 hover:border-[#2D5016]/30 transition-colors duration-200"
+                                className="flex flex-col gap-5 p-8 bg-[var(--bg-cream)] border-none rounded-none shadow-none hover:border-[#2D5016]/30 transition-colors duration-200"
+                                gradientColor="var(--gold-tint)"
                             >
                                 {/* TOP ROW: Index + Status */}
                                 <div className="flex items-center justify-between">
@@ -153,7 +155,7 @@ export default function RecentShips() {
                                         {study.role}
                                     </span>
                                 </div>
-                            </div>
+                            </MagicCard>
                         ))}
                     </div>
                 </BlurFade>

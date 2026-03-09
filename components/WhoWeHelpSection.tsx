@@ -1,6 +1,7 @@
 "use client";
 
 import { BlurFade } from "@/components/ui/blur-fade";
+import { MagicCard } from "@/components/ui/magic-card";
 
 const cards = [
     {
@@ -53,16 +54,9 @@ export default function WhoWeHelpSection() {
                 >
                     {cards.map((card, i) => (
                         <BlurFade key={i} delay={0.1 + i * 0.07} inView>
-                            <div
-                                style={{
-                                    backgroundColor: "var(--bg-white)",
-                                    border: "1px solid var(--border)",
-                                    borderRadius: "0px",
-                                    padding: "32px",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    height: "100%",
-                                }}
+                            <MagicCard
+                                className="flex flex-col h-full p-8 rounded-none shadow-none bg-[var(--bg-white)] border border-[var(--border)]"
+                                gradientColor="var(--gold-tint)"
                             >
                                 {/* Quote icon */}
                                 <div
@@ -129,7 +123,7 @@ export default function WhoWeHelpSection() {
                                         {card.attribution}
                                     </p>
                                 </div>
-                            </div>
+                            </MagicCard>
                         </BlurFade>
                     ))}
                 </div>
