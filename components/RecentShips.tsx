@@ -88,11 +88,11 @@ export default function RecentShips() {
 
                 {/* CASE STUDY GRID */}
                 <BlurFade delay={0.4} inView>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#2D5016]/10 border border-[#2D5016]/10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         {CASE_STUDIES.map((study) => (
                             <MagicCard
                                 key={study.index}
-                                className="flex flex-col gap-5 p-8 bg-[var(--bg-cream)] border-none rounded-none shadow-none hover:border-[#2D5016]/30 transition-colors duration-200"
+                                className="flex flex-col gap-5 p-8 bg-[var(--bg-cream)] border border-[#2D5016]/30 rounded-none shadow-none hover:border-[#2D5016]/60 transition-colors duration-200"
                                 gradientColor="var(--gold-tint)"
                             >
                                 {/* TOP ROW: Index + Status */}
