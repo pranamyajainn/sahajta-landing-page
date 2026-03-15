@@ -84,6 +84,11 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
                     </div>
 
                     {/* Title */}
+                    {title === "MVP Engineering" && (
+                        <span className="block font-mono text-[11px] uppercase tracking-[0.12em] text-[#C9A84C] mb-2">
+                            CORE OFFERING
+                        </span>
+                    )}
                     <h3
                         style={{
                             fontFamily: "var(--font-cormorant), Georgia, serif",
@@ -156,7 +161,7 @@ export default function Services() {
                             marginBottom: "48px",
                         }}
                     >
-                        Four ways we ship for you.
+                        MVP-first. Everything else supports it.
                     </h2>
                 </BlurFade>
 

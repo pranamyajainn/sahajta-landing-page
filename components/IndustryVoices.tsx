@@ -25,7 +25,7 @@ export default function IndustryVoices() {
                         style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 900 }}
                     >
                         Your competitor just shipped<br />
-                        an AI feature. You haven&apos;t.
+                        an AI-powered MVP. You haven&apos;t.
                     </h2>
 
                     {/* BODY */}
@@ -37,7 +37,7 @@ export default function IndustryVoices() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a
                             href="#contact"
-                            className="inline-flex items-center gap-3 bg-[#0B2818] text-[var(--bg-cream)] px-10 py-4 rounded-none font-mono text-sm tracking-[0.12em] uppercase hover:bg-[#2D5016] transition-colors duration-200 border-2 border-[#0B2818] hover:border-[#2D5016]"
+                            className="inline-flex items-center gap-3 bg-[#0B422A] text-[var(--bg-cream)] px-10 py-4 rounded-none font-mono text-sm tracking-[0.12em] uppercase hover:bg-[#2D6E54] transition-colors duration-200 border-2 border-[#0B422A] hover:border-[#2D6E54]"
                         >
                             Start a Project
                             <span className="text-[var(--gold)] font-mono">→</span>
@@ -50,7 +50,7 @@ export default function IndustryVoices() {
 
                     {/* STRUCTURAL DIVIDER */}
                     <div className="mt-20 pt-8 border-t border-[#2D5016]/10 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
-                        <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">Est. 2024</span>
+                        <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">Est. 2025</span>
                         <span className="hidden sm:block w-1 h-1 rounded-full bg-[#0B2818]/20" />
                         <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">Bangalore, India</span>
                         <span className="hidden sm:block w-1 h-1 rounded-full bg-[#0B2818]/20" />

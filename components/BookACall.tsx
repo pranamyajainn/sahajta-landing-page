@@ -257,7 +257,7 @@ export default function BookACall() {
                                     02 — SCHEDULE DIRECTLY
                                 </p>
                                 <p className="text-[#0B2818]/50 text-sm leading-relaxed">
-                                    Ready to talk now? Pick a slot. 20 minutes.
+                                    Ready to talk now? Pick a time. 20 minutes.
                                     We&apos;ll come prepared.
                                 </p>
                             </div>
@@ -302,10 +302,6 @@ export default function BookACall() {
                         <span className="w-1 h-1 bg-[#0B2818]/20 rounded-full hidden sm:block" />
                         <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">
                             No retainer lock-in
-                        </span>
-                        <span className="w-1 h-1 bg-[#0B2818]/20 rounded-full hidden sm:block" />
-                        <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">
-                            3 clients / quarter
                         </span>
                     </div>
                     <div className="flex items-center gap-4">

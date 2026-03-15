@@ -24,27 +24,6 @@ export default function UrgencyBanner() {
                     flexWrap: "wrap",
                 }}
             >
-                {/* Text */}
-                <p
-                    style={{
-                        fontFamily: "var(--font-inter)",
-                        fontSize: "0.9375rem",
-                        fontWeight: 500,
-                        color: "var(--text-body)",
-                    }}
-                >
-                    We take on {" "}
-                    <strong
-                        style={{
-                            color: "var(--green-primary)",
-                            fontWeight: 700,
-                        }}
-                    >
-                        3 clients per quarter
-                    </strong>
-                    . We write every line of code ourselves. That&apos;s the trade-off.
-                </p>
-
                 {/* CTA group */}
                 <div
                     style={{
@@ -52,45 +31,10 @@ export default function UrgencyBanner() {
                         alignItems: "center",
                         gap: "20px",
                         flexWrap: "wrap",
+                        justifyContent: "center",
+                        width: "100%",
                     }}
                 >
-                    <a
-                        href="#contact"
-                        style={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            gap: "6px",
-                            fontFamily: "var(--font-inter)",
-                            fontSize: "0.9375rem",
-                            fontWeight: 600,
-                            color: "var(--gold-dark)",
-                            textDecoration: "none",
-                        }}
-                        onMouseEnter={(e) =>
-                            (e.currentTarget.style.textDecoration = "underline")
-                        }
-                        onMouseLeave={(e) =>
-                            (e.currentTarget.style.textDecoration = "none")
-                        }
-                    >
-                        See if there&apos;s a slot open
-                        <ArrowRight
-                            style={{ width: "14px", height: "14px" }}
-                            aria-hidden="true"
-                        />
-                    </a>
-
-                    <span
-                        aria-hidden="true"
-                        style={{
-                            color: "var(--border-strong)",
-                            fontSize: "1rem",
-                            lineHeight: 1,
-                        }}
-                    >
-                        ·
-                    </span>
-
                     <a
                         href="mailto:hello@sahajta.com"
                         style={{
@@ -107,7 +51,7 @@ export default function UrgencyBanner() {
                             (e.currentTarget.style.textDecoration = "none")
                         }
                     >
-                        Or email hello@sahajta.com
+                        Contact us at hello@sahajta.com
                     </a>
                 </div>
             </div>

@@ -4,10 +4,10 @@ export function StructuredData() {
         '@type': 'ProfessionalService',
         name: 'Sahajta AI Solution Pvt Ltd',
         alternateName: 'Sahajta AI',
-        description: 'AI-powered MVP development studio for founders and early-stage startups. Ships production-grade AI products in 24–48 hours. No outsourcing.',
+        description: 'AI-powered MVP development studio for founders and early-stage startups. Ships production-grade AI products in 24–48 hours.',
         url: 'https://sahajta.com',
         logo: 'https://sahajta.com/sahajta-logo.png',
-        foundingDate: '2024',
+        foundingDate: '2025',
         address: {
             '@type': 'PostalAddress',
             addressLocality: 'Bengaluru',
@@ -87,14 +87,6 @@ export function StructuredData() {
                 acceptedAnswer: {
                     '@type': 'Answer',
                     text: 'Projects are scoped and priced per engagement. AI Automation starts from ₹40K, Website Design from ₹35K, AI Feature Integration from ₹75K, and MVP Engineering is scoped per project.',
-                },
-            },
-            {
-                '@type': 'Question',
-                name: 'Why does Sahajta AI only take 3 clients per quarter?',
-                acceptedAnswer: {
-                    '@type': 'Answer',
-                    text: 'Because they write every line of code themselves. No outsourcing, no junior devs. The cap exists to protect quality.',
                 },
             },
         ],

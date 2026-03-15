@@ -17,10 +17,23 @@ export function ProjectPopup() {
     const [form, setForm] = useState<FormState>({ name: '', email: '', phone: '', project: '' });
     const [submitState, setSubmitState] = useState<SubmitState>('idle');
     const [errorMsg, setErrorMsg] = useState('');
+    const [contactVisible, setContactVisible] = useState(false);
+
+    // Track whether the #contact section is in the viewport
+    useEffect(() => {
+        const contactSection = document.querySelector('#contact');
+        if (!contactSection) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => setContactVisible(entry.isIntersecting),
+            { threshold: 0.2 }
+        );
+        observer.observe(contactSection);
+        return () => observer.disconnect();
+    }, []);
 
     const open = useCallback(() => {
-        if (!submitted) setVisible(true);
-    }, [submitted]);
+        if (!submitted && !contactVisible) setVisible(true);
+    }, [submitted, contactVisible]);
 
     // Show after 60 seconds, then every 60 seconds if not submitted
     useEffect(() => {
@@ -217,7 +230,7 @@ export function ProjectPopup() {
                                     <button
                                         onClick={handleSubmit}
                                         disabled={submitState === 'loading'}
-                                        className="inline-flex items-center gap-3 bg-[#0B2818] text-[var(--bg-cream,#F5F0E8)] px-8 py-4 rounded-none font-mono text-xs tracking-[0.12em] uppercase hover:bg-[#2D5016] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                        className="inline-flex items-center gap-3 bg-[#0B422A] text-[var(--bg-cream,#F5F0E8)] px-8 py-4 rounded-none font-mono text-xs tracking-[0.12em] uppercase hover:bg-[#2D6E54] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         {submitState === 'loading' ? 'Sending...' : 'Start a Project'}
                                         {submitState !== 'loading' && (

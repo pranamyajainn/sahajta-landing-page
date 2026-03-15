@@ -51,7 +51,7 @@ export default function WhyAI() {
                                         "AI products, automations, and websites shipped",
                                         "From MVPs to agent pipelines to marketing sites",
                                         "Clients across India and global early-stage teams",
-                                        "Every project scoped, built, and shipped by us — no outsourcing"
+                                        "Every project scoped, built, and shipped by us"
                                     ].map((list, i) => (
                                         <li key={i} className="flex gap-3 items-start">
                                             <div className="w-1.5 h-1.5 bg-[#D9B75B] mt-1.5 shrink-0" />
@@ -120,7 +120,7 @@ export default function WhyAI() {
                         {/* BOTTOM ROW */}
                         <div className="border-t border-[#121212]/10 px-8 py-8 bg-[#FDFCF0]/50">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[#121212]/40 mb-6 block text-center">
-                                BUILT WITH TEAMS AT
+                                TRUSTED BY TEAMS AT
                             </span>
                             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
                                 {[

@@ -25,7 +25,7 @@ const CASE_STUDIES = [
         problem: "Traditional recruitment is manual, slow, and misses strong candidates — costing companies time and money on every hire cycle.",
         solution: "Built a full recruitment platform with AI-powered candidate matching, automated resume parsing, AI voice interviews via ElevenLabs, and natural language candidate search.",
         impact: "Reduced screening time significantly, modernized the candidate experience, and improved alignment between candidates and roles.",
-        year: "2024",
+        year: "2025",
         role: "MVP Engineering",
         link: "#",
         status: "SHIPPED"
@@ -38,7 +38,7 @@ const CASE_STUDIES = [
         problem: "Clients were sending messy invoice and receipt photos over Telegram. Manual data extraction was slow, error-prone, and creating bookkeeping backlogs.",
         solution: "Automated pipeline that receives images from Telegram, uses Gemini Vision to extract structured fields, validates the data, and logs everything into Google Sheets instantly.",
         impact: "Eliminated manual bookkeeping work. Every invoice processed in seconds with zero human intervention.",
-        year: "2024",
+        year: "2025",
         role: "AI Automation",
         link: "#",
         status: "SHIPPED"
@@ -51,7 +51,7 @@ const CASE_STUDIES = [
         problem: "AI-generated content felt generic. Teams were spending as much time editing AI drafts as writing from scratch.",
         solution: "Three-stage agentic pipeline: Research Agent → Draft Agent → Refinement Agent. Each stage specialises. The final output reads human.",
         impact: "Blog produced in under 3 minutes. Engagement up, unsubscribes down. Content team's editing time cut to near zero.",
-        year: "2024",
+        year: "2025",
         role: "Agentic Workflow",
         link: "#",
         status: "SHIPPED"

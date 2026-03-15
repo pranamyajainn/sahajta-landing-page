@@ -3,6 +3,21 @@
 const PRICING_TIERS = [
     {
         index: "01",
+        name: "MVP Engineering",
+        from: "Scoped",
+        description: "From zero to a live AI product. Full auth, database, AI core, and deployment. The kind of build that's ready for real users — not a demo.",
+        includes: [
+            "Full-stack build: Next.js, auth, DB, AI",
+            "24–48 hours to live product environment",
+            "Agentic workflows and LLM pipelines",
+            "Production-grade, fully typed codebase",
+            "You own the repo, the docs, everything"
+        ],
+        cta: "Start a Project →",
+        highlight: true
+    },
+    {
+        index: "02",
         name: "AI Automation & Agents",
         from: "₹40K",
         description: "n8n pipelines, agentic workflows, Telegram bots, document parsers, lead gen automations. Scoped, built, deployed. No templates.",
@@ -12,21 +27,6 @@ const PRICING_TIERS = [
             "Google Sheets / Notion / Slack integrations",
             "Delivery in 48–72 hours for scoped builds",
             "You own the workflow"
-        ],
-        cta: "Start a Project →",
-        highlight: false
-    },
-    {
-        index: "02",
-        name: "Website Design & Development",
-        from: "₹35K",
-        description: "Clean, fast, conversion-focused websites. Landing pages to full marketing sites — designed, developed, and deployed for founders who need to move.",
-        includes: [
-            "Custom design — no templates",
-            "Next.js, fully typed, production-ready",
-            "Mobile-first, performance-optimised",
-            "CMS integration if needed",
-            "You own the code"
         ],
         cta: "Start a Project →",
         highlight: false
@@ -48,18 +48,18 @@ const PRICING_TIERS = [
     },
     {
         index: "04",
-        name: "MVP Engineering",
-        from: "Scoped",
-        description: "From zero to a live AI product. Full auth, database, AI core, and deployment. The kind of build that's ready for real users — not a demo.",
+        name: "Website Design & Development",
+        from: "₹35K",
+        description: "Clean, fast, conversion-focused websites. Landing pages to full marketing sites — designed, developed, and deployed for founders who need to move.",
         includes: [
-            "Full-stack build: Next.js, auth, DB, AI",
-            "24–48 hours to live product environment",
-            "Agentic workflows and LLM pipelines",
-            "Production-grade, fully typed codebase",
-            "You own the repo, the docs, everything"
+            "Custom design — no templates",
+            "Next.js, fully typed, production-ready",
+            "Mobile-first, performance-optimised",
+            "CMS integration if needed",
+            "You own the code"
         ],
         cta: "Start a Project →",
-        highlight: true
+        highlight: false
     },
 ] as const;
 
@@ -99,6 +99,11 @@ export function Pricing() {
                                 <span className={`font-mono text-xs tracking-widest uppercase ${tier.highlight ? 'text-[#C9A84C]' : 'text-[#2D5016]/50'}`}>
                                     {tier.index}
                                 </span>
+                                {tier.name === "MVP Engineering" && (
+                                    <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#C9A84C] mb-2">
+                                        CORE OFFERING
+                                    </div>
+                                )}
                                 <h3
                                     className={`font-black text-2xl leading-tight mt-1 ${tier.highlight ? 'text-[#F5F0E8]' : 'text-[#0B2818]'}`}
                                     style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 900 }}
@@ -155,7 +160,7 @@ export function Pricing() {
 
                 {/* BOTTOM NOTE */}
                 <p className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase mt-8 text-center">
-                    All projects include full IP transfer · No outsourcing · No junior devs · 3 clients per quarter
+                    All projects include full IP transfer · Production-grade code · Zero vendor lock-in
                 </p>
 
             </div>

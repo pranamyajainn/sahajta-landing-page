@@ -23,11 +23,7 @@ const faqItems = [
     },
     {
         question: "How much does it cost?",
-        answer: "Projects are scoped and priced per engagement. Tell us what you\u0027re building and we\u0027ll give you a number within 24 hours.",
-    },
-    {
-        question: "Why only 3 clients per quarter?",
-        answer: "Because we write the code ourselves. No outsourcing, no junior devs. The cap exists to protect quality.",
+        answer: "Projects are scoped and priced per engagement. Tell us what you're building and we'll give you a number within 24 hours.",
     },
 ];
 

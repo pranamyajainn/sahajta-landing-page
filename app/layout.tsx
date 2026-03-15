@@ -24,14 +24,14 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({
     subsets: ["latin"],
     variable: "--font-mono",
-    weight: ["400", "500"],
+    weight: ["400", "500", "700"],
     display: "swap",
     preload: false,
 });
 
 export const metadata: Metadata = {
     title: 'Sahajta AI | AI-Powered MVP Studio — Ship in 24–48 Hours',
-    description: 'Sahajta AI builds AI-powered MVPs and products for founders and early-stage startups. From concept to live product in 24–48 hours. No outsourcing. Full code ownership. Based in Bangalore, India.',
+    description: 'Sahajta AI builds AI-powered MVPs and products for founders and early-stage startups. From concept to live product in 24–48 hours. Full code ownership. Based in Bangalore, India.',
     keywords: [
         'AI MVP development',
         'AI startup studio',

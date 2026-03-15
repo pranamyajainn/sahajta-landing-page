@@ -20,7 +20,8 @@ import Footer from "@/components/Footer";
 export default function Home() {
     return (
         <main>
-            <Navbar />
+            {/* Global Navbar is suppressed on the homepage as Hero has its own internal floating nav */}
+            {/* <Navbar /> */}
             <Hero />
             <OnlyAgencyThatShips />
             <Services />
