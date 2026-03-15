@@ -12,6 +12,7 @@ const transporter = nodemailer.createTransport({
 const RECIPIENT_EMAILS = [
     'pranamyajeet@gmail.com',
     'shubhangsethi@gmail.com',
+    'hello@sahajta.com',
     'sahajta.ai@gmail.com',
 ];
 

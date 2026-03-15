@@ -242,10 +242,10 @@ export default function BookACall() {
                             <p className="font-mono text-xs text-[#0B2818]/30 tracking-widest">
                                 OR EMAIL DIRECTLY —{" "}
                                 <a
-                                    href="mailto:sahajta.ai@gmail.com"
+                                    href="mailto:hello@sahajta.com"
                                     className="text-[#2D5016]/60 hover:text-[#2D5016] transition-colors underline underline-offset-4"
                                 >
-                                    sahajta.ai@gmail.com
+                                    hello@sahajta.com
                                 </a>
                             </p>
                         </div>

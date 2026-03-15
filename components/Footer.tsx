@@ -186,7 +186,7 @@ export default function Footer() {
                             fontWeight: 500,
                             color: "var(--text-body, #2C3E2D)",
                         }}>
-                            sahajta.ai@gmail.com | Bengaluru, Karnataka, India
+                            hello@sahajta.com | Bengaluru, Karnataka, India
                         </p>
                     </div>
                 </div>

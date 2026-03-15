@@ -16,7 +16,7 @@ export function StructuredData() {
         },
         contactPoint: {
             '@type': 'ContactPoint',
-            email: 'sahajta.ai@gmail.com',
+            email: 'hello@sahajta.com',
             contactType: 'sales',
         },
         founder: [
