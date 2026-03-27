@@ -90,7 +90,7 @@ export default function BookACall() {
                 {/* SECTION HEADER */}
                 <div className="mb-16">
                     <BlurFade delay={0.1} inView>
-                        <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016]/60 mb-4">
+                        <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016] mb-4 font-bold">
                             LET&apos;S TALK
                         </p>
                     </BlurFade>
@@ -117,10 +117,10 @@ export default function BookACall() {
                         {/* LEFT — INTAKE FORM */}
                         <div className="bg-[var(--bg-cream,#F5F0E8)] p-10 flex flex-col gap-8">
                             <div>
-                                <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016]/60 mb-2">
+                                <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016] mb-2 font-bold">
                                     01 — TELL US ABOUT YOUR PROJECT
                                 </p>
-                                <p className="text-[#0B2818]/50 text-sm leading-relaxed">
+                                <p className="text-[#0B2818]/70 text-sm leading-relaxed font-medium">
                                     Tell us what you&apos;re building. We respond within 24 hours with a clear next
                                     step — no pitch, no proposal deck.
                                 </p>
@@ -130,7 +130,7 @@ export default function BookACall() {
                             <div className="flex flex-col gap-5">
                                 {/* NAME */}
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818] font-bold">
                                         Your Name *
                                     </label>
                                     <input
@@ -139,13 +139,13 @@ export default function BookACall() {
                                         value={form.name}
                                         onChange={handleChange}
                                         placeholder="Pranamya Jain"
-                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm"
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] placeholder:text-[#0B2818]/40 focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm"
                                     />
                                 </div>
 
                                 {/* EMAIL */}
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818] font-bold">
                                         Email *
                                     </label>
                                     <input
@@ -154,13 +154,13 @@ export default function BookACall() {
                                         value={form.email}
                                         onChange={handleChange}
                                         placeholder="you@startup.com"
-                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm"
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] placeholder:text-[#0B2818]/40 focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm"
                                     />
                                 </div>
 
                                 {/* PROJECT */}
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818] font-bold">
                                         What are you building? *
                                     </label>
                                     <textarea
@@ -169,13 +169,13 @@ export default function BookACall() {
                                         onChange={handleChange}
                                         placeholder="Brief description — what problem, who it's for, where you are now."
                                         rows={4}
-                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm resize-none"
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] placeholder:text-[#0B2818]/40 focus:outline-none focus:border-[#2D5016] transition-colors font-[var(--font-inter)] text-sm resize-none"
                                     />
                                 </div>
 
                                 {/* BUDGET */}
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818] font-bold">
                                         Budget Range
                                     </label>
                                     <select
@@ -239,11 +239,11 @@ export default function BookACall() {
                             )}
 
                             {/* DIRECT EMAIL FALLBACK */}
-                            <p className="font-mono text-xs text-[#0B2818]/30 tracking-widest">
+                            <p className="font-mono text-xs text-[#0B2818]/60 tracking-widest font-bold">
                                 OR EMAIL DIRECTLY —{" "}
                                 <a
                                     href="mailto:hello@sahajta.com"
-                                    className="text-[#2D5016]/60 hover:text-[#2D5016] transition-colors underline underline-offset-4"
+                                    className="text-[#2D5016] hover:text-[#2D5016] transition-colors underline underline-offset-4"
                                 >
                                     hello@sahajta.com
                                 </a>
@@ -253,10 +253,10 @@ export default function BookACall() {
                         {/* RIGHT — CAL.COM BOOKING */}
                         <div className="bg-[var(--bg-cream,#F5F0E8)] p-10 flex flex-col gap-6">
                             <div>
-                                <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016]/60 mb-2">
+                                <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016] mb-2 font-bold">
                                     02 — SCHEDULE DIRECTLY
                                 </p>
-                                <p className="text-[#0B2818]/50 text-sm leading-relaxed">
+                                <p className="text-[#0B2818]/70 text-sm leading-relaxed font-medium">
                                     Ready to talk now? Pick a time. 20 minutes.
                                     We&apos;ll come prepared.
                                 </p>
@@ -296,11 +296,11 @@ export default function BookACall() {
                 {/* BOTTOM METADATA STRIP */}
                 <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="flex items-center gap-6">
-                        <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">
+                        <span className="font-mono text-xs text-[#0B2818]/60 tracking-widest uppercase font-bold">
                             Response within 24h
                         </span>
                         <span className="w-1 h-1 bg-[#0B2818]/20 rounded-full hidden sm:block" />
-                        <span className="font-mono text-xs text-[#0B2818]/30 tracking-widest uppercase">
+                        <span className="font-mono text-xs text-[#0B2818]/60 tracking-widest uppercase font-bold">
                             No retainer lock-in
                         </span>
                     </div>

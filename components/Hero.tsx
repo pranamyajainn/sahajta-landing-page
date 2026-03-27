@@ -41,7 +41,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0B120A]">
             {/* Background Video */}
             <video
                 ref={videoRef}
@@ -51,6 +51,7 @@ export default function Hero() {
                 playsInline
                 preload="auto"
                 src="/hero-bg.mp4"
+                poster="/hero-poster.jpg"
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ zIndex: 0, willChange: 'transform' }}
             />

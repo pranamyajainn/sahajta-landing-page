@@ -120,14 +120,14 @@ export function ProjectPopup() {
                     {/* HEADER BAR */}
                     <div className="flex items-center justify-between px-8 py-5 border-b border-[#2D5016]/10">
                         <div>
-                            <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016]/60">
+                            <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016] font-bold">
                                 01 — START A PROJECT
                             </p>
                         </div>
                         <button
                             onClick={handleDismiss}
                             aria-label="Close"
-                            className="font-mono text-xs text-[#0B2818]/30 hover:text-[#0B2818]/70 tracking-widest uppercase transition-colors"
+                            className="font-mono text-xs text-[#0B2818]/60 hover:text-[#0B2818] tracking-widest uppercase transition-colors font-bold"
                         >
                             ✕ CLOSE
                         </button>
@@ -147,7 +147,7 @@ export function ProjectPopup() {
                                 >
                                     We'll respond within 24 hours.
                                 </p>
-                                <p className="font-mono text-xs text-[#0B2818]/40 tracking-widest uppercase mt-2">
+                                <p className="font-mono text-xs text-[#0B2818]/60 tracking-widest uppercase mt-2 font-bold">
                                     No pitch. Just a clear next step.
                                 </p>
                             </div>
@@ -155,7 +155,7 @@ export function ProjectPopup() {
                             <>
                                 {/* NAME */}
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818] font-bold">
                                         Your Name *
                                     </label>
                                     <input
@@ -165,14 +165,14 @@ export function ProjectPopup() {
                                         onChange={handleChange}
                                         placeholder="Pranamya Jain"
                                         autoComplete="name"
-                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] text-sm placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors"
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] text-sm placeholder:text-[#0B2818]/40 focus:outline-none focus:border-[#2D5016] transition-colors"
                                         style={{ fontFamily: 'var(--font-inter)' }}
                                     />
                                 </div>
 
                                 {/* EMAIL */}
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818] font-bold">
                                         Email *
                                     </label>
                                     <input
@@ -182,14 +182,14 @@ export function ProjectPopup() {
                                         onChange={handleChange}
                                         placeholder="you@startup.com"
                                         autoComplete="email"
-                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] text-sm placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors"
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] text-sm placeholder:text-[#0B2818]/40 focus:outline-none focus:border-[#2D5016] transition-colors"
                                         style={{ fontFamily: 'var(--font-inter)' }}
                                     />
                                 </div>
 
                                 {/* PHONE */}
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818] font-bold">
                                         Contact Number *
                                     </label>
                                     <input
@@ -199,14 +199,14 @@ export function ProjectPopup() {
                                         onChange={handleChange}
                                         placeholder="+91 98765 43210"
                                         autoComplete="tel"
-                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] text-sm placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors"
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] text-sm placeholder:text-[#0B2818]/40 focus:outline-none focus:border-[#2D5016] transition-colors"
                                         style={{ fontFamily: 'var(--font-inter)' }}
                                     />
                                 </div>
 
                                 {/* PROJECT */}
                                 <div className="flex flex-col gap-1.5">
-                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818]/50">
+                                    <label className="font-mono text-xs tracking-widest uppercase text-[#0B2818] font-bold">
                                         What are you building? *
                                     </label>
                                     <textarea
@@ -215,7 +215,7 @@ export function ProjectPopup() {
                                         onChange={handleChange}
                                         placeholder="Brief description — what problem, who it's for, where you are now."
                                         rows={3}
-                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] text-sm placeholder:text-[#0B2818]/25 focus:outline-none focus:border-[#2D5016] transition-colors resize-none"
+                                        className="bg-transparent border-b border-[#2D5016]/30 py-2.5 text-[#0B2818] text-sm placeholder:text-[#0B2818]/40 focus:outline-none focus:border-[#2D5016] transition-colors resize-none"
                                         style={{ fontFamily: 'var(--font-inter)' }}
                                     />
                                 </div>
@@ -237,7 +237,7 @@ export function ProjectPopup() {
                                             <span className="text-[var(--gold,#C9A84C)]">→</span>
                                         )}
                                     </button>
-                                    <p className="font-mono text-xs text-[#0B2818]/25 tracking-widest uppercase">
+                                    <p className="font-mono text-xs text-[#0B2818]/40 tracking-widest uppercase font-bold">
                                         24h response
                                     </p>
                                 </div>
