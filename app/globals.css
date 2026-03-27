@@ -51,8 +51,18 @@ body {
    LAYOUT UTILITIES
    ========================================================= */
 .section-pad {
-  padding-top: 128px;
-  padding-bottom: 128px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
 }
 
 .section-canvas {
@@ -65,13 +75,6 @@ body {
 
 .section-tint {
   background-color: var(--bg-green-tint);
-}
-
-@media (max-width: 768px) {
-  .section-pad {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
 }
 
 /* =========================================================

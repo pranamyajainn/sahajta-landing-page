@@ -40,12 +40,12 @@ export default function HowSahajtaShips() {
                     <h2
                         style={{
                             fontFamily: "var(--font-cormorant), Georgia, serif",
-                            fontSize: "clamp(2rem, 4vw, 3rem)",
+                            fontSize: "clamp(1.5rem, 4vw, 3rem)",
                             fontWeight: 700,
                             color: "var(--text-dark)",
                             letterSpacing: "-0.02em",
                             lineHeight: 1.05,
-                            marginBottom: "64px",
+                            marginBottom: "clamp(32px, 5vw, 64px)",
                             maxWidth: "560px",
                         }}
                     >

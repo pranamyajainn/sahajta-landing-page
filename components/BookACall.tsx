@@ -115,7 +115,7 @@ export default function BookACall() {
                 <BlurFade delay={0.3} inView>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#2D5016]/10 border border-[#2D5016]/10">
                         {/* LEFT — INTAKE FORM */}
-                        <div className="bg-[var(--bg-cream,#F5F0E8)] p-10 flex flex-col gap-8">
+                        <div className="bg-[var(--bg-cream,#F5F0E8)] p-5 md:p-10 flex flex-col gap-8">
                             <div>
                                 <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016] mb-2 font-bold">
                                     01 — TELL US ABOUT YOUR PROJECT
@@ -251,7 +251,7 @@ export default function BookACall() {
                         </div>
 
                         {/* RIGHT — CAL.COM BOOKING */}
-                        <div className="bg-[var(--bg-cream,#F5F0E8)] p-10 flex flex-col gap-6">
+                        <div className="bg-[var(--bg-cream,#F5F0E8)] p-5 md:p-10 flex flex-col gap-6">
                             <div>
                                 <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016] mb-2 font-bold">
                                     02 — SCHEDULE DIRECTLY
@@ -263,14 +263,14 @@ export default function BookACall() {
                             </div>
 
                             {/* CAL.COM INLINE EMBED */}
-                            <div className="flex-1 min-h-[500px]">
+                            <div className="flex-1 min-h-0 md:min-h-[500px]">
                                 <Cal
                                     namespace="30min"
                                     calLink="pranamyajain/30min"
                                     style={{
                                         width: "100%",
                                         height: "100%",
-                                        minHeight: "500px",
+                                        minHeight: "0px",
                                         overflow: "auto",
                                     }}
                                     config={{

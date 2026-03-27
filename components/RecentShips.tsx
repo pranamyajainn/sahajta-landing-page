@@ -92,7 +92,7 @@ export default function RecentShips() {
                         {CASE_STUDIES.map((study) => (
                             <MagicCard
                                 key={study.index}
-                                className="flex flex-col gap-5 p-8 bg-[var(--bg-cream)] border border-[#2D5016]/30 rounded-none shadow-none hover:border-[#2D5016]/60 transition-colors duration-200"
+                                className="flex flex-col gap-5 p-5 md:p-8 bg-[var(--bg-cream)] border border-[#2D5016]/30 rounded-none shadow-none hover:border-[#2D5016]/60 transition-colors duration-200"
                                 gradientColor="var(--gold-tint)"
                             >
                                 {/* TOP ROW: Index + Status */}
@@ -107,7 +107,7 @@ export default function RecentShips() {
 
                                 {/* TITLE */}
                                 <h3
-                                    className="font-black text-3xl leading-tight text-[#0B2818]"
+                                    className="font-black text-xl md:text-3xl leading-tight text-[#0B2818]"
                                     style={{ fontFamily: "var(--font-cormorant)", fontWeight: 900 }}
                                 >
                                     {study.title}

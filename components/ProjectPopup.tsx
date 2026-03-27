@@ -118,7 +118,7 @@ export function ProjectPopup() {
                 <div className="w-full max-w-lg bg-[var(--bg-cream,#F5F0E8)] border border-[#2D5016]/20 flex flex-col">
 
                     {/* HEADER BAR */}
-                    <div className="flex items-center justify-between px-8 py-5 border-b border-[#2D5016]/10">
+                    <div className="flex items-center justify-between px-5 md:px-8 py-5 border-b border-[#2D5016]/10">
                         <div>
                             <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016] font-bold">
                                 01 — START A PROJECT
@@ -134,7 +134,7 @@ export function ProjectPopup() {
                     </div>
 
                     {/* FORM BODY */}
-                    <div className="px-8 py-8 flex flex-col gap-6">
+                    <div className="px-5 md:px-8 py-8 flex flex-col gap-6">
 
                         {submitState === 'success' ? (
                             <div className="flex flex-col gap-3 py-6">

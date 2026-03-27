@@ -15,7 +15,7 @@ export default function Hero() {
             // The native loop attribute sometimes causes a visible gap
             if (video.currentTime >= video.duration - 0.1) {
                 video.currentTime = 0;
-                video.play().catch(() => {});
+                video.play().catch(() => { });
             }
         };
 
@@ -32,6 +32,18 @@ export default function Hero() {
     };
 
     const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [menuOpen]);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 80);
@@ -41,7 +53,8 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0B120A]">
+        <>
+            <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0B120A]">
             {/* Background Video */}
             <video
                 ref={videoRef}
@@ -66,15 +79,14 @@ export default function Hero() {
             />
 
             {/* New Flat Navbar */}
-            <nav 
-                className={`fixed top-0 left-0 w-full h-[72px] z-50 flex items-center justify-between px-6 md:px-16 transition-colors duration-300 ${
-                    scrolled ? 'bg-[var(--bg-cream,#F5F0E8)] border-b border-[#2D501622]' : 'bg-transparent border-b border-transparent'
-                }`}
+            <nav
+                className={`fixed top-0 left-0 w-full h-[72px] z-50 flex items-center justify-between px-6 md:px-16 transition-colors duration-300 ${scrolled ? 'bg-[var(--bg-cream,#F5F0E8)] border-b border-[#2D501622]' : 'bg-transparent border-b border-transparent'
+                    }`}
             >
                 {/* Left: Logo */}
                 <a href="#" aria-label="Sahajta AI — home" className="flex-shrink-0">
                     <Image
-                        src="/sahajta-logo.png"
+                        src={scrolled ? "/sahajta-logo.png" : "/sahajta-logo-light.png"}
                         alt="Sahajta AI Logo"
                         width={120}
                         height={34}
@@ -82,18 +94,17 @@ export default function Hero() {
                         priority
                     />
                 </a>
-                
+
                 {/* Center: Nav links */}
                 <div className="hidden md:flex items-center gap-8">
                     {["Work", "Services", "Process", "Team"].map((item) => {
                         const href = item === "Work" ? "#ships" : `#${item.toLowerCase()}`;
                         return (
-                            <a 
-                                key={item} 
-                                href={href} 
-                                className={`font-mono text-[13px] uppercase tracking-[0.08em] hover:text-[#C9A84C] transition-colors duration-300 ${
-                                    scrolled ? 'text-[#0B2818]' : 'text-[#F5F0E8]'
-                                }`}
+                            <a
+                                key={item}
+                                href={href}
+                                className={`font-mono text-[13px] uppercase tracking-[0.08em] hover:text-[#C9A84C] transition-colors duration-300 ${scrolled ? 'text-[#0B2818]' : 'text-[#F5F0E8]'
+                                    }`}
                             >
                                 {item}
                             </a>
@@ -101,15 +112,29 @@ export default function Hero() {
                     })}
                 </div>
 
-                {/* Right: CTA Button */}
-                <a 
-                    href="#contact"
-                    className={`font-mono text-[13px] uppercase tracking-[0.08em] px-6 py-3 rounded-none hover:opacity-90 transition-all duration-300 ${
-                        scrolled ? 'bg-[#0B422A] text-[#F5F0E8]' : 'bg-[#C9A84C] text-[#0B2818]'
-                    }`}
-                >
-                    START A PROJECT →
-                </a>
+                {/* Right: CTA Button & Hamburger */}
+                <div className="flex items-center gap-4">
+                    {scrolled && (
+                        <a
+                            href="#contact"
+                            className="hidden md:inline-block font-mono text-[13px] uppercase tracking-[0.08em] px-6 py-3 rounded-none bg-[#0B422A] text-[#F5F0E8] hover:opacity-90 transition-all duration-300"
+                        >
+                            GET IN TOUCH →
+                        </a>
+                    )}
+
+                    {/* Hamburger Menu - Mobile Only */}
+                    <button
+                        onClick={() => setMenuOpen(true)}
+                        className={`md:hidden flex flex-col gap-[5px] p-2 transition-colors duration-300 ${scrolled ? 'text-[#0B2818]' : 'text-[#F5F0E8]'
+                            }`}
+                        aria-label="Open menu"
+                    >
+                        <span className="w-6 h-[2px] bg-current" />
+                        <span className="w-6 h-[2px] bg-current" />
+                        <span className="w-6 h-[2px] bg-current" />
+                    </button>
+                </div>
             </nav>
 
             {/* Hero Content */}
@@ -138,13 +163,13 @@ export default function Hero() {
 
                 {/* CTA Row */}
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a 
+                    <a
                         href="#contact"
                         className="bg-[#C9A84C] text-[#0B2818] font-mono text-[13px] uppercase tracking-[0.1em] px-8 py-4 rounded-none hover:opacity-90 transition-opacity inline-block"
                     >
                         START A PROJECT →
                     </a>
-                    <button 
+                    <button
                         onClick={scrollToShips}
                         className="border border-[#F5F0E8]/30 text-[#F5F0E8] font-mono text-[13px] uppercase tracking-[0.1em] px-8 py-4 rounded-none bg-transparent hover:border-[#F5F0E8] transition-colors"
                     >
@@ -155,5 +180,65 @@ export default function Hero() {
 
 
         </section>
+
+        {/* Mobile Fullscreen Overlay */}
+        <div
+            className={`fixed inset-0 bg-[#0B2818] z-[100] transition-opacity duration-500 ease-in-out ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                }`}
+        >
+            {/* Overlay Header */}
+            <div className="absolute top-0 left-0 w-full h-[72px] flex items-center justify-between px-6">
+                <div className="flex-shrink-0">
+                    <Image
+                        src="/sahajta-logo-light.png"
+                        alt="Sahajta AI Logo"
+                        width={120}
+                        height={34}
+                        style={{ objectFit: "contain" }}
+                    />
+                </div>
+                <button
+                    onClick={() => setMenuOpen(false)}
+                    className="font-mono text-[24px] text-[#F5F0E8] p-2"
+                    aria-label="Close menu"
+                >
+                    ✕
+                </button>
+            </div>
+
+            {/* Nav Links Container */}
+            <div className="flex flex-col items-center justify-center h-full gap-6">
+                {["Work", "Services", "Process", "Team"].map((item, index) => {
+                    const href = item === "Work" ? "#ships" : `#${item.toLowerCase()}`;
+                    return (
+                        <a
+                            key={item}
+                            href={href}
+                            onClick={() => setMenuOpen(false)}
+                            className={`font-serif font-[900] text-[48px] text-[#F5F0E8] hover:text-[#C9A84C] transition-all duration-300 transform ${menuOpen ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+                                }`}
+                            style={{
+                                transitionDelay: `${index * 100}ms`,
+                            }}
+                        >
+                            {item}
+                        </a>
+                    );
+                })}
+
+                <a
+                    href="#contact"
+                    onClick={() => setMenuOpen(false)}
+                    className={`mt-8 bg-[#C9A84C] text-[#0B2818] font-mono text-[13px] uppercase tracking-[0.1em] px-8 py-4 rounded-none transition-all duration-500 transform ${menuOpen ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+                        }`}
+                    style={{
+                        transitionDelay: `400ms`,
+                    }}
+                >
+                    GET IN TOUCH →
+                </a>
+            </div>
+        </div>
+    </>
     );
 }

@@ -62,7 +62,7 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
                 gradientSize={200}
                 gradientOpacity={0.8}
             >
-                <div style={{ padding: "40px", display: "flex", flexDirection: "column", height: "100%" }}>
+                <div className="p-5 md:p-10 flex flex-col h-100%">
                     {/* Icon */}
                     <div
                         style={{
@@ -166,8 +166,7 @@ export default function Services() {
                 </BlurFade>
 
                 <div
-                    style={{ display: "grid", gap: "32px" }}
-                    className="grid-cols-1 md:grid-cols-2"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"
                 >
                     {services.map((s, i) => (
                         <ServiceCard key={i} service={s} />

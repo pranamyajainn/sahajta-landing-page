@@ -33,16 +33,16 @@ export default function WhyAI() {
                     <div className="border border-[#121212]/10 rounded-none overflow-hidden bg-white">
                         <div className="grid grid-cols-1 md:grid-cols-3">
                             {/* COLUMN 1: THE OPPORTUNITY */}
-                            <div className="p-8 border-b md:border-b-0 md:border-r border-[#121212]/10">
+                            <div className="p-5 md:p-8 border-b md:border-b-0 md:border-r border-[#121212]/10">
                                 <span className="font-mono text-[10px] uppercase tracking-widest text-[#0B422A] mb-8 block">
                                     SHIPPED
                                 </span>
                                 <div className="mb-8 flex flex-col">
-                                    <div className="font-serif font-black text-[90px] leading-none flex items-baseline">
+                                    <div className="font-serif font-black text-[48px] md:text-[90px] leading-none flex items-baseline">
                                         <span className="text-[#121212]">25</span>
                                         <span className="text-[#D9B75B]">+</span>
                                     </div>
-                                    <div className="font-serif font-bold text-2xl text-[#121212]/60 -mt-2">
+                                    <div className="font-serif font-bold text-xl md:text-2xl text-[#121212]/60 mt-0 md:-mt-2">
                                         AI projects & websites
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@ export default function WhyAI() {
                             </div>
 
                             {/* COLUMN 2: THE AI ADOPTION CURVE */}
-                            <div className="p-8 border-b md:border-b-0 md:border-r border-[#121212]/10 flex flex-col justify-between">
+                             <div className="p-5 md:p-8 border-b md:border-b-0 md:border-r border-[#121212]/10 flex flex-col justify-between">
                                 <span className="font-mono text-[10px] uppercase tracking-widest text-[#0B422A] mb-8 block">
                                     THE AI ADOPTION CURVE
                                 </span>
@@ -84,11 +84,11 @@ export default function WhyAI() {
                             {/* COLUMN 3: TWO STACKED SUB-CELLS */}
                             <div className="flex flex-col">
                                 {/* Top sub-cell */}
-                                <div className="p-8 border-b border-[#121212]/10">
+                                 <div className="p-5 md:p-8 border-b border-[#121212]/10">
                                     <span className="font-mono text-[10px] uppercase text-[#0B422A] mb-4 block">
                                         TYPICAL PROJECT TIMELINE
                                     </span>
-                                    <div className="font-serif font-black text-7xl text-[#D9B75B] mb-2">
+                                     <div className="font-serif font-black text-4xl md:text-7xl text-[#D9B75B] mb-2">
                                         48h
                                     </div>
                                     <p className="font-sans text-xs text-[#121212]/50">
@@ -96,7 +96,7 @@ export default function WhyAI() {
                                     </p>
                                 </div>
                                 {/* Bottom sub-cell */}
-                                <div className="p-8">
+                                 <div className="p-5 md:p-8">
                                     <span className="font-mono text-[10px] uppercase text-[#0B422A] mb-6 block">
                                         WHO WE BUILD FOR
                                     </span>
@@ -118,7 +118,7 @@ export default function WhyAI() {
                         </div>
 
                         {/* BOTTOM ROW */}
-                        <div className="border-t border-[#121212]/10 px-8 py-8 bg-[#FDFCF0]/50">
+                         <div className="border-t border-[#121212]/10 px-5 py-8 md:px-8 bg-[#FDFCF0]/50">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[#121212]/40 mb-6 block text-center">
                                 TRUSTED BY TEAMS AT
                             </span>

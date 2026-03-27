@@ -51,10 +51,10 @@ export default function Reality() {
                 </div>
 
                 {/* Capability Grid */}
-                <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
                     {capabilities.map((item, index) => (
                         <BlurFade key={index} delay={0.1 + index * 0.05} inView>
-                            <div className="relative p-6 bg-[#EFEFEF]/50 flex flex-row items-center gap-4 transition-all duration-200 group border border-transparent hover:bg-[#EFEFEF]/80 min-h-[96px]">
+                            <div className="border border-[#1A1A1A]/10 rounded-none bg-white p-4 md:p-6 flex flex-row items-center gap-4 transition-all duration-200 hover:translate-y-[-2px] hover:shadow-lg min-h-0 md:min-h-[96px]">
                                 {/* 4 Corner Accent Markers */}
                                 <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-[#2D5016]"></div>
                                 <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#2D5016]"></div>

@@ -63,7 +63,7 @@ export default function Testimonials() {
                         {PAIN_POINTS.map((item, i) => (
                             <div
                                 key={i}
-                                className="bg-[var(--bg-cream)] p-8 flex flex-col gap-6 hover:bg-[#2D5016]/[0.03] transition-colors duration-200"
+                                className="bg-[var(--bg-cream)] p-5 md:p-8 flex flex-col gap-4 md:gap-6 hover:bg-[#2D5016]/[0.03] transition-colors duration-200"
                             >
                                 {/* QUOTE MARK */}
                                 <div className="w-8 h-8 bg-[#2D5016] flex items-center justify-center flex-shrink-0">
