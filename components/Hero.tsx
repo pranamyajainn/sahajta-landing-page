@@ -68,16 +68,13 @@ export default function Hero() {
             <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0B120A]">
             {/* Background: video on desktop, static poster on mobile */}
             {isMobile ? (
-                <img
+                <Image
                     src="/hero-poster.jpg"
-                    alt=""
-                    aria-hidden="true"
-                    width={1920}
-                    height={1080}
-                    fetchPriority="high"
-                    decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    style={{ zIndex: 0 }}
+                    alt="Sahajta AI"
+                    fill
+                    priority
+                    sizes="100vw"
+                    style={{ objectFit: "cover", zIndex: 0 }}
                 />
             ) : (
                 <video
