@@ -1,0 +1,14 @@
+# Target modern browsers only — eliminates legacy JS polyfills (Array.at, Object.hasOwn etc)
+# This removes ~11.5KB of unnecessary polyfills from the JS bundle
+[production]
+chrome >= 90
+firefox >= 90
+safari >= 14
+edge >= 90
+samsung >= 14
+ios_saf >= 14
+
+[development]
+last 1 chrome version
+last 1 firefox version
+last 1 safari version

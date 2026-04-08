@@ -67,6 +67,10 @@ export default function IndustryVoices() {
                                 <img
                                     src={img.src}
                                     alt={img.alt}
+                                    width={560}
+                                    height={280}
+                                    loading="lazy"
+                                    decoding="async"
                                     className="h-[280px] md:h-[320px] w-auto object-contain bg-white block"
                                 />
                             </div>

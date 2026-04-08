@@ -38,7 +38,7 @@ export default function FeaturedProduct() {
                         height={720}
                         className="w-full h-full object-contain"
                         draggable={false}
-                        priority
+                        sizes="(max-width: 768px) 100vw, 80vw"
                     />
                 </a>
             </ContainerScroll>
