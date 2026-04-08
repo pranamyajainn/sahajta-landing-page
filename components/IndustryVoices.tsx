@@ -24,13 +24,13 @@ export default function IndustryVoices() {
                         className="font-[var(--font-cormorant)] font-black text-[clamp(3rem,7vw,5.5rem)] leading-[1.0] tracking-tight text-[#0B2818] mb-8"
                         style={{ fontFamily: 'var(--font-cormorant)', fontWeight: 900 }}
                     >
-                        Your competitor just shipped<br />
-                        an AI-powered MVP. You haven&apos;t.
+                        Your competitor is already using AI<br />
+                        to run leaner and serve customers better.
                     </h2>
 
                     {/* BODY */}
                     <p className="font-[var(--font-inter)] text-lg text-[#0B2818]/60 max-w-xl mx-auto mb-12 leading-relaxed">
-                        Every week without AI in your product is a week your competitor is building their moat. We exist to close that gap in days, not months.
+                        Every month you wait, the gap grows. We exist to close that gap in days, not months.
                     </p>
 
                     {/* CTA ROW */}

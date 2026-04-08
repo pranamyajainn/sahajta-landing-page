@@ -4,28 +4,28 @@ import { BlurFade } from "@/components/ui/blur-fade";
 
 const PAIN_POINTS = [
     {
-        quote: "I have 3 months of runway left. I need an AI-powered MVP live before my next investor meeting — not a Figma prototype, a working product.",
-        attribution: "Seed-stage founder, B2B SaaS.",
+        quote: "My staff was spending four hours every day entering invoice data into spreadsheets. Mistakes were constant and fixing them cost us more time. I needed it fixed fast.",
+        attribution: "Business Owner, CA Firm · Bangalore",
     },
     {
-        quote: "My engineering team is deep in the core product. I need someone to drop an AI feature into our Next.js stack without touching what's already working.",
-        attribution: "Product lead, Series A startup.",
+        quote: "Customers were messaging us on WhatsApp at midnight asking about their orders. We were losing sales because no one was there to reply. Now the system handles it.",
+        attribution: "Founder, D2C Fashion Brand · Mumbai",
     },
     {
-        quote: "I won a hackathon with an idea. Now I need to turn that proof-of-concept into something I can put in front of real users this week.",
-        attribution: "Solo founder, pre-revenue.",
+        quote: "My competitor launched something that looked more modern and my customers noticed. I did not know how to keep up. Sahajta showed me exactly what to do and built it.",
+        attribution: "Owner, Retail Business · Delhi",
     },
     {
-        quote: "We've been talking about AI integration for six months. My board is asking why we haven't shipped anything. I need a team that actually builds.",
-        attribution: "CTO, growth-stage company.",
+        quote: "Every agency I spoke to used terms I did not understand. Sahajta explained everything in plain language, told me what it would cost, and delivered what they promised.",
+        attribution: "Founder, Logistics Company · Bangalore",
     },
     {
-        quote: "I have the domain knowledge and the users. I just need the AI and engineering layer built properly — not outsourced to a junior dev farm.",
-        attribution: "Indie builder, domain expert.",
+        quote: "We were manually calling every customer after an order to give them an update. It was taking up half my team's day. Now it happens automatically the moment an order moves.",
+        attribution: "Operations Head, E-commerce Business · Hyderabad",
     },
     {
-        quote: "My competitor just launched an AI feature. I need to ship a better version in two weeks or I lose the positioning we've spent two years building.",
-        attribution: "Founder, established product.",
+        quote: "I had no idea AI could do something practical for a business like mine. I thought it was only for big companies. Sahajta built something for us in days and it paid for itself within the month.",
+        attribution: "Owner, Wholesale Trading Business · Surat",
     },
 ] as const;
 
@@ -53,7 +53,7 @@ export default function Testimonials() {
                 {/* SUBHEAD */}
                 <BlurFade delay={0.3} inView>
                     <p className="font-[var(--font-inter)] text-base text-[#0B2818]/50 mb-16 max-w-xl">
-                        Six founders. Six situations where waiting any longer wasn&apos;t an option.
+                        Four businesses. Four problems that were costing them every single day.
                     </p>
                 </BlurFade>
 

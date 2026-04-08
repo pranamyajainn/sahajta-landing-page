@@ -8,26 +8,26 @@ import { BlurFade } from "@/components/ui/blur-fade";
 const services = [
     {
         Icon: Brain,
-        title: "MVP Engineering",
-        body: "From zero to live product with full auth, db, and AI core. We do not build prototypes. We ship products ready for real users.",
+        title: "Custom AI Solutions",
+        body: "We build systems that handle the specific problem costing your business the most time or money — and hand it over fully working.",
         cta: "Work with us on your AI product →",
     },
     {
         Icon: Lightbulb,
-        title: "AI Feature Integration",
-        body: "Dropping intelligence into an existing Next.js monolith safely. We map the opportunity, design the system, and ship it this week.",
+        title: "Add AI to Your Existing Business",
+        body: "We add AI capabilities to how your business already operates — without disrupting anything that is currently working.",
         cta: "Discuss AI integration →",
     },
     {
         Icon: Globe,
-        title: "AI Automation & Agents",
-        body: "n8n pipelines, agentic workflows, LLM integrations, and custom AI agents — built to run your operations on autopilot. We engineer from scratch. No templates, no generic setups.",
+        title: "Business Automation",
+        body: "Whatever your team does manually and repeatedly — entering data, following up with customers, processing documents — we build a system to do it automatically. No templates. Built for your specific operation.",
         cta: "Build your automation →",
     },
     {
         Icon: Layout,
         title: "Website Design & Development",
-        body: "Clean, fast, conversion-focused websites built for founders who need to move. From landing pages to full marketing sites — designed, developed, and deployed.",
+        body: "Clean, fast, conversion-focused websites built for businesses that need to grow. From landing pages to full marketing sites — designed, developed, and deployed.",
         cta: "Start a Project →",
     },
 ];
@@ -84,7 +84,7 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
                     </div>
 
                     {/* Title */}
-                    {title === "MVP Engineering" && (
+                    {title === "Custom AI Solutions" && (
                         <span className="block font-mono text-[11px] uppercase tracking-[0.12em] text-[#C9A84C] mb-2">
                             CORE OFFERING
                         </span>
@@ -161,7 +161,7 @@ export default function Services() {
                             marginBottom: "48px",
                         }}
                     >
-                        MVP-first. Everything else supports it.
+                        We eliminate the work your team should not be doing.
                     </h2>
                 </BlurFade>
 

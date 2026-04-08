@@ -7,7 +7,7 @@ import { BlurFade } from "@/components/ui/blur-fade";
 const faqItems = [
     {
         question: "What kind of businesses do you work with?",
-        answer: "We work with seed to Series B founders, product leads, and indie builders who need production-grade AI shipped fast. If you have a real problem and a budget, we can help.",
+        answer: "We work with established businesses across fashion, retail, logistics, finance, and services — particularly businesses where the team is spending significant time on manual, repetitive work that could be automated. No technical knowledge is required on your end.",
     },
     {
         question: "How fast can you actually ship?",

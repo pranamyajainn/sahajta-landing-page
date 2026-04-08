@@ -102,10 +102,10 @@ export default function WhyAI() {
                                     </span>
                                     <ul className="space-y-3">
                                         {[
-                                            "Seed & Series A Founders",
-                                            "Product Leads",
-                                            "Indie Builders",
-                                            "Enterprise Innovation Teams"
+                                            "Fashion & D2C Brands",
+                                            "CA Firms & Finance Businesses",
+                                            "Retail & Trading",
+                                            "Logistics & Operations"
                                         ].map((item, i) => (
                                             <li key={i} className="flex items-center font-sans text-sm text-[#121212]">
                                                 <span className="text-[#D9B75B] mr-2">→</span>

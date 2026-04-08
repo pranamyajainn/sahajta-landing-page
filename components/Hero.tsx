@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -33,6 +33,17 @@ export default function Hero() {
 
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(true); // default true = safe SSR assumption
+
+    const checkMobile = useCallback(() => {
+        setIsMobile(window.innerWidth <= 768);
+    }, []);
+
+    useEffect(() => {
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, [checkMobile]);
 
     useEffect(() => {
         if (menuOpen) {
@@ -55,19 +66,33 @@ export default function Hero() {
     return (
         <>
             <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0B120A]">
-            {/* Background Video */}
-            <video
-                ref={videoRef}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                src="/hero-bg.mp4"
-                poster="/hero-poster.jpg"
-                className="absolute inset-0 w-full h-full object-cover"
-                style={{ zIndex: 0, willChange: 'transform' }}
-            />
+            {/* Background: video on desktop, static poster on mobile */}
+            {isMobile ? (
+                <img
+                    src="/hero-poster.jpg"
+                    alt=""
+                    aria-hidden="true"
+                    width={1920}
+                    height={1080}
+                    fetchPriority="high"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{ zIndex: 0 }}
+                />
+            ) : (
+                <video
+                    ref={videoRef}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    src="/hero-bg.mp4"
+                    poster="/hero-poster.jpg"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{ zIndex: 0, willChange: 'transform' }}
+                />
+            )}
 
             {/* Radial vignette — softens center text zone only, edges stay fully clear */}
             <div
@@ -149,16 +174,16 @@ export default function Hero() {
                 {/* Primary Headline */}
                 <h1 className="flex flex-col items-center justify-center -space-y-2 mb-6 sm:mb-8">
                     <span className="font-serif font-[900] text-[clamp(52px,6vw,84px)] text-[#F5F0E8] tracking-[-0.03em] leading-[1.1]">
-                        Agency that ships your
+                        We help your business run smarter
                     </span>
                     <span className="font-serif font-[900] italic text-[clamp(60px,8vw,108px)] text-[#C9A84C] tracking-[-0.04em] leading-[1.1]">
-                        AI products live
+                        with AI
                     </span>
                 </h1>
 
                 {/* Subtext */}
                 <p className="font-sans font-[400] text-[17px] text-[#F5F0E8]/65 max-w-[460px] text-center mb-10 leading-[1.7]">
-                    India&apos;s AI-powered MVP studio. We take your idea from zero to a live product in 48 hours.
+                    We take the work your team does manually every day and automate it — so your business grows without growing your headcount.
                 </p>
 
                 {/* CTA Row */}
@@ -167,7 +192,7 @@ export default function Hero() {
                         href="#contact"
                         className="bg-[#C9A84C] text-[#0B2818] font-mono text-[13px] uppercase tracking-[0.1em] px-8 py-4 rounded-none hover:opacity-90 transition-opacity inline-block"
                     >
-                        START A PROJECT →
+                        Tell us your biggest operational problem →
                     </a>
                     <button
                         onClick={scrollToShips}
