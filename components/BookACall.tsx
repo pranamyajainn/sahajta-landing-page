@@ -1,8 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Cal, { getCalApi } from "@calcom/embed-react";
+import { useState, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 import { BlurFade } from "@/components/ui/blur-fade";
+
+// Dynamically imported so Cal.com JS never loads during initial page load
+const Cal = dynamic(() => import("@calcom/embed-react").then((m) => m.default), {
+    ssr: false,
+    loading: () => <div style={{ minHeight: 500 }} />,
+});
+
+function CalEmbed() {
+    return (
+        <Cal
+            namespace="30min"
+            calLink="pranamyajain/30min"
+            style={{ width: "100%", height: "100%", minHeight: "0px", overflow: "auto" }}
+            config={{ layout: "month_view", theme: "light" }}
+        />
+    );
+}
 
 const BUDGET_OPTIONS = [
     "Under ₹1L",
@@ -31,8 +48,31 @@ export default function BookACall() {
     const [submitState, setSubmitState] = useState<SubmitState>("idle");
     const [errorMsg, setErrorMsg] = useState("");
 
+    const [calVisible, setCalVisible] = useState(false);
+    const calSectionRef = useRef<HTMLDivElement>(null);
+
+    // Only load Cal.com when the booking section is near the viewport
     useEffect(() => {
+        const node = calSectionRef.current;
+        if (!node) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setCalVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: "200px" }
+        );
+        observer.observe(node);
+        return () => observer.disconnect();
+    }, []);
+
+    // Initialise Cal UI config once the embed is mounted
+    useEffect(() => {
+        if (!calVisible) return;
         (async () => {
+            const { getCalApi } = await import("@calcom/embed-react");
             const cal = await getCalApi({ namespace: "30min" });
             cal("ui", {
                 theme: "light",
@@ -41,7 +81,7 @@ export default function BookACall() {
                 layout: "month_view",
             });
         })();
-    }, []);
+    }, [calVisible]);
 
     const handleChange = (
         e: React.ChangeEvent<
@@ -251,7 +291,7 @@ export default function BookACall() {
                         </div>
 
                         {/* RIGHT — CAL.COM BOOKING */}
-                        <div className="bg-[var(--bg-cream,#F5F0E8)] p-5 md:p-10 flex flex-col gap-6">
+                        <div className="bg-[var(--bg-cream,#F5F0E8)] p-5 md:p-10 flex flex-col gap-6" ref={calSectionRef}>
                             <div>
                                 <p className="font-mono text-xs tracking-[0.2em] uppercase text-[#2D5016] mb-2 font-bold">
                                     02 — SCHEDULE DIRECTLY
@@ -262,22 +302,11 @@ export default function BookACall() {
                                 </p>
                             </div>
 
-                            {/* CAL.COM INLINE EMBED */}
+                            {/* CAL.COM INLINE EMBED — only mounted after scroll */}
                             <div className="flex-1 min-h-0 md:min-h-[500px]">
-                                <Cal
-                                    namespace="30min"
-                                    calLink="pranamyajain/30min"
-                                    style={{
-                                        width: "100%",
-                                        height: "100%",
-                                        minHeight: "0px",
-                                        overflow: "auto",
-                                    }}
-                                    config={{
-                                        layout: "month_view",
-                                        theme: "light",
-                                    }}
-                                />
+                                {calVisible && (
+                                    <CalEmbed />
+                                )}
                             </div>
 
                             {/* Fallback link in case embed doesn't load */}
