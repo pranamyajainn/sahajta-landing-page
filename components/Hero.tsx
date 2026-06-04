@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -33,18 +33,6 @@ export default function Hero() {
 
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(true); // default true = safe SSR assumption
-
-    const checkMobile = useCallback(() => {
-        setIsMobile(window.innerWidth <= 768);
-    }, []);
-
-    useEffect(() => {
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, [checkMobile]);
-
     useEffect(() => {
         if (menuOpen) {
             document.body.style.overflow = "hidden";
@@ -66,30 +54,19 @@ export default function Hero() {
     return (
         <>
             <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0B120A]">
-            {/* Background: video on desktop, static poster on mobile */}
-            {isMobile ? (
-                <Image
-                    src="/hero-poster.jpg"
-                    alt="Sahajta AI"
-                    fill
-                    priority
-                    sizes="100vw"
-                    style={{ objectFit: "cover", zIndex: 0 }}
-                />
-            ) : (
-                <video
-                    ref={videoRef}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    src="/hero-bg.mp4"
-                    poster="/hero-poster.jpg"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    style={{ zIndex: 0, willChange: 'transform' }}
-                />
-            )}
+            {/* Background video */}
+            <video
+                ref={videoRef}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                src="/hero-bg.mp4"
+                poster="/hero-poster.jpg"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{ zIndex: 0, willChange: 'transform' }}
+            />
 
             {/* Radial vignette — softens center text zone only, edges stay fully clear */}
             <div
