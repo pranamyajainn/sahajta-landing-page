@@ -69,7 +69,7 @@ export default function LegalPage({ title, lastUpdated, children }: LegalPagePro
       </header>
 
       {/* Content */}
-      <main style={{ flex: 1, padding: "32px 24px 96px" }}>
+      <main style={{ flex: 1, padding: "20px 24px 96px" }}>
         <div style={{ maxWidth: "720px", margin: "0 auto" }}>
           <h1 style={{
             fontFamily: "var(--font-cormorant), Georgia, serif",
@@ -78,6 +78,7 @@ export default function LegalPage({ title, lastUpdated, children }: LegalPagePro
             color: "#0B2818",
             letterSpacing: "-0.03em",
             lineHeight: 1.0,
+            marginTop: 0,
             marginBottom: "10px",
           }}>
             {title}

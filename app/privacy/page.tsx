@@ -11,7 +11,8 @@ export default function PrivacyPage() {
     <LegalPage title="Privacy Policy" lastUpdated="22 June 2026">
       <h2 style={h2Style}>1. Who We Are</h2>
       <p style={pStyle}>
-        Sahajta AI Solution Private Limited (CIN: U63999RJ2026PTC111789) is an AI studio and automation services company based in Bangalore, India. Our registered office is at: Registered Office Address — To Be Added.{/* TODO: Pranamya — add the registered office address before launch */}
+        {/* TODO: confirm exact registered office address with Pranamya before next update */}
+        Sahajta AI Solution Private Limited (CIN: U63999RJ2026PTC111789) is an AI studio and automation services company based in Bangalore, India. Our registered office is at: Bangalore, Karnataka, India.
       </p>
       <p style={pStyle}>
         You can reach us at <a href="mailto:hello@sahajta.com" style={linkStyle}>hello@sahajta.com</a>. For privacy-related queries, write to <a href="mailto:privacy@sahajta.com" style={linkStyle}>privacy@sahajta.com</a>.
