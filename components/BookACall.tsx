@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 // Dynamically imported so Cal.com JS never loads during initial page load
@@ -262,20 +263,29 @@ export default function BookACall() {
 
                             {/* SUBMIT BUTTON */}
                             {submitState !== "success" && (
-                                <button
-                                    onClick={handleSubmit}
-                                    disabled={submitState === "loading"}
-                                    className="self-start inline-flex items-center gap-3 bg-[#0B2818] text-[var(--bg-cream,#F5F0E8)] px-8 py-4 rounded-none font-mono text-sm tracking-[0.12em] uppercase hover:bg-[#2D5016] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                                >
-                                    {submitState === "loading"
-                                        ? "Sending..."
-                                        : "Send Project Brief"}
-                                    {submitState !== "loading" && (
-                                        <span className="text-[var(--gold,#C9A84C)]">
-                                            →
-                                        </span>
-                                    )}
-                                </button>
+                                <>
+                                    <button
+                                        onClick={handleSubmit}
+                                        disabled={submitState === "loading"}
+                                        className="self-start inline-flex items-center gap-3 bg-[#0B2818] text-[var(--bg-cream,#F5F0E8)] px-8 py-4 rounded-none font-mono text-sm tracking-[0.12em] uppercase hover:bg-[#2D5016] transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    >
+                                        {submitState === "loading"
+                                            ? "Sending..."
+                                            : "Send Project Brief"}
+                                        {submitState !== "loading" && (
+                                            <span className="text-[var(--gold,#C9A84C)]">
+                                                →
+                                            </span>
+                                        )}
+                                    </button>
+                                    <p className="text-xs text-[#0B2818]/50 mt-2">
+                                        By submitting this form, you agree to our{" "}
+                                        <Link href="/privacy" className="underline hover:text-[#0B2818] transition-colors">
+                                            Privacy Policy
+                                        </Link>
+                                        .
+                                    </p>
+                                </>
                             )}
 
                             {/* DIRECT EMAIL FALLBACK */}

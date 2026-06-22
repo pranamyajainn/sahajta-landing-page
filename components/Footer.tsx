@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 export default function Footer() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -135,6 +136,36 @@ export default function Footer() {
           margin: 0,
         }}>
           Built &amp; Shipped in BLR, IND
+        </p>
+      </div>
+
+      {/* Legal links row */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          textAlign: "center",
+          padding: "12px 40px 0",
+        }}
+      >
+        <p style={{
+          fontFamily: "'JetBrains Mono', monospace",
+          fontSize: "11px",
+          letterSpacing: "0.12em",
+          textTransform: "uppercase",
+          color: "#F5F0E8",
+          opacity: 0.5,
+          margin: 0,
+        }}>
+          <Link href="/privacy" style={{ color: "inherit", textDecoration: "none" }}>Privacy Policy</Link>
+          {" · "}
+          <Link href="/terms" style={{ color: "inherit", textDecoration: "none" }}>Terms of Service</Link>
+          {" · "}
+          <Link href="/cookies" style={{ color: "inherit", textDecoration: "none" }}>Cookie Policy</Link>
+          {" · "}
+          <Link href="/refund" style={{ color: "inherit", textDecoration: "none" }}>Refund Policy</Link>
+          {" · "}
+          <Link href="/ai-usage" style={{ color: "inherit", textDecoration: "none" }}>How We Use AI</Link>
         </p>
       </div>
 
