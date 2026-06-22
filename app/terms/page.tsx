@@ -1,4 +1,5 @@
-import LegalPage, { h2Style, pStyle, ulStyle, liStyle } from "@/components/LegalPage";
+import Link from "next/link";
+import LegalPage, { h2Style, pStyle, ulStyle, liStyle, linkStyle } from "@/components/LegalPage";
 
 export const metadata = {
   title: "Terms of Service — Sahajta AI",
@@ -47,6 +48,17 @@ export default function TermsPage() {
       <h2 style={h2Style}>7. No Warranty</h2>
       <p style={pStyle}>
         Work is delivered to meet the agreed specification at time of handover. Sahajta makes no warranty about ongoing performance under conditions outside the agreed scope, including third-party API changes, infrastructure changes made by the client, or modifications made to the codebase after handover.
+      </p>
+
+      <p style={pStyle}>
+        For our{" "}
+        <Link href="/cookies" style={linkStyle}>Cookie Policy</Link>
+        {", "}
+        <Link href="/refund" style={linkStyle}>Refund Policy</Link>
+        {", and "}
+        <Link href="/ai-usage" style={linkStyle}>AI usage practices</Link>
+        {", email us at "}
+        <a href="mailto:hello@sahajta.com" style={linkStyle}>hello@sahajta.com</a>.
       </p>
 
       <h2 style={h2Style}>8. Governing Law</h2>

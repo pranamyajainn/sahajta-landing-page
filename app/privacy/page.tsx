@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LegalPage, { h2Style, pStyle, ulStyle, liStyle, linkStyle } from "@/components/LegalPage";
 
 export const metadata = {
@@ -70,6 +71,17 @@ export default function PrivacyPage() {
 
       <h2 style={h2Style}>9. Changes to This Policy</h2>
       <p style={pStyle}>When this policy changes, we update the Last Updated date at the top of this page. Continued use of the site after a change constitutes acceptance of the updated policy.</p>
+
+      <p style={pStyle}>
+        For our{" "}
+        <Link href="/cookies" style={linkStyle}>Cookie Policy</Link>
+        {", "}
+        <Link href="/refund" style={linkStyle}>Refund Policy</Link>
+        {", and "}
+        <Link href="/ai-usage" style={linkStyle}>AI usage practices</Link>
+        {", email us at "}
+        <a href="mailto:hello@sahajta.com" style={linkStyle}>hello@sahajta.com</a>.
+      </p>
 
       <h2 style={h2Style}>10. Governing Law</h2>
       <p style={pStyle}>This policy is governed by the laws of India. Disputes are subject to the exclusive jurisdiction of courts in Bangalore, Karnataka.</p>
